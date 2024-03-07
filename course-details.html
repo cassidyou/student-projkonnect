@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student - Course details</title>
+
+    <!--asset-->
+    <link rel="shortcut icon" type="text/css" href="asset/img/favicon.ico">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="vendor/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="https://preview.colorlib.com/theme/bootstrap/css-table-19/css/style.css">
+
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="vendor/fontawesome/all.min.css">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="vendor/swiper/swiper-bundle.min.css">
+
+    <!-- Bootstrap daterangepicker -->
+    <link rel="stylesheet" href="vendor/bootstrap-daterangepicker/daterangepicker.css">
+
+    <!--Custom CSS-->
+    <link rel="stylesheet" href="asset/css/style.css">
+    <link rel="stylesheet" href="asset/css/responsive.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.0.0/dist/chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+
+</head>
+
+<body>
+    <div class="page-wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-2 sidebar">
+                    <div class="sidebar-header">
+                        <div class="sidebar-close d-lg-none"></div>
+                        <div class="logo">
+                            <img src="asset/img/logo-light.png" class="img-fluid mb-2 sidebar-logo" alt="">
+                        </div>
+                    </div>
+                    <div class="sidebar-content">
+                        <ul class="sidebar-nav-links">
+                            <li class="adm-sidebar-link-item">
+                                <a href="index.html" class="sidebar-link">
+                                    <img src="asset/img/dashboard-img.png" alt="">
+                                    Dashboard
+                                </a>
+                            </li>
+                            <li class="adm-sidebar-link-item">
+                                <a href="live-tutorials.html" class="sidebar-link active">
+                                    <img src="asset/img/users-img.png" alt="">
+                                    Live Tutorials & Courses
+                                </a>
+                            </li>
+                            <li class="adm-sidebar-link-item">
+                                <a href="konnect-me.html" class="sidebar-link">
+                                    <img src="asset/img/konnect-icon.png" alt="">
+                                    Konnect Me
+                                </a>
+                            </li>
+                            <li class="adm-sidebar-link-item">
+                                <a href="project-pitch.html" class="sidebar-link">
+                                    <img src="asset/img/fiat-img.png" alt="">
+                                    Project Pitch
+                                </a>
+                            </li>
+                            <li class="adm-sidebar-link-item">
+                                <a href="internships.html" class="sidebar-link">
+                                    <img src="asset/img/fiat-img.png" alt="">
+                                    Internships
+                                </a>
+                            </li>
+                            <li class="adm-sidebar-link-item">
+                                <a href="jobs.html" class="sidebar-link">
+                                    <img src="asset/img/fiat-img.png" alt="">
+                                    Jobs
+                                </a>
+                            </li>
+                            <li class="adm-sidebar-link-item">
+                                <a href="forum.html" class="sidebar-link">
+                                    <img src="asset/img/fiat-img.png" alt="">
+                                    Forum
+                                </a>
+                            </li>
+                            <li class="adm-sidebar-link-item">
+                                <a href="my-learning.html" class="sidebar-link">
+                                    <img src="asset/img/fiat-img.png" alt="">
+                                    My Learning
+                                </a>
+                            </li>
+
+                        </ul>
+                        <div class="sidebar-footer">
+                            <a href="profile.html" class="sidebar-link mb-5">
+                                <img src="asset/img/setting-icon-light.png" alt="">
+                                My Account
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-10 main">
+                    <div class="container-fluid px-4">
+                        <div class="main-header">
+                            <div class="d-flex align-items-start gap-3">
+                                <div class="menu d-lg-none">
+                                   <i class="fa fa-ellipsis-v"></i>
+                                </div>
+                                <h1 class="heading">Live Tutorials & Courses</h1>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between">
+                                <button class="btn btn-nav-search" data-bs-toggle="modal"
+                                data-bs-target="#searchModal">
+                                    <img src="asset/img/search-icon.png" alt="">
+                                </button>
+    
+                                <div class="profile-dropdown notify-dropdown">
+                                    <div class="drop-now">
+                                        <img src="asset/img/notification-icon.png" alt="">
+                                    </div>
+                                    <div class="profile-dropdown-items notify-dropdown-items d-none">
+                                        <div class="d-flex align-items-center justify-content-between mb-4">
+                                            <h4 class="heading">Notifications</h4>
+                                            <span>  <i class="fa fa-check-double"></i> Mark all as read</span>
+                                        </div>
+                                        <div class="notify-dropdown-item">
+                                            <div class="notice-ctn">
+                                                <div class="img">
+                                                    <img src="asset/img/user-picture.png" alt="">
+                                                </div>
+                                                <div class="notice">
+                                                    <p>
+                                                        <b>John Does</b> added a new course, check this out!
+                                                    </p>
+                                                    <small class="time">23 mins ago</small>
+                                                </div>
+                                                <div class="resta"></div>
+                                            </div>
+                                            <div class="notice-ctn">
+                                                <div class="img">
+                                                    <img src="asset/img/user-picture.png" alt="">
+                                                </div>
+                                                <div class="notice">
+                                                    <p>
+                                                        <b>John Does</b> added a new course, check this out!
+                                                    </p>
+                                                    <small class="time">23 mins ago</small>
+                                                </div>
+                                                <!-- <div class="resta"></div> -->
+                                            </div>
+                                            <div class="text-center">
+                                                <a href="javascript:;" class="notify-btn">See all notifications</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="profile-dropdown">
+                                    <div class="drop-now d-flex align-items-center justify-content-between gap-4">
+                                        <div class="d-flex align-items-center align-items-start gap-3">
+                                            <div class="img">
+                                                <img src="asset/img/user-picture.png" class="img-flui" alt="">
+                                            </div>
+                                            <div class="d-flex flex-column">
+                                                <span class="name">John Doe</span>
+                                                <span class="role">Student</span>
+                                            </div>
+                                        </div>
+                                        <div class="directions close">
+                                            <i class="fa fa-chevron-down"></i>
+                                            <i class="fa fa-chevron-up"></i>
+                                        </div>
+                                    </div>
+                                    <ul class="profile-dropdown-items profile-items d-none">
+                                        <li class="dropdown-item">
+                                            <a href="profile.html">
+                                            <img src="asset/img/user-icon-dark.png" class="img-fluid" alt="">Profile</a>
+                                        </li>
+                                        <li class="dropdown-item">
+                                            <a href="settings.html">
+                                            <img src="asset/img/setting-icon-dark.png" class="img-fluid" alt="">Settings</a>
+                                        </li>
+                                        <li class="dropdown-item">
+                                            <a href="help-center.html">
+                                            <img src="asset/img/message-question-icon.png" class="img-fluid" alt="">Help center</a>
+                                        </li>
+                                        <li class="dropdown-item">
+                                            <a href="../login.html">
+                                            <img src="asset/img/login-icon.png" class="img-fluid" alt="">Logout</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="main-content">
+                              <div class="row">
+                                   <div class="col-lg-8 col-md-7 mb-4">
+                                        <div class="mb-5">
+                                             <span class="g-sm-heading op-6">Live Tutorials & Courses <i class="fa fa-chevron-right"></i></span>
+                                             <span class="g-sm-heading">Organization of Programming Languages</span>
+                                        </div>
+                                        <div class="custom-tab cs-dtl">
+                                             <div class="d-flex align-items-center justify-content-between flex-wrap">
+                                                  <ul class="nav nav-tabs">
+                                                       <li class="nav-item">
+                                                       <a class="nav-link active" data-bs-toggle="tab" href="#overview"></i> Course Overview</a>
+                                                       </li>
+                                                       <li class="nav-item">
+                                                       <a class="nav-link" data-bs-toggle="tab" href="#review"> Reviews</a>
+                                                       </li>
+                                                  </ul>
+                                             </div>
+                                             <div class="tab-content mb-5">
+                                                  <div class="tab-pane fade show active" id="overview" role="tabpanel">
+                                                       <h3 class="g-heading mt-4 mb-3">Organization of Programming Languages</h3>
+                                                       <p>
+                                                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum optio consequuntur veritatis quae cupiditate maiores. Deserunt autem tempore consequatur. Cumque, sapiente commodi sit amet quam eos quae aliquam dolorum officiis!
+                                                            Lorem ipsum dolor sit amet.
+                                                       </p>
+                                                       <h2 class="g-heading mt-4 mb-3">Course Syllabus</h2>
+                                                       <div class="border p-3 rounded mb-2">
+                                                            <h2 class="g-heading">Introduction to programming Languages</h2>
+                                                            <p class="mb-0 pb-0">
+                                                                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Labore expedita similique totam, blanditiis impedit dignissimos officia tempore quidem deleniti soluta.
+                                                            </p>
+                                                       </div>
+                                                       <div class="border p-3 rounded mb-2">
+                                                            <h2 class="g-heading">Introduction to programming Languages</h2>
+                                                            <p class="mb-0 pb-0">
+                                                                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Labore expedita similique totam, blanditiis impedit dignissimos officia tempore quidem deleniti soluta.
+                                                            </p>
+                                                       </div>
+                                                       <div class="border p-3 rounded mb-2">
+                                                            <h2 class="g-heading">Introduction to programming Languages</h2>
+                                                            <p class="mb-0 pb-0">
+                                                                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Labore expedita similique totam, blanditiis impedit dignissimos officia tempore quidem deleniti soluta.
+                                                            </p>
+                                                       </div>
+                                                       <div class="d-flex align-items-center justify-content-between mt-5">
+                                                            <h2 class="content-heading">Completed Courses</h2>
+                                                            <a href="courses.html" class="content-heading">View All &nbsp; <i class="fa fa-chevron-right"></i></a>
+                                                       </div>
+                                                       <div class="row mt-3">
+                                                            <div class="col-md-10 col-lg-6 mb-4">
+                                                                 <div class="course-card">
+                                                                      <div class="img-ctn">
+                                                                           <img src="asset/img/course-img.png" alt="">
+                                                                      </div>
+                                                                      <h3 class="course-category">Programming</h3>
+                                                                      <h3 class="course-title">Python Fullstack Developer Co...</h3>
+                                                                      <small class="author">from John Doe</small>
+                                                                      <div class="d-flex align-items-center justify-content-start gap-4 mt-3">
+                                                                           <div class="course-details">
+                                                                                <img src="asset/img/user-icon-dark.png" alt="">
+                                                                                <span>40</span>
+                                                                           </div>
+                                                                           <div class="course-details">
+                                                                                <img src="asset/img/book-icon.png" alt="">
+                                                                                <span>12 Chapters</span>
+                                                                           </div>
+                                                                      </div>
+                                                                 </div>
+                                                            </div>
+                                                            <div class="col-md-10 col-lg-6 mb-4">
+                                                                 <div class="course-card">
+                                                                      <div class="img-ctn">
+                                                                           <img src="asset/img/course-img.png" alt="">
+                                                                      </div>
+                                                                      <h3 class="course-category">Programming</h3>
+                                                                      <h3 class="course-title">Python Fullstack Developer Co...</h3>
+                                                                      <small class="author">from John Doe</small>
+                                                                      <div class="d-flex align-items-center justify-content-start gap-4 mt-3">
+                                                                           <div class="course-details">
+                                                                                <img src="asset/img/user-icon-dark.png" alt="">
+                                                                                <span>40</span>
+                                                                           </div>
+                                                                           <div class="course-details">
+                                                                                <img src="asset/img/book-icon.png" alt="">
+                                                                                <span>12 Chapters</span>
+                                                                           </div>
+                                                                      </div>
+                                                                 </div>
+                                                            </div>
+                                                       </div>
+                                                  </div>
+                                             </div>
+                                        </div>
+                                   </div>
+                                   <div class="col-lg-4 col-md-5 mb-4">
+                                        <div class="dlt-card mb-4">
+                                             <div class="dlt-card-header">
+                                                  <img src="asset/img/course-img.png" class="bg-img" alt="">
+                                                  <div class="header-ctn">
+                                                       <div class="img">
+                                                            <img src="asset/img/play-icon.png" class="play-icon" alt="">
+                                                       </div>
+                                                       <h3 class="g-sm-heading">Preview this Course</h3>
+                                                  </div>
+                                             </div>
+                                             <div class="dlt-card-body">
+                                                  <h3 class="price mb-3">$198.89</h3>
+                                                  <h4 class="g-sm-heading my-4">Organization of Programming Languages</h4>
+                                                  <a href="checkout.html" class="pch-btn d-block mb-4">Purchase Now</a>
+                                                  <h3 class="g-sm-heading mb-3">This course contains:</h3>
+                                                  <div class="cont-ctn">
+                                                       <div class="ctn">
+                                                            <div class="img"></div>
+                                                            <p class="mb-0 pb-0">27 Topics</p>
+                                                       </div>
+                                                  </div>
+                                                  <div class="cont-ctn">
+                                                       <div class="ctn">
+                                                            <div class="img"></div>
+                                                            <p class="mb-0 pb-0">72 Hours on-demand videos</p>
+                                                       </div>
+                                                  </div>
+                                                  <div class="cont-ctn">
+                                                       <div class="ctn">
+                                                            <div class="img"></div>
+                                                            <p class="mb-0 pb-0">Live lecture</p>
+                                                       </div>
+                                                  </div>
+                                                  <div class="cont-ctn">
+                                                       <div class="ctn">
+                                                            <div class="img"></div>
+                                                            <p class="mb-0 pb-0">Certificate of completion</p>
+                                                       </div>
+                                                  </div>
+                                                 </div>
+                                        </div>
+                                        <div class="pro-dlt">
+                                             <h3 class="g-sm-heading primary-color">Proguide Information</h3>
+                                             <div class="d-flex align-items-center gap-3 mt-4 mb-2">
+                                                  <div class="img">
+                                                       <img src="asset/img//user-picture.png" alt="">
+                                                  </div>
+                                                  <h3 class="g-heading">John Doe</h3>
+                                             </div>
+                                             <p class="mb-0 pb-0">
+                                                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse facilis nemo earum? Cupiditate, reiciendis minima! Cumque hic placeat neque nisi?
+                                             </p>
+                                        </div>
+                                   </div>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                aria-label="Close"><i class="fa fa-times"></i></button>
+                <div class="form-group">
+                    <input type="text" name="keyword" value="Programming" id="keyword" class="form-control">
+                </div>
+            </div>
+
+            <div class="modal-body rounded">
+                <div class="result-ctn">
+                    <h2 class="heading">Search result</h2>
+
+                    <div class="results">
+                        <div class="result">
+                            <h3 class="title">Organization of programming</h3>
+                            <p class="short-desc">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur, fugiat provident temporibus quas molestias similique?...
+                            </p>
+                        </div>
+                        <div class="result">
+                            <h3 class="title">Python programming</h3>
+                            <p class="short-desc">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur, fugiat provident temporibus quas molestias similique?...
+                            </p>
+                        </div>
+                        <div class="result">
+                            <h3 class="title">Web programming</h3>
+                            <p class="short-desc">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur, fugiat provident temporibus quas molestias similique?...
+                            </p>
+                        </div>
+                        <div class="result">
+                            <h3 class="title">Computer programming</h3>
+                            <p class="short-desc">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur, fugiat provident temporibus quas molestias similique?...
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+    <!-- JS FILES -->
+    <script src="vendor/jquery/jQuery3.6.1.min.js"></script>
+    <script src="vendor/popper/popper.js"></script>
+    <script src="vendor/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="vendor/fontawesome/all.min.js"></script>
+    <script src="vendor/jquery-validate/jquery.validate.js"></script>
+    <script src="vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="vendor/moment/moment.min.js"></script>
+    <script src="vendor/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <!-- <script src="asset/js/dashboard.js"></script> -->
+    <script src="asset/js/plugins_init.js"></script>
+    <script src="asset/js/main.js"></script>
+</body>
+
+</html>
