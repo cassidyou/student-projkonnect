@@ -1,3 +1,45 @@
+
+@media (max-width: 1200px){
+    .message-sidebar{
+        width: 40%;
+    }
+}
+
+
+@media (min-width: 1024px) and (max-width: 1300px){
+    .ai-sidebar{
+        width: 35%;
+    }
+}
+
+
+@media (max-width: 1200px)
+{
+    .tutimg{
+        height: 320px;
+    }
+}
+
+
+
+
+@media (max-width: 1024px)
+{
+    .tutimg{
+        height: 270px;
+    }
+}
+
+
+@media (max-width: 991px)
+{
+    .ai-sidebar{
+        width: 35%;
+    }
+}
+
+
+
 @media (max-width: 768px)
 {
     .custom-tab .nav-link {
@@ -18,7 +60,43 @@
         font-size: 16px;
         border-color: rgba(0, 0, 0, 0.15);
     }
+
+    .tutimg{
+        height: 220px;
+    }
+
+    .ai-sidebar{
+        position: absolute;
+        left: -300px;
+        height: 100%;
+        z-index: 10;
+        width: 250px;
+    }
+
+    .ai-sidebar .ai-sidebar-close{
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        z-index: 10;
+        width: 10px;
+        opacity: .5;
+    }
+
+    .ai-sidebar .ai-card-header{
+        padding-top: 40px;
+    }
+
+    .ai-sidebar .ai-card .ai-chats{
+        padding-top: 150px;
+    }
+
+    .ai-main .ai-main-main{
+        padding-top: 70px;
+    }
 }
+
+
+
 
 
 @media (max-width: 576px)
@@ -32,6 +110,20 @@
       .custom-tab .nav-link {
         margin-bottom: 20px;
     }
+
+    .tutimg{
+        height: 270px;
+    }
+
+    .message-sidebar{
+        width: 320px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 50;
+        height: 100%;
+    }
+
 
 }
 
@@ -63,6 +155,26 @@
           right: -55px;
       }
 
+      .tutimg{
+        height: 200px;
+    }
+
+    .ai-card-footer .suggest{
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .ai-card-footer .sg-card{
+        margin-bottom: 10px;
+    }
+
+    .ai-card-footer .sg-card button{
+        display: none;
+    }
+
+    .message-sidebar{
+        width: 100%;
+    }
 
 }
 
@@ -75,7 +187,13 @@
       .profile-dropdown.notify-dropdown .notify-dropdown-items{
            right: -65px;
        }
+
+       .tutimg{
+        height: 170px;
+    }
 }
+
+
 
 
 @media (max-width: 320px){
@@ -96,4 +214,8 @@
            right: -65px;
            width: 300px!important;
        }
+
+       .tutimg{
+        height: 140px;
+    }
 }

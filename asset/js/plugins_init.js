@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-  var ctx = document.getElementById('progressChart').getContext('2d');
+  // var ctx = document.getElementById('progressChart').getContext('2d');
 
   const data = {
     labels: [
@@ -47,9 +47,35 @@ $(document).ready(function () {
     }
   };
   
-  var progressChart = new Chart(ctx, config);
+  // var progressChart = new Chart(ctx, config);
 
 
+  //Dashboard Swiper
+  var screenWidth = window.innerWidth;
+  console.log(screenWidth);
+
+  if ($(".dashboard-swiper").length > 0) {
+
+    var t = new Swiper(".dashboard-swiper", 
+    { 
+      speed: 3e3, 
+      slidesPerView: 2, 
+      spaceBetween: 30, 
+      parallax: !0, 
+      centeredSlides: (screenWidth < 426) ? true : false,
+      loop: !0, 
+      autoplay: { delay: 8e3 }, 
+      navigation: { nextEl: ".testimonial-next", prevEl: ".testimonial-prev" }, 
+      breakpoints: { 
+        1400: { slidesPerView: 4 }, 
+        1300: { slidesPerView: 4 }, 
+        768: { slidesPerView: 3 }, 
+        576: { slidesPerView: 2 }, 
+        320: { slidesPerView: 1 } 
+      } 
+    });
+
+  }
 
 
   /********************************* DataTables ***************************************/

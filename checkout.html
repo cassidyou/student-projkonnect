@@ -50,45 +50,57 @@
                                 </a>
                             </li>
                             <li class="adm-sidebar-link-item">
-                                <a href="live-tutorials.html" class="sidebar-link active">
-                                    <img src="asset/img/users-img.png" alt="">
-                                    Live Tutorials & Courses
+                                <a href="courses.html" class="sidebar-link active">
+                                    <img src="asset/img/book_icon.png" alt="">
+                                    Courses
                                 </a>
                             </li>
                             <li class="adm-sidebar-link-item">
-                                <a href="konnect-me.html" class="sidebar-link">
+                                <a href="message.html" class="sidebar-link">
                                     <img src="asset/img/konnect-icon.png" alt="">
-                                    Konnect Me
+                                    Messages
+                                </a>
+                            </li>
+                            <li class="adm-sidebar-link-item">
+                                <a href="livelearn.html" class="sidebar-link">
+                                    <img src="asset/img/video_icon.png" alt="">
+                                    LiveLearn Sessions
+                                </a>
+                            </li>
+                            <li class="adm-sidebar-link-item">
+                                <a href="credshow.html" class="sidebar-link">
+                                    <img src="asset/img/credshow_icon.png" alt="">
+                                    CredShow
                                 </a>
                             </li>
                             <li class="adm-sidebar-link-item">
                                 <a href="project-pitch.html" class="sidebar-link">
-                                    <img src="asset/img/fiat-img.png" alt="">
+                                    <img src="asset/img/project_pitch_icon.png" alt="">
                                     Project Pitch
                                 </a>
                             </li>
                             <li class="adm-sidebar-link-item">
-                                <a href="internships.html" class="sidebar-link">
-                                    <img src="asset/img/fiat-img.png" alt="">
+                                <a href="internship.html" class="sidebar-link">
+                                    <img src="asset/img/internship_icon.png" alt="">
                                     Internships
                                 </a>
                             </li>
                             <li class="adm-sidebar-link-item">
-                                <a href="jobs.html" class="sidebar-link">
-                                    <img src="asset/img/fiat-img.png" alt="">
+                                <a href="job.html" class="sidebar-link">
+                                    <img src="asset/img/briefcase.png" alt="">
                                     Jobs
                                 </a>
                             </li>
                             <li class="adm-sidebar-link-item">
                                 <a href="forum.html" class="sidebar-link">
-                                    <img src="asset/img/fiat-img.png" alt="">
+                                    <img src="asset/img/forum_icon.png" alt="">
                                     Forum
                                 </a>
                             </li>
                             <li class="adm-sidebar-link-item">
-                                <a href="my-learning.html" class="sidebar-link">
-                                    <img src="asset/img/fiat-img.png" alt="">
-                                    My Learning
+                                <a href="schedule.html" class="sidebar-link">
+                                    <img src="asset/img/schedule_icon.png" alt="">
+                                    Schedules
                                 </a>
                             </li>
 
@@ -108,7 +120,7 @@
                                 <div class="menu d-lg-none">
                                    <i class="fa fa-ellipsis-v"></i>
                                 </div>
-                                <h1 class="heading">Live Tutorials & Courses</h1>
+                                <h1 class="heading">Courses</h1>
                             </div>
                             <div class="d-flex align-items-center justify-content-between">
                                 <button class="btn btn-nav-search" data-bs-toggle="modal"
@@ -151,7 +163,7 @@
                                                 <!-- <div class="resta"></div> -->
                                             </div>
                                             <div class="text-center">
-                                                <a href="javascript:;" class="notify-btn">See all notifications</a>
+                                                <a href="notifications.html" class="notify-btn">See all notifications</a>
                                             </div>
                                         </div>
                                     </div>
@@ -179,8 +191,16 @@
                                             <img src="asset/img/user-icon-dark.png" class="img-fluid" alt="">Profile</a>
                                         </li>
                                         <li class="dropdown-item">
+                                            <a href="projkonnect-ai.html">
+                                            <img src="asset/img/projkonnectai_icon.png" class="img-fluid" alt="">Projkonnect AI</a>
+                                        </li>
+                                        <li class="dropdown-item">
                                             <a href="settings.html">
                                             <img src="asset/img/setting-icon-dark.png" class="img-fluid" alt="">Settings</a>
+                                        </li>
+                                        <li class="dropdown-item">
+                                            <a href="certificates.html">
+                                            <img src="asset/img/certificate_icon.png" class="img-fluid" alt="">Certificates</a>
                                         </li>
                                         <li class="dropdown-item">
                                             <a href="help-center.html">
@@ -289,7 +309,7 @@
                                              </div>
                                              <h3 class="g-sm-heading mt-5 mb-4">Select a Payment Method</h3>
                                              <div class="d-flex align-items-center justify-content-between flex-wrap gap-3">
-                                                  <button class="btn pmt-btn">Debit Card</button>
+                                                  <button class="btn pmt-btn active">Debit Card</button>
                                                   <button class="btn pmt-btn">Credit Card</button>
                                                   <button class="btn pmt-btn">Net Banking</button>
                                              </div>
@@ -373,27 +393,34 @@
     <script src="asset/js/main.js"></script>
     <script>
           $(document).ready(function(){
-               $('.pay-btn').on('click', function(){
-                    $(this).prop('disabled', true).text('Please wait...');
-                    var _this = $(this);
-                   
 
-                    setTimeout(() => {
-                         Swal.fire({
-                              title: 'Payment Confirmed',
-                              icon: 'success',
-                              showCancelButton: false,
-                              confirmButtonColor: 'var(--primary-color)',
-                              confirmButtonText: 'Proceed to view course'
-                         }).then((result) => {
-                              if (result.isConfirmed) {
-                                   location.href = 'course-preview.html';
-                              }
-                         })
+            $('.pmt-btn').on('click', function () {
+                  $('.pmt-btn').removeClass('active');
+                  $(this).addClass('active');
+              })
 
-                         _this.prop('disabled', false).text('Pay $139.86');
-                    }, 2000);
-               })
+
+               $('.pay-btn').on('click', function () {
+                  $(this).prop('disabled', true).text('Please wait...');
+                  var _this = $(this);
+
+
+                  setTimeout(() => {
+                      Swal.fire({
+                          title: 'Payment Confirmed',
+                          icon: 'success',
+                          showCancelButton: false,
+                          confirmButtonColor: 'var(--primary-color)',
+                          confirmButtonText: 'Proceed to view course'
+                      }).then((result) => {
+                          if (result.isConfirmed) {
+                              location.href = 'course-preview.html';
+                          }
+                      })
+
+                      _this.prop('disabled', false).text('Pay $139.86');
+                  }, 2000);
+              })
           })
     </script>
 </body>
