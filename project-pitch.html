@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student - ProjKonnect AI</title>
+    <title>Student - Project Pitch</title>
 
     <!--asset-->
     <link rel="shortcut icon" type="text/css" href="asset/img/favicon.ico">
@@ -21,12 +21,14 @@
 
     <!-- Bootstrap daterangepicker -->
     <link rel="stylesheet" href="vendor/bootstrap-daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+    <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
 
     <!--Custom CSS-->
-    <link rel="stylesheet" href="asset/css/style.css">
-    <link rel="stylesheet" href="asset/css/responsive.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.0.0/dist/chart.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+    <link rel="stylesheet" href="asset/css/style.css">
+    <link rel="stylesheet" href="asset/css/responsive.css">
 
 </head>
 
@@ -44,7 +46,7 @@
                     <div class="sidebar-content">
                         <ul class="sidebar-nav-links">
                             <li class="adm-sidebar-link-item">
-                                <a href="index.html" class="sidebar-link active">
+                                <a href="index.html" class="sidebar-link">
                                     <img src="asset/img/dashboard-img.png" alt="">
                                     Dashboard
                                 </a>
@@ -74,7 +76,7 @@
                                 </a>
                             </li>
                             <li class="adm-sidebar-link-item">
-                                <a href="project-pitch.html" class="sidebar-link">
+                                <a href="project-pitch.html" class="sidebar-link active">
                                     <img src="asset/img/project_pitch_icon.png" alt="">
                                     Project Pitch
                                 </a>
@@ -120,7 +122,7 @@
                                 <div class="menu harmburger-menu d-lg-none">
                                    <div class="menu"></div>
                                 </div>
-                                <h1 class="heading">ProjKonnect AI</h1>
+                                <h1 class="heading">Project Pitch</h1>
                             </div>
                             <div class="d-flex align-items-center justify-content-between">
                                 <button class="btn btn-nav-search" data-bs-toggle="modal"
@@ -222,105 +224,173 @@
                             </div>
                         </div>
                         <div class="main-content">
-                          <div class="ai-ctn">
-                              <div class="ai-sidebar">
-                                   <div class="card ai-card">
-                                        <div class="ai-sidebar-close">
-                                             <i class="fa fa-times"></i>
+                              <div class="row">
+                                   <div class="col-12 mb-5 mt-3">
+                                        <a href="create-project-pitch.html" class="new-discussion-btn"><img src="asset/img/plus_icon.png" alt=""> &nbsp; New Pitch</a>
+                                   </div>
+                                    <div class="col-12">
+                                        <div class="table-responsive">
+                                             <table class="table" id="livelearn-table">
+                                                  <thead>
+                                                       <th>
+                                                            <div class="d-flex align-items-center gap-2">
+                                                                <div
+                                                                    class="form-check custom-checkbox checkbox-success check-lg">
+                                                                    <input type="checkbox" class="form-check-input"
+                                                                        id="customCheckBox8">
+                                                                    <label class="form-check-label"
+                                                                        for="customCheckBox8"></label>
+                                                                </div>
+                                                                <div class="apt_ful">
+                                                                    <span> Name</span>
+                                                                </div>
+                                                            </div>
+                                                        </th>
+                                                        <th>
+                                                            <span>Recent</span>
+                                                        </th>
+                                                        <th>
+                                                            <span>Status</span>
+                                                        </th>
+                                                        <th>
+                                                            <span></span>
+                                                        </th>
+                                                  </thead>
+                                                 <tbody>
+                                                  <tr>
+                                                       <td>
+                                                           <div
+                                                               class="d-flex align-items-center justify-content-start gap-2">
+                                                               <div
+                                                                   class="form-check custom-checkbox checkbox-success check-lg">
+                                                                   <input type="checkbox" class="form-check-input"
+                                                                       id="customCheckBox8">
+                                                                   <label class="form-check-label"
+                                                                       for="customCheckBox8"></label>
+                                                               </div>
+                                                               <div class="apt_nit dark">
+                                                                   <span>P</span>
+                                                               </div>
+                                                               <div class="apt_ful">
+                                                                   <span> Projkonnect: The all-in-one learning and career partner</span>
+                                                               </div>
+                                                           </div>
+                                                       </td>
+                                                       <td>
+                                                           2 days ago
+                                                       </td>
+                                                       <td>
+                                                           <span class="live-badge success">Published</span>
+                                                       </td>
+                                                       <td><span><i class="fa fa-ellipsis-h"></i></span></td>
+                                                   </tr>
+                                                  <tr>
+                                                       <td>
+                                                           <div
+                                                               class="d-flex align-items-center justify-content-start gap-2">
+                                                               <div
+                                                                   class="form-check custom-checkbox checkbox-success check-lg">
+                                                                   <input type="checkbox" class="form-check-input"
+                                                                       id="customCheckBox8">
+                                                                   <label class="form-check-label"
+                                                                       for="customCheckBox8"></label>
+                                                               </div>
+                                                               <div class="apt_nit dark">
+                                                                   <span>P</span>
+                                                               </div>
+                                                               <div class="apt_ful">
+                                                                   <span> Projkonnect: The all-in-one learning and career partner</span>
+                                                               </div>
+                                                           </div>
+                                                       </td>
+                                                       <td>
+                                                           2 days ago
+                                                       </td>
+                                                       <td>
+                                                           <span class="live-badge success">Published</span>
+                                                       </td>
+                                                       <td><span><i class="fa fa-ellipsis-h"></i></span></td>
+                                                   </tr>
+                                                  <tr>
+                                                       <td>
+                                                           <div
+                                                               class="d-flex align-items-center justify-content-start gap-2">
+                                                               <div
+                                                                   class="form-check custom-checkbox checkbox-success check-lg">
+                                                                   <input type="checkbox" class="form-check-input"
+                                                                       id="customCheckBox8">
+                                                                   <label class="form-check-label"
+                                                                       for="customCheckBox8"></label>
+                                                               </div>
+                                                               <div class="apt_nit dark">
+                                                                   <span>P</span>
+                                                               </div>
+                                                               <div class="apt_ful">
+                                                                   <span> Projkonnect: The all-in-one learning and career partner</span>
+                                                               </div>
+                                                           </div>
+                                                       </td>
+                                                       <td>
+                                                           2 days ago
+                                                       </td>
+                                                       <td>
+                                                           <span class="live-badge success">Published</span>
+                                                       </td>
+                                                       <td><span><i class="fa fa-ellipsis-h"></i></span></td>
+                                                   </tr>
+                                                  <tr>
+                                                       <td>
+                                                           <div
+                                                               class="d-flex align-items-center justify-content-start gap-2">
+                                                               <div
+                                                                   class="form-check custom-checkbox checkbox-success check-lg">
+                                                                   <input type="checkbox" class="form-check-input"
+                                                                       id="customCheckBox8">
+                                                                   <label class="form-check-label"
+                                                                       for="customCheckBox8"></label>
+                                                               </div>
+                                                               <div class="apt_nit dark">
+                                                                   <span>P</span>
+                                                               </div>
+                                                               <div class="apt_ful">
+                                                                   <span> Projkonnect: The all-in-one learning and career partner</span>
+                                                               </div>
+                                                           </div>
+                                                       </td>
+                                                       <td>
+                                                           2 days ago
+                                                       </td>
+                                                       <td>
+                                                           <span class="live-badge secondary">Pending</span>
+                                                       </td>
+                                                       <td><span><i class="fa fa-ellipsis-h"></i></span></td>
+                                                   </tr>
+                                               
+                                               
+                                                  <tr>
+                                                       <td colspan="6">
+                                                            <div class="table-pagination">
+                                                                 <button class='paginate-btn'><i class="fa fa-arrow-left"></i>&nbsp; Previous</button>
+                                                                 <div class="pagination-links">
+                                                                      <button class="pagination-link active">1</button>
+                                                                      <button class="pagination-link">2</button>
+                                                                      <button class="pagination-link">3</button>
+                                                                      <button class="pagination-link">4</button>
+                                                                      <button class="pagination-link">5</button>
+                                                                      <button class="pagination-link">6</button>
+                                                                 </div>
+                                                                 <button class='paginate-btn'>Next &nbsp;<i class="fa fa-arrow-right"></i></button>
+                                                            </div>
+                                                       </td>
+                                                  </tr>
+                                                 
+                                                 </tbody>
+                                             </table>
                                         </div>
-                                        <div class="ai-card-header">
-                                             <button class="ai-btn new-chat-btn"><img src="asset/img/plus_icon.png" alt=""> New Chat</button>
-                                             <h6 class="mt-4">Recent chats</h6>  
-                                        </div>
-                                        <ul class="ai-chats">
-                                             <li class="ai-chat active">Degree vs certificate</li>
-                                             <li class="ai-chat">Generate a database for a</li>
-                                             <li class="ai-chat">Write an esssay on this topic</li>
-                                             <li class="ai-chat">Explain Pythagoras theorem</li>
-                                             <li class="ai-chat">Explain Pythagoras theorem</li>
-                                             <li class="ai-chat">Explain Pythagoras theorem</li>
-                                             <li class="ai-chat">Degree vs certificate</li>
-                                             <li class="ai-chat">Generate a database for a</li>
-                                             <li class="ai-chat">Write an esssay on this topic</li>
-                                             <li class="ai-chat">Explain Pythagoras theorem</li>
-                                             <li class="ai-chat">Explain Pythagoras theorem</li>
-                                             <li class="ai-chat">Explain Pythagoras theorem</li>
-                                        </ul>
+                                      
+
                                    </div>
                               </div>
-                              <div class="ai-main">
-                                   <div class="card ai-card">
-                                        <div class="header-bar">
-                                             <div class="menu" id="header-menu-icon"></div>                                                
-                                             <button class="new-chat-btn"><img src="asset/img/plus_icon.png" alt=""></button>
-                                        </div>
-                                        <div class="ai-main-main">
-                                             <div class="ai-chat-content d-none">
-                                                  <div class="ai-chat-ctn">
-                                                       <div class="img">
-                                                            <img src="asset/img/user-picture.png" alt="">
-                                                       </div>
-                                                       <div class="chat-content">
-                                                            <p class="mb-0">
-                                                                 What are the steps of generating credshow link?
-                                                            </p>
-                                                       </div>
-                                                  </div>
-                                                  <div class="ai-chat-ctn">
-                                                       <div class="img">
-                                                            <img src="asset/img/ai-logo-colored.png" alt="">
-                                                       </div>
-                                                       <div class="chat-content">
-                                                            <p class="mb-0">
-                                                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim sit et accusamus, dicta odit vero deleniti velit pariatur consequatur tempore architecto dolore ipsa blanditiis deserunt libero numquam delectus nam magnam cum fugit. Voluptatum animi nisi iste quod vel consequuntur dolores autem quibusdam voluptatem praesentium similique, ad provident quasi! Explicabo, culpa.
-                                                            </p>
-                                                       </div>
-                                                  </div>
-                                                  <div class="ai-chat-ctn">
-                                                       <div class="img">
-                                                            <img src="asset/img/user-picture.png" alt="">
-                                                       </div>
-                                                       <div class="chat-content">
-                                                            <p class="mb-0">
-                                                                 What are the steps of generating credshow link?
-                                                            </p>
-                                                       </div>
-                                                  </div>
-                                                  <div class="ai-chat-ctn">
-                                                       <div class="img">
-                                                            <img src="asset/img/ai-logo-colored.png" alt="">
-                                                       </div>
-                                                       <div class="chat-content">
-                                                            <p class="mb-0">
-                                                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim sit et accusamus, dicta odit vero deleniti velit pariatur consequatur tempore architecto dolore ipsa blanditiis deserunt libero numquam delectus nam magnam cum fugit. Voluptatum animi nisi iste quod vel consequuntur dolores autem quibusdam voluptatem praesentium similique, ad provident quasi! Explicabo, culpa.
-                                                            </p>
-                                                       </div>
-                                                  </div>
-                                             </div>
-                                             <div class="ai-card-footer">
-                                              <div class="suggest">
-                                                   <div class="sg-card">
-                                                        <small>How to generate a CredShow shareable link for public view</small>
-                                                        <button>Ask AI</button>
-                                                   </div>
-                                                   <div class="sg-card">
-                                                        <small>How to generate a CredShow shareable link for public view</small>
-                                                        <button>Ask AI</button>
-                                                   </div>
-                                              </div>
-                                              <div class="form">
-                                                   <form class="ai-form" action="#">
-                                                        <div class="group-input">
-                                                             <input type="text" name="query" placeholder="Write your query here...">
-                                                             <button class="group-input-btn">Ask AI</button>
-                                                        </div>
-                                                   </form>
-                                              </div>
-                                             </div>
-                                        </div>
-                                   </div>
-                              </div>
-                          </div>
                         </div>
                     </div>
                 </div>
@@ -328,13 +398,7 @@
         </div>
     </div>
 
-
-
-
-
-
-
-
+    <!--********************** Search Modal *****************************-->
     <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable modal-md">
@@ -381,9 +445,7 @@
             </div>
         </div>
     </div>
-</div>
-
-
+    </div>
 
 
     <!-- JS FILES -->

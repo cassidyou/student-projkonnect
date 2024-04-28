@@ -1,0 +1,1381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student - CredShow</title>
+
+    <!--asset-->
+    <link rel="shortcut icon" type="text/css" href="asset/img/favicon.ico">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="vendor/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="https://preview.colorlib.com/theme/bootstrap/css-table-19/css/style.css">
+
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="vendor/fontawesome/all.min.css">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="vendor/swiper/swiper-bundle.min.css">
+
+    <!-- Bootstrap daterangepicker -->
+    <link rel="stylesheet" href="vendor/bootstrap-daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+    <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
+
+    <!--Custom CSS-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.0.0/dist/chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+    <link rel="stylesheet" href="asset/css/style.css">
+    <link rel="stylesheet" href="asset/css/responsive.css">
+
+</head>
+
+<body>
+    <div class="page-wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-2 sidebar">
+                    <div class="sidebar-header">
+                        <div class="sidebar-close d-lg-none"></div>
+                        <div class="logo">
+                            <img src="asset/img/logo-light.png" class="img-fluid mb-2 sidebar-logo" alt="">
+                        </div>
+                    </div>
+                    <div class="sidebar-content">
+                        <ul class="sidebar-nav-links">
+                            <li class="adm-sidebar-link-item">
+                                <a href="index.html" class="sidebar-link">
+                                    <img src="asset/img/dashboard-img.png" alt="">
+                                    Dashboard
+                                </a>
+                            </li>
+                            <li class="adm-sidebar-link-item">
+                                <a href="courses.html" class="sidebar-link">
+                                    <img src="asset/img/book_icon.png" alt="">
+                                    Courses
+                                </a>
+                            </li>
+                            <li class="adm-sidebar-link-item">
+                                <a href="message.html" class="sidebar-link">
+                                    <img src="asset/img/konnect-icon.png" alt="">
+                                    Messages
+                                </a>
+                            </li>
+                            <li class="adm-sidebar-link-item">
+                                <a href="livelearn.html" class="sidebar-link">
+                                    <img src="asset/img/video_icon.png" alt="">
+                                    LiveLearn Sessions
+                                </a>
+                            </li>
+                            <li class="adm-sidebar-link-item">
+                                <a href="credshow.html" class="sidebar-link active">
+                                    <img src="asset/img/credshow_icon.png" alt="">
+                                    CredShow
+                                </a>
+                            </li>
+                            <li class="adm-sidebar-link-item">
+                                <a href="project-pitch.html" class="sidebar-link">
+                                    <img src="asset/img/project_pitch_icon.png" alt="">
+                                    Project Pitch
+                                </a>
+                            </li>
+                            <li class="adm-sidebar-link-item">
+                                <a href="internship.html" class="sidebar-link">
+                                    <img src="asset/img/internship_icon.png" alt="">
+                                    Internships
+                                </a>
+                            </li>
+                            <li class="adm-sidebar-link-item">
+                                <a href="job.html" class="sidebar-link">
+                                    <img src="asset/img/briefcase.png" alt="">
+                                    Jobs
+                                </a>
+                            </li>
+                            <li class="adm-sidebar-link-item">
+                                <a href="forum.html" class="sidebar-link">
+                                    <img src="asset/img/forum_icon.png" alt="">
+                                    Forum
+                                </a>
+                            </li>
+                            <li class="adm-sidebar-link-item">
+                                <a href="schedule.html" class="sidebar-link">
+                                    <img src="asset/img/schedule_icon.png" alt="">
+                                    Schedules
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="sidebar-footer">
+                            <a href="profile.html" class="sidebar-link mb-5">
+                                <img src="asset/img/setting-icon-light.png" alt="">
+                                My Account
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-10 main">
+                    <div class="container-fluid px-4">
+                        <div class="main-header">
+                            <div class="d-flex align-items-start gap-3">
+                                <div class="menu harmburger-menu d-lg-none">
+                                   <div class="menu"></div>
+                                </div>
+                                <h1 class="heading">CredShow</h1>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between">
+                                <button class="btn btn-nav-search" data-bs-toggle="modal"
+                                data-bs-target="#searchModal">
+                                    <img src="asset/img/search-icon.png" alt="">
+                                </button>
+    
+                                <div class="profile-dropdown notify-dropdown">
+                                    <div class="drop-now">
+                                        <img src="asset/img/notification-icon.png" alt="">
+                                    </div>
+                                    <div class="profile-dropdown-items notify-dropdown-items d-none">
+                                        <div class="d-flex align-items-center justify-content-between mb-4">
+                                            <h4 class="heading">Notifications</h4>
+                                            <span>  <i class="fa fa-check-double"></i> Mark all as read</span>
+                                        </div>
+                                        <div class="notify-dropdown-item">
+                                            <div class="notice-ctn">
+                                                <div class="img">
+                                                    <img src="asset/img/user-picture.png" alt="">
+                                                </div>
+                                                <div class="notice">
+                                                    <p>
+                                                        <b>John Does</b> added a new course, check this out!
+                                                    </p>
+                                                    <small class="time">23 mins ago</small>
+                                                </div>
+                                                <div class="resta"></div>
+                                            </div>
+                                            <div class="notice-ctn">
+                                                <div class="img">
+                                                    <img src="asset/img/user-picture.png" alt="">
+                                                </div>
+                                                <div class="notice">
+                                                    <p>
+                                                        <b>John Does</b> added a new course, check this out!
+                                                    </p>
+                                                    <small class="time">23 mins ago</small>
+                                                </div>
+                                                <!-- <div class="resta"></div> -->
+                                            </div>
+                                            <div class="text-center">
+                                                <a href="notifications.html" class="notify-btn">See all notifications</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="profile-dropdown">
+                                    <div class="drop-now d-flex align-items-center justify-content-between gap-4">
+                                        <div class="d-flex align-items-center align-items-start gap-3">
+                                            <div class="img">
+                                                <img src="asset/img/user-picture.png" class="img-flui" alt="">
+                                            </div>
+                                            <div class="d-flex flex-column">
+                                                <span class="name">John Doe</span>
+                                                <span class="role">Student</span>
+                                            </div>
+                                        </div>
+                                        <div class="directions close">
+                                            <i class="fa fa-chevron-down"></i>
+                                            <i class="fa fa-chevron-up"></i>
+                                        </div>
+                                    </div>
+                                    <ul class="profile-dropdown-items profile-items d-none">
+                                        <li class="dropdown-item">
+                                            <a href="profile.html">
+                                            <img src="asset/img/user-icon-dark.png" class="img-fluid" alt="icon">Profile</a>
+                                        </li>
+                                        <li class="dropdown-item">
+                                            <a href="cart.html">
+                                            <img src="asset/img/shopping-cart.png" class="img-fluid" alt="icon">Cart <span class="cart-count">2</span></a>
+                                        </li>
+                                        <li class="dropdown-item">
+                                            <a href="referrals.html">
+                                            <img src="asset/img/referral-icon.png" class="img-fluid" alt="icon">Refer a Friend</a>
+                                        </li>
+                                        <li class="dropdown-item">
+                                            <a href="projkonnect-ai.html">
+                                            <img src="asset/img/projkonnectai_icon.png" class="img-fluid" alt="icon">Projkonnect AI</a>
+                                        </li>
+                                        <li class="dropdown-item">
+                                            <a href="settings.html">
+                                            <img src="asset/img/setting-icon-dark.png" class="img-fluid" alt="icon">Settings</a>
+                                        </li>
+                                        <li class="dropdown-item">
+                                            <a href="certificates.html">
+                                            <img src="asset/img/certificate_icon.png" class="img-fluid" alt="icon">Certificates</a>
+                                        </li>
+                                        <li class="dropdown-item">
+                                            <a href="help-center.html">
+                                            <img src="asset/img/message-question-icon.png" class="img-fluid" alt="icon">Help center</a>
+                                        </li>
+                                        <li class="dropdown-item">
+                                            <a href="../login.html">
+                                            <img src="asset/img/login-icon.png" class="img-fluid" alt="icon">Logout</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="main-content">
+                              <div class="row">
+                                   <div class="col-12">
+                                        <form id="create-credshow-form">
+                                             <div id="cred-tabs">
+                                                  <div class="cred-tab">
+                                                       <div class="header-lg-ctn mb-5">
+                                                            <h2>Add Resume</h2>
+                                                            <div class="cred-progress-ctn">
+                                                             <div class="cred-bar"></div>
+                                                            </div>
+                                                        </div>
+                                                       <h5>Personal Information</h5>
+                                                       <div class="row">
+                                                            <div class="col-md-4 mb-4">
+                                                                 <div class="form-group">
+                                                                      <input type="text" name="" placeholder="Full Name" id="" class="form-control">
+                                                                 </div>
+                                                            </div>
+                                                            <div class="col-md-4 mb-4">
+                                                                 <div class="form-group">
+                                                                      <input type="text" name="" placeholder="Phone Number" id="" class="form-control">
+                                                                 </div>
+                                                            </div>
+                                                            <div class="col-md-4 mb-4">
+                                                                 <div class="form-group">
+                                                                      <input type="text" name="" placeholder="E-mail Address" id="" class="form-control">
+                                                                 </div>
+                                                            </div>
+                                                       </div>
+                                                       <div class="row align-items-stretch">
+                                                            <div class="col-md-4 mb-4">
+                                                                 <div class="form-group">
+                                                                      <textarea name="" class="form-control h-100" placeholder="Address" id="" cols="30" rows="3"></textarea>
+                                                                 </div>
+                                                            </div>
+                                                            <div class="col-md-4 mb-4">
+                                                                 <div class="form-group mb-2">
+                                                                      <input type="text" class="form-control" name="" placeholder="Instagram Link (optional)" id="" class="form-control">
+                                                                 </div>
+                                                                 <div class="form-group">
+                                                                      <input type="text" class="form-control" name="" placeholder="Behance Link (optional)" id="" class="form-control">
+                                                                 </div>
+                                                            </div>
+                                                            <div class="col-md-4 mb-4">
+                                                                 <div class="form-group mb-2">
+                                                                      <input type="text" class="form-control" name="" placeholder="Twitter Link (optional)" id="" class="form-control">
+                                                                 </div>
+                                                                 <div class="form-group">
+                                                                      <input type="text" class="form-control" name="" placeholder="Github Link (optional)" id="" class="form-control">
+                                                                 </div>
+                                                            </div>
+                                                       </div>
+                                                       <h5>Educational Background</h5>
+                                                       <div class="row">
+                                                            <div class="col-md-8 mb-4">
+                                                                 <div class="form-group">
+                                                                      <input type="text" name="" placeholder="School Attended" id="" class="form-control">
+                                                                 </div>
+                                                            </div>
+                                                            <div class="col-md-2 mb-4">
+                                                                 <div class="form-group">
+                                                                      <input type="text" name="" placeholder="Degree Obtained" id="" class="form-control">
+                                                                 </div>
+                                                            </div>
+                                                            <div class="col-md-2 mb-4">
+                                                                 <div class="form-group">
+                                                                      <input type="text" name="" placeholder="CGPA" id="" class="form-control">
+                                                                 </div>
+                                                            </div>
+
+                                                            <div class="col-md-6 mb-4">
+                                                                 <div class="form-group">
+                                                                      <textarea name="" class="form-control" placeholder="Relevant Coursework" id="" cols="30" rows="5"></textarea>
+                                                                 </div>
+                                                            </div>
+                                                            <div class="col-md-6 mb-4">
+                                                                 <div class="form-group">
+                                                                      <textarea name="" class="form-control" placeholder="Academic Projects" id="" cols="30" rows="5"></textarea>
+                                                                 </div>
+                                                            </div>
+                                                       </div>
+                                                       <h5>Work Experience</h5>
+                                                      <div class="row">
+                                                       <div class="col-md-3 mb-4">
+                                                            <div class="form-group">
+                                                                 <input type="text" name="" placeholder="Institution" id="" class="form-control">
+                                                            </div>
+                                                       </div>
+                                                       <div class="col-md-3 mb-4">
+                                                            <div class="form-group">
+                                                                 <input type="text" name="" placeholder="Position Held" id="" class="form-control">
+                                                            </div>
+                                                       </div>
+                                                       <div class="col-md-3 mb-4">
+                                                            <div class="form-group">
+                                                                 <input type="text" name="" placeholder="Start Date" id="" class="form-control">
+                                                            </div>
+                                                       </div>
+                                                       <div class="col-md-3 mb-4">
+                                                            <div class="form-group">
+                                                                 <input type="text" name="" placeholder="End Date" id="" class="form-control">
+                                                            </div>
+                                                       </div>
+                                                       <div class="col-md-6 mb-4">
+                                                            <div class="form-group">
+                                                                 <textarea name="" class="form-control" placeholder="Responsibilities" id="" cols="30" rows="5"></textarea>
+                                                            </div>
+                                                       </div>
+                                                       <div class="col-md-6 mb-4">
+                                                            <div class="form-group">
+                                                                 <textarea name="" class="form-control" placeholder="Achievements" id="" cols="30" rows="5"></textarea>
+                                                            </div>
+                                                       </div>
+                                                      </div>
+                                                      <h5>Certifications</h5>
+                                                      <div class="row">
+                                                            <div class="col-md-5 mb-4">
+                                                                 <div class="form-group">
+                                                                      <input type="text" name="" placeholder="Certification name" id="" class="form-control">
+                                                                 </div>
+                                                            </div>
+                                                            <div class="col-md-5 mb-4">
+                                                                 <div class="form-group">
+                                                                      <input type="text" name="" placeholder="Issuing Organization" id="" class="form-control">
+                                                                 </div>
+                                                            </div>
+                                                            <div class="col-md-2 mb-4">
+                                                                 <div class="form-group">
+                                                                      <input type="text" name="" placeholder="Year of acquisition" id="" class="form-control">
+                                                                 </div>
+                                                            </div>
+                                                            <div class="col-md-5 mb-4">
+                                                                 <div class="form-group">
+                                                                      <input type="text" name="" placeholder="Certification name" id="" class="form-control">
+                                                                 </div>
+                                                            </div>
+                                                            <div class="col-md-5 mb-4">
+                                                                 <div class="form-group">
+                                                                      <input type="text" name="" placeholder="Issuing Organization" id="" class="form-control">
+                                                                 </div>
+                                                            </div>
+                                                            <div class="col-md-2 mb-4">
+                                                                 <div class="form-group">
+                                                                      <input type="text" name="" placeholder="Year of acquisition" id="" class="form-control">
+                                                                 </div>
+                                                            </div>
+                                                      </div>
+                                                      <h5>Honors and Awards <i class="op-6">(scholarships, dean's list, honor societies)</i></h5>
+                                                      <div class="row">
+                                                       <div class="col-md-4 mb-4">
+                                                            <div class="d-flex align-items-center justify-content-between honor-ctn">
+                                                                 <span>Scholarships</span>
+                                                                 <img src="asset/img/pdf_icon.png" width="30px" alt="icon">
+                                                            </div>
+                                                       </div>
+                                                       <div class="col-md-4 mb-4">
+                                                            <div class="d-flex align-items-center justify-content-between honor-ctn">
+                                                                 <span>Scholarships</span>
+                                                                 <img src="asset/img/pdf_icon.png" width="30px" alt="icon">
+                                                            </div>
+                                                       </div>
+                                                       <div class="col-md-4 mb-4">
+                                                            <div class="d-flex align-items-center justify-content-between honor-ctn">
+                                                                 <span>Title</span>
+                                                                 <img src="asset/img/upload-icon.png" width="25px" alt="icon">
+                                                            </div>
+                                                       </div>
+                                                      </div>
+                                                      <h5>Activities</h5>
+                                                      <div class="row">
+                                                       <div class="col-md-6 mb-4">
+                                                            <div class="form-group">
+                                                                 <textarea name="" class="form-control" placeholder="Student Organizations" id="" cols="30" rows="5"></textarea>
+                                                            </div>
+                                                       </div>
+                                                       <div class="col-md-6 mb-4">
+                                                            <div class="form-group">
+                                                                 <textarea name="" class="form-control" placeholder="Sport Teams" id="" cols="30" rows="5"></textarea>
+                                                            </div>
+                                                       </div>
+                                                       <div class="col-md-6 mb-4">
+                                                            <div class="form-group">
+                                                                 <textarea name="" class="form-control" placeholder="Conferences Attended" id="" cols="30" rows="5"></textarea>
+                                                            </div>
+                                                       </div>
+                                                       <div class="col-md-6 mb-4">
+                                                            <div class="form-group">
+                                                                 <textarea name="" class="form-control" placeholder="Student Clubs" id="" cols="30" rows="5"></textarea>
+                                                            </div>
+                                                       </div>
+                                                      </div>
+                                                      <h5>Volunteering</h5>
+                                                      <div class="row">
+                                                       <div class="col-md-6 mb-4">
+                                                            <div class="form-group">
+                                                                 <input type="text" class="form-control" placeholder="Name of Organization">
+                                                            </div>
+                                                       </div>
+                                                       <div class="col-md-6 mb-4">
+                                                            <div class="form-group">
+                                                                 <input type="text" class="form-control" placeholder="Volunteering Duration">
+                                                            </div>
+                                                       </div>
+                                                       <div class="col-md-6 mb-4">
+                                                            <div class="form-group">
+                                                                 <textarea name="" class="form-control" placeholder="Causes Supported" id="" cols="30" rows="5"></textarea>
+                                                            </div>
+                                                       </div>
+                                                       <div class="col-md-6 mb-4">
+                                                            <div class="form-group">
+                                                                 <textarea name="" class="form-control" placeholder="Accomplishments/responsibilities" id="" cols="30" rows="5"></textarea>
+                                                            </div>
+                                                       </div>
+                                                      </div>
+                                                      <h5>Additional</h5>
+                                                      <div class="row">
+                                                       <div class="col-md-6 mb-4">
+                                                            <div class="form-group">
+                                                                 <textarea name="" class="form-control" placeholder="Publications" id="" cols="30" rows="5"></textarea>
+                                                            </div>
+                                                       </div>
+                                                       <div class="col-md-6 mb-4">
+                                                            <div class="form-group">
+                                                                 <textarea name="" class="form-control" placeholder="Leadership Roles" id="" cols="30" rows="5"></textarea>
+                                                            </div>
+                                                       </div>
+                                                       <div class="col-md-6 mb-4">
+                                                            <div class="form-group">
+                                                                 <textarea name="" class="form-control" placeholder="Interests" id="" cols="30" rows="5"></textarea>
+                                                            </div>
+                                                       </div>
+                                                       <div class="col-md-6 mb-4">
+                                                            <div class="form-group">
+                                                                 <textarea name="" class="form-control" placeholder="Hobbies" id="" cols="30" rows="5"></textarea>
+                                                            </div>
+                                                       </div>
+                                                      </div>
+                                                  </div>
+                                                  <div class="cred-tab">
+                                                       <div class="header-lg-ctn mb-5">
+                                                            <h2>Select Skills</h2>
+                                                            <div class="cred-progress-ctn">
+                                                             <div class="cred-bar"></div>
+                                                            </div>
+                                                        </div>
+                                                       <div class="d-flex align-items-center justify-content-between">
+                                                            <h5>Skill</h5>
+                                                            <h5>Proficiency</h5>
+                                                       </div>
+                                                       <div id="skills">
+                                                            <div class="row mb-4">
+                                                                 <div class="col-7 col-md-5">
+                                                                      <div class="form-group">
+                                                                           <input type="text" name="" value="UI/UX" id="" class="form-control">
+                                                                      </div>
+                                                                 </div>
+                                                                 <div class="col-md-2 d-none d-md-block"></div>
+                                                                 <div class="col-5 col-md-5">
+                                                                      <div class="form-group">
+                                                                           <select name="" class="form-control" id="">
+                                                                                <option value="">Select</option>
+                                                                                <option selected value="">Beginner</option>
+                                                                                <option value="">Intermediate</option>
+                                                                                <option value="">Advanced</option>
+                                                                                <option value="">Expert</option>
+                                                                                <option value="">Master</option>
+                                                                           </select>
+                                                                      </div>
+                                                                 </div>
+                                                            </div>
+                                                            <div class="row mb-4">
+                                                                 <div class="col-md-5 col-7">
+                                                                      <div class="form-group">
+                                                                           <input type="text" name="" value="Frontend Development" id="" class="form-control">
+                                                                      </div>
+                                                                 </div>
+                                                                 <div class="col-md-2 d-none d-md-block"></div>
+                                                                 <div class="col-md-5 col-5">
+                                                                      <div class="form-group">
+                                                                           <select name="" class="form-control" id="">
+                                                                                <option value="">Select</option>
+                                                                                <option value="">Beginner</option>
+                                                                                <option selected value="">Intermediate</option>
+                                                                                <option value="">Advanced</option>
+                                                                                <option value="">Expert</option>
+                                                                                <option value="">Master</option>
+                                                                           </select>
+                                                                      </div>
+                                                                 </div>
+                                                            </div>
+                                                            <div class="row mb-4">
+                                                                 <div class="col-md-5 col-7">
+                                                                      <div class="form-group">
+                                                                           <input type="text" name="" value="Data Analysis" id="" class="form-control">
+                                                                      </div>
+                                                                 </div>
+                                                                 <div class="col-md-2 d-none d-md-block"></div>
+                                                                 <div class="col-md-5 col-5">
+                                                                      <div class="form-group">
+                                                                           <select name="" class="form-control" id="">
+                                                                                <option value="">Select</option>
+                                                                                <option value="">Beginner</option>
+                                                                                <option value="">Intermediate</option>
+                                                                                <option selected value="">Advanced</option>
+                                                                                <option value="">Expert</option>
+                                                                                <option value="">Master</option>
+                                                                           </select>
+                                                                      </div>
+                                                                 </div>
+                                                            </div>
+                                                            <div class="row mb-4">
+                                                                 <div class="col-md-5 col-7">
+                                                                      <div class="form-group">
+                                                                           <input type="text" name="" value="Artificial Intelligence" id="" class="form-control">
+                                                                      </div>
+                                                                 </div>
+                                                                 <div class="col-md-2 d-none d-md-block"></div>
+                                                                 <div class="col-md-5 col-5">
+                                                                      <div class="form-group">
+                                                                           <select name="" class="form-control" id="">
+                                                                                <option value="">Select</option>
+                                                                                <option value="">Beginner</option>
+                                                                                <option value="">Intermediate</option>
+                                                                                <option value="">Advanced</option>
+                                                                                <option selected value="">Expert</option>
+                                                                                <option value="">Master</option>
+                                                                           </select>
+                                                                      </div>
+                                                                 </div>
+                                                            </div>
+                                                            <div class="row mb-4">
+                                                                 <div class="col-md-5 col-7">
+                                                                      <div class="form-group">
+                                                                           <input type="text" name="" value="Cyber Security" id="" class="form-control">
+                                                                      </div>
+                                                                 </div>
+                                                                 <div class="col-md-2 d-none d-md-block"></div>
+                                                                 <div class="col-md-5 col-5">
+                                                                      <div class="form-group">
+                                                                           <select name="" class="form-control" id="">
+                                                                                <option value="">Select</option>
+                                                                                <option value="">Beginner</option>
+                                                                                <option value="">Intermediate</option>
+                                                                                <option value="">Advanced</option>
+                                                                                <option value="">Expert</option>
+                                                                                <option selected value="">Master</option>
+                                                                           </select>
+                                                                      </div>
+                                                                 </div>
+                                                            </div>
+                                                       </div>
+                                                       <button type="button" class="new-discussion-btn" id="add-skill-btn">
+                                                            <img src="asset/img/plus_icon.png" alt="icon"> Add skill
+                                                       </button>
+                                                  </div>
+                                                  <div class="cred-tab">
+                                                       <div class="header-lg-ctn mb-5">
+                                                            <h2>Showcase Projects</h2>
+                                                            <div class="cred-progress-ctn">
+                                                             <div class="cred-bar"></div>
+                                                            </div>
+                                                        </div>
+                                                       <div class="d-flex align-items-center justify-content-between mb-3">
+                                                            <h5>Academic Projects</h5>
+                                                            <button type="button" class="plus-btn" id="add-acad-p">
+                                                                 <img src="asset/img/plus-dark-icon.png" alt="icon">
+                                                            </button>
+                                                       </div>
+                                                       <div id="academic-projects">
+                                                            <div class="row">
+                                                                 <div class="col-md-6 mb-4">
+                                                                      <div class="form-group">
+                                                                           <input type="text" placeholder="Project Name" name="" id="" class="form-control">
+                                                                      </div>
+                                                                 </div>
+                                                                 <div class="col-md-6 mb-4">
+                                                                      <div class="form-group">
+                                                                           <input type="text" placeholder="Project Duration" name="" id="" class="form-control">
+                                                                      </div>
+                                                                 </div>
+                                                                 <div class="col-md-6 mb-4">
+                                                                      <div class="form-group">
+                                                                           <textarea name="" id="" cols="30" placeholder="Project Summary" rows="4" class="form-control h-100"></textarea>
+                                                                      </div>
+                                                                 </div>
+                                                                 <div class="col-md-6 mb-4">
+                                                                      <div class="input-ctn border h-100 p-3">
+                                                                           <div class="proj-file-ctn"></div>
+                                                                           <div class="form-group evid-ctn mt-2">
+                                                                                <label class="proj-label" ><span>Upload files</span> <img src="asset/img/upload-icon.png" width="20px" alt=""> </label>
+                                                                                <input type="file"  name="files" class="form-control default-input off-screen proj-file">
+                                                                           </div>
+                                                                      </div>
+                                                                 </div>
+                                                            </div>
+                                                       </div>
+                                                       <div class="d-flex align-items-center justify-content-between mb-3">
+                                                            <h5>Professional Projects</h5>
+                                                            <button type="button" class="plus-btn" id="add-prof-p">
+                                                                 <img src="asset/img/plus-dark-icon.png" alt="icon">
+                                                            </button>
+                                                       </div>
+                                                       <div id="professional-projects">
+                                                            <div class="row">
+                                                                 <div class="col-md-6 mb-4">
+                                                                      <div class="form-group">
+                                                                           <input type="text" placeholder="Project Name" name="" id="" class="form-control">
+                                                                      </div>
+                                                                 </div>
+                                                                 <div class="col-md-6 mb-4">
+                                                                      <div class="form-group">
+                                                                           <input type="text" placeholder="Project Duration" name="" id="" class="form-control">
+                                                                      </div>
+                                                                 </div>
+                                                                 <div class="col-md-6 mb-4">
+                                                                      <div class="form-group">
+                                                                           <textarea name="" id="" cols="30" placeholder="Project Summary" rows="4" class="form-control h-100"></textarea>
+                                                                      </div>
+                                                                 </div>
+                                                                 <div class="col-md-6 mb-4">
+                                                                      <div class="input-ctn border h-100 p-3">
+                                                                           <div class="proj-file-ctn"></div>
+                                                                           <div class="form-group evid-ctn mt-2">
+                                                                                <label class="proj-label" ><span>Upload files</span> <img src="asset/img/upload-icon.png" width="20px" alt=""> </label>
+                                                                                <input type="file"  name="files" class="form-control default-input off-screen proj-file">
+                                                                           </div>
+                                                                      </div>
+                                                                 </div>
+                                                            </div>
+                                                       </div>
+                                                       <div class="d-flex align-items-center justify-content-between mb-3">
+                                                            <h5>Personal Projects</h5>
+                                                            <button type="button" class="plus-btn" id="add-perso-p">
+                                                                 <img src="asset/img/plus-dark-icon.png" alt="icon">
+                                                            </button>
+                                                       </div>
+                                                       <div id="personal-projects">
+                                                            <div class="row">
+                                                                 <div class="col-md-6 mb-4">
+                                                                      <div class="form-group">
+                                                                           <input type="text" placeholder="Project Name" name="" id="" class="form-control">
+                                                                      </div>
+                                                                 </div>
+                                                                 <div class="col-md-6 mb-4">
+                                                                      <div class="form-group">
+                                                                           <input type="text" placeholder="Project Duration" name="" id="" class="form-control">
+                                                                      </div>
+                                                                 </div>
+                                                                 <div class="col-md-6 mb-4">
+                                                                      <div class="form-group">
+                                                                           <textarea name="" id="" cols="30" placeholder="Project Summary" rows="4" class="form-control h-100"></textarea>
+                                                                      </div>
+                                                                 </div>
+                                                                 <div class="col-md-6 mb-4">
+                                                                      <div class="input-ctn border h-100 p-3">
+                                                                           <div class="proj-file-ctn"></div>
+                                                                           <div class="form-group evid-ctn mt-2">
+                                                                                <label class="proj-label" ><span>Upload files</span> <img src="asset/img/upload-icon.png" width="20px" alt=""> </label>
+                                                                                <input type="file"  name="files" class="form-control default-input off-screen proj-file">
+                                                                           </div>
+                                                                      </div>
+                                                                 </div>
+                                                            </div>
+                                                       </div>
+                                                  </div>
+                                                  <div class="cred-tab">
+                                                       <div class="header-lg-ctn mb-5">
+                                                            <h2>Record Video Pitch</h2>
+                                                            <div class="cred-progress-ctn">
+                                                             <div class="cred-bar"></div>
+                                                            </div>
+                                                        </div>
+                                                       <div class="row mt-5">
+                                                            <div class="col-md-1 col-lg-2"></div>
+                                                            <div class="col-md-10 col-lg-8">
+                                                                 <div id="video-live-ctn">
+                                                                      <div id="live-record-ctn">
+                                                                           <img src="asset/img/user-picture.png" class="img-fluid" alt="">
+                                                                      </div>
+                                                                      <div class="d-flex align-items-center justify-content-between">
+                                                                           <div id="video-duration">
+                                                                                <img src="asset/img/recording-img.png" alt="icon">
+                                                                                <span>11:20</span>
+                                                                           </div>
+                                                                           <div class="d-flex align-items-center justify-content-center gap-4 vid-control-ctn">
+                                                                                <div id="video-pause-play">
+                                                                                     <img src="asset/img/pause-icon.png" alt="icon">
+                                                                                </div>
+                                                                                <div id="video-microphone">
+                                                                                     <img src="asset/img/video-micro-phone-icon.png" alt="icon">
+                                                                                </div>
+                                                                                <div id="video-camera">
+                                                                                     <img src="asset/img/camera-icon.png" alt="icon">
+                                                                                </div>
+                                                                           </div>
+                                                                           <div id="video-start-stop">
+                                                                                Start Recording
+                                                                           </div>
+                                                                      </div>
+                                                                 </div>
+                                                            </div>
+                                                            <div class="col-md-1 col-lg-2"></div>
+                                                    </div>
+                                                    <div class="row mt-5">
+                                                       <div class="col-md-3 col-lg-4"></div>
+                                                       <div class="col-md-6 col-lg-4">
+                                                            <div class="hr-line-ctn">
+                                                                 <h5 class="word">OR</h5>
+                                                                 <div class="hr-line"></div>
+                                                            </div>
+                              
+                                                            <label class="header-md-ctn d-block" for="video-file" style="cursor: pointer;">
+                                                                 <img src="asset/img/upload-icon.png" alt=""> &nbsp; Upload File
+                                                                 <input type="file" name="" id="video-file" accept="video/*" class="d-none">
+                                                                      
+                                                            </label>
+                                                       </div>
+                                                       <div class="col-md-3 col-lg-4"></div>
+                                                    </div>
+                                                  </div> 
+                                                  <!-- *************** Preview Tab *******************-->
+                                                  <div class="cred-tab">
+                                                       <div class="header-lg-ctn mb-5">
+                                                            <h2>Preview Portfolio</h2>
+                                                            <div class="cred-progress-ctn">
+                                                             <div class="cred-bar"></div>
+                                                            </div>
+                                                        </div>
+                                                       <div class="d-flex justify-content-center">
+                                                            <div class="cred-profile-img">
+                                                                 <img src="asset/img/user-picture.png" alt="Profile picture">
+                                                            </div>
+                                                       </div>
+                                                       <div class="d-flex justify-content-center">
+                                                            <div class="cred-prev-header">
+                                                                 Resume
+                                                            </div>
+                                                       </div>
+                                                       <h5>Personal Information</h5>
+                                                       <div class="row">
+                                                            <div class="col-md-4 mb-4">
+                                                                 <div class="form-group">
+                                                                      <input type="text" name="" placeholder="Full Name" id="" class="form-control">
+                                                                 </div>
+                                                            </div>
+                                                            <div class="col-md-4 mb-4">
+                                                                 <div class="form-group">
+                                                                      <input type="text" name="" placeholder="Phone Number" id="" class="form-control">
+                                                                 </div>
+                                                            </div>
+                                                            <div class="col-md-4 mb-4">
+                                                                 <div class="form-group">
+                                                                      <input type="text" name="" placeholder="E-mail Address" id="" class="form-control">
+                                                                 </div>
+                                                            </div>
+                                                       </div>
+                                                       <div class="row align-items-stretch">
+                                                            <div class="col-md-4 mb-4">
+                                                                 <div class="form-group">
+                                                                      <textarea name="" class="form-control h-100" placeholder="Address" id="" cols="30" rows="3"></textarea>
+                                                                 </div>
+                                                            </div>
+                                                            <div class="col-md-4 mb-4">
+                                                                 <div class="form-group mb-2">
+                                                                      <input type="text" class="form-control" name="" placeholder="Instagram Link (optional)" id="" class="form-control">
+                                                                 </div>
+                                                                 <div class="form-group">
+                                                                      <input type="text" class="form-control" name="" placeholder="Behance Link (optional)" id="" class="form-control">
+                                                                 </div>
+                                                            </div>
+                                                            <div class="col-md-4 mb-4">
+                                                                 <div class="form-group mb-2">
+                                                                      <input type="text" class="form-control" name="" placeholder="Twitter Link (optional)" id="" class="form-control">
+                                                                 </div>
+                                                                 <div class="form-group">
+                                                                      <input type="text" class="form-control" name="" placeholder="Github Link (optional)" id="" class="form-control">
+                                                                 </div>
+                                                            </div>
+                                                       </div>
+                                                       <h5>Educational Background</h5>
+                                                       <div class="row">
+                                                            <div class="col-md-8 mb-4">
+                                                                 <div class="form-group">
+                                                                      <input type="text" name="" placeholder="School Attended" id="" class="form-control">
+                                                                 </div>
+                                                            </div>
+                                                            <div class="col-md-2 mb-4">
+                                                                 <div class="form-group">
+                                                                      <input type="text" name="" placeholder="Degree Obtained" id="" class="form-control">
+                                                                 </div>
+                                                            </div>
+                                                            <div class="col-md-2 mb-4">
+                                                                 <div class="form-group">
+                                                                      <input type="text" name="" placeholder="CGPA" id="" class="form-control">
+                                                                 </div>
+                                                            </div>
+
+                                                            <div class="col-md-6 mb-4">
+                                                                 <div class="form-group">
+                                                                      <textarea name="" class="form-control" placeholder="Relevant Coursework" id="" cols="30" rows="5"></textarea>
+                                                                 </div>
+                                                            </div>
+                                                            <div class="col-md-6 mb-4">
+                                                                 <div class="form-group">
+                                                                      <textarea name="" class="form-control" placeholder="Academic Projects" id="" cols="30" rows="5"></textarea>
+                                                                 </div>
+                                                            </div>
+                                                       </div>
+                                                       <h5>Work Experience</h5>
+                                                      <div class="row">
+                                                       <div class="col-md-3 mb-4">
+                                                            <div class="form-group">
+                                                                 <input type="text" name="" placeholder="Institution" id="" class="form-control">
+                                                            </div>
+                                                       </div>
+                                                       <div class="col-md-3 mb-4">
+                                                            <div class="form-group">
+                                                                 <input type="text" name="" placeholder="Position Held" id="" class="form-control">
+                                                            </div>
+                                                       </div>
+                                                       <div class="col-md-3 mb-4">
+                                                            <div class="form-group">
+                                                                 <input type="text" name="" placeholder="Start Date" id="" class="form-control">
+                                                            </div>
+                                                       </div>
+                                                       <div class="col-md-3 mb-4">
+                                                            <div class="form-group">
+                                                                 <input type="text" name="" placeholder="End Date" id="" class="form-control">
+                                                            </div>
+                                                       </div>
+                                                       <div class="col-md-6 mb-4">
+                                                            <div class="form-group">
+                                                                 <textarea name="" class="form-control" placeholder="Responsibilities" id="" cols="30" rows="5"></textarea>
+                                                            </div>
+                                                       </div>
+                                                       <div class="col-md-6 mb-4">
+                                                            <div class="form-group">
+                                                                 <textarea name="" class="form-control" placeholder="Achievements" id="" cols="30" rows="5"></textarea>
+                                                            </div>
+                                                       </div>
+                                                      </div>
+                                                      <h5>Certifications</h5>
+                                                      <div class="row">
+                                                            <div class="col-md-5 mb-4">
+                                                                 <div class="form-group">
+                                                                      <input type="text" name="" placeholder="Certification name" id="" class="form-control">
+                                                                 </div>
+                                                            </div>
+                                                            <div class="col-md-5 mb-4">
+                                                                 <div class="form-group">
+                                                                      <input type="text" name="" placeholder="Issuing Organization" id="" class="form-control">
+                                                                 </div>
+                                                            </div>
+                                                            <div class="col-md-2 mb-4">
+                                                                 <div class="form-group">
+                                                                      <input type="text" name="" placeholder="Year of acquisition" id="" class="form-control">
+                                                                 </div>
+                                                            </div>
+                                                            <div class="col-md-5 mb-4">
+                                                                 <div class="form-group">
+                                                                      <input type="text" name="" placeholder="Certification name" id="" class="form-control">
+                                                                 </div>
+                                                            </div>
+                                                            <div class="col-md-5 mb-4">
+                                                                 <div class="form-group">
+                                                                      <input type="text" name="" placeholder="Issuing Organization" id="" class="form-control">
+                                                                 </div>
+                                                            </div>
+                                                            <div class="col-md-2 mb-4">
+                                                                 <div class="form-group">
+                                                                      <input type="text" name="" placeholder="Year of acquisition" id="" class="form-control">
+                                                                 </div>
+                                                            </div>
+                                                      </div>
+                                                      <h5>Honors and Awards <i class="op-6">(scholarships, dean's list, honor societies)</i></h5>
+                                                      <div class="row">
+                                                       <div class="col-md-4 mb-4">
+                                                            <div class="d-flex align-items-center justify-content-between honor-ctn">
+                                                                 <span>Scholarships</span>
+                                                                 <img src="asset/img/pdf_icon.png" width="30px" alt="icon">
+                                                            </div>
+                                                       </div>
+                                                       <div class="col-md-4 mb-4">
+                                                            <div class="d-flex align-items-center justify-content-between honor-ctn">
+                                                                 <span>Scholarships</span>
+                                                                 <img src="asset/img/pdf_icon.png" width="30px" alt="icon">
+                                                            </div>
+                                                       </div>
+                                                       <div class="col-md-4 mb-4">
+                                                            <div class="d-flex align-items-center justify-content-between honor-ctn">
+                                                                 <span>Title</span>
+                                                                 <img src="asset/img/upload-icon.png" width="25px" alt="icon">
+                                                            </div>
+                                                       </div>
+                                                      </div>
+                                                      <h5>Activities</h5>
+                                                      <div class="row">
+                                                       <div class="col-md-6 mb-4">
+                                                            <div class="form-group">
+                                                                 <textarea name="" class="form-control" placeholder="Student Organizations" id="" cols="30" rows="5"></textarea>
+                                                            </div>
+                                                       </div>
+                                                       <div class="col-md-6 mb-4">
+                                                            <div class="form-group">
+                                                                 <textarea name="" class="form-control" placeholder="Sport Teams" id="" cols="30" rows="5"></textarea>
+                                                            </div>
+                                                       </div>
+                                                       <div class="col-md-6 mb-4">
+                                                            <div class="form-group">
+                                                                 <textarea name="" class="form-control" placeholder="Conferences Attended" id="" cols="30" rows="5"></textarea>
+                                                            </div>
+                                                       </div>
+                                                       <div class="col-md-6 mb-4">
+                                                            <div class="form-group">
+                                                                 <textarea name="" class="form-control" placeholder="Student Clubs" id="" cols="30" rows="5"></textarea>
+                                                            </div>
+                                                       </div>
+                                                      </div>
+                                                      <h5>Volunteering</h5>
+                                                      <div class="row">
+                                                       <div class="col-md-6 mb-4">
+                                                            <div class="form-group">
+                                                                 <input type="text" class="form-control" placeholder="Name of Organization">
+                                                            </div>
+                                                       </div>
+                                                       <div class="col-md-6 mb-4">
+                                                            <div class="form-group">
+                                                                 <input type="text" class="form-control" placeholder="Volunteering Duration">
+                                                            </div>
+                                                       </div>
+                                                       <div class="col-md-6 mb-4">
+                                                            <div class="form-group">
+                                                                 <textarea name="" class="form-control" placeholder="Causes Supported" id="" cols="30" rows="5"></textarea>
+                                                            </div>
+                                                       </div>
+                                                       <div class="col-md-6 mb-4">
+                                                            <div class="form-group">
+                                                                 <textarea name="" class="form-control" placeholder="Accomplishments/responsibilities" id="" cols="30" rows="5"></textarea>
+                                                            </div>
+                                                       </div>
+                                                      </div>
+                                                      <h5>Additional</h5>
+                                                      <div class="row">
+                                                       <div class="col-md-6 mb-4">
+                                                            <div class="form-group">
+                                                                 <textarea name="" class="form-control" placeholder="Publications" id="" cols="30" rows="5"></textarea>
+                                                            </div>
+                                                       </div>
+                                                       <div class="col-md-6 mb-4">
+                                                            <div class="form-group">
+                                                                 <textarea name="" class="form-control" placeholder="Leadership Roles" id="" cols="30" rows="5"></textarea>
+                                                            </div>
+                                                       </div>
+                                                       <div class="col-md-6 mb-4">
+                                                            <div class="form-group">
+                                                                 <textarea name="" class="form-control" placeholder="Interests" id="" cols="30" rows="5"></textarea>
+                                                            </div>
+                                                       </div>
+                                                       <div class="col-md-6 mb-4">
+                                                            <div class="form-group">
+                                                                 <textarea name="" class="form-control" placeholder="Hobbies" id="" cols="30" rows="5"></textarea>
+                                                            </div>
+                                                       </div>
+                                                      </div>
+                                                      <div class="d-flex justify-content-center">
+                                                           <div class="cred-prev-header">
+                                                                 Skills
+                                                            </div>
+                                                      </div>
+                                                       <div class="d-flex align-items-center justify-content-between">
+                                                            <h5>Skill</h5>
+                                                            <h5>Proficiency</h5>
+                                                       </div>
+                                                       <div class="row mb-4">
+                                                            <div class="col-md-5 col-7">
+                                                                 <div class="form-group">
+                                                                      <input type="text" name="" value="UI/UX" id="" class="form-control">
+                                                                 </div>
+                                                            </div>
+                                                            <div class="col-md-2 d-none d-md-block"></div>
+                                                            <div class="col-md-5 col-5">
+                                                                 <div class="form-group">
+                                                                      <select name="" class="form-control" id="">
+                                                                           <option value="">Select</option>
+                                                                           <option selected value="">Beginner</option>
+                                                                           <option value="">Intermediate</option>
+                                                                           <option value="">Advanced</option>
+                                                                           <option value="">Expert</option>
+                                                                           <option value="">Master</option>
+                                                                      </select>
+                                                                 </div>
+                                                            </div>
+                                                       </div>
+                                                       <div class="row mb-4">
+                                                            <div class="col-md-5 col-7">
+                                                                 <div class="form-group">
+                                                                      <input type="text" name="" value="Frontend Development" id="" class="form-control">
+                                                                 </div>
+                                                            </div>
+                                                            <div class="col-md-2 d-none d-md-block"></div>
+                                                            <div class="col-md-5 col-5">
+                                                                 <div class="form-group">
+                                                                      <select name="" class="form-control" id="">
+                                                                           <option value="">Select</option>
+                                                                           <option value="">Beginner</option>
+                                                                           <option selected value="">Intermediate</option>
+                                                                           <option value="">Advanced</option>
+                                                                           <option value="">Expert</option>
+                                                                           <option value="">Master</option>
+                                                                      </select>
+                                                                 </div>
+                                                            </div>
+                                                       </div>
+                                                       <div class="row mb-4">
+                                                            <div class="col-md-5 col-7">
+                                                                 <div class="form-group">
+                                                                      <input type="text" name="" value="Data Analysis" id="" class="form-control">
+                                                                 </div>
+                                                            </div>
+                                                            <div class="col-md-2 d-none d-md-block"></div>
+                                                            <div class="col-md-5 col-5">
+                                                                 <div class="form-group">
+                                                                      <select name="" class="form-control" id="">
+                                                                           <option value="">Select</option>
+                                                                           <option value="">Beginner</option>
+                                                                           <option value="">Intermediate</option>
+                                                                           <option selected value="">Advanced</option>
+                                                                           <option value="">Expert</option>
+                                                                           <option value="">Master</option>
+                                                                      </select>
+                                                                 </div>
+                                                            </div>
+                                                       </div>
+                                                       <div class="row mb-4">
+                                                            <div class="col-md-5 col-7">
+                                                                 <div class="form-group">
+                                                                      <input type="text" name="" value="Artificial Intelligence" id="" class="form-control">
+                                                                 </div>
+                                                            </div>
+                                                            <div class="col-md-2 d-none d-md-block"></div>
+                                                            <div class="col-md-5 col-5">
+                                                                 <div class="form-group">
+                                                                      <select name="" class="form-control" id="">
+                                                                           <option value="">Select</option>
+                                                                           <option value="">Beginner</option>
+                                                                           <option value="">Intermediate</option>
+                                                                           <option value="">Advanced</option>
+                                                                           <option selected value="">Expert</option>
+                                                                           <option value="">Master</option>
+                                                                      </select>
+                                                                 </div>
+                                                            </div>
+                                                       </div>
+                                                       <div class="row mb-4">
+                                                            <div class="col-md-5 col-7">
+                                                                 <div class="form-group">
+                                                                      <input type="text" name="" value="Cyber Security" id="" class="form-control">
+                                                                 </div>
+                                                            </div>
+                                                            <div class="col-md-2 d-none d-md-block"></div>
+                                                            <div class="col-md-5 col-5">
+                                                                 <div class="form-group">
+                                                                      <select name="" class="form-control" id="">
+                                                                           <option value="">Select</option>
+                                                                           <option value="">Beginner</option>
+                                                                           <option value="">Intermediate</option>
+                                                                           <option value="">Advanced</option>
+                                                                           <option value="">Expert</option>
+                                                                           <option selected value="">Master</option>
+                                                                      </select>
+                                                                 </div>
+                                                            </div>
+                                                       </div>
+
+                                                       <div class="d-flex justify-content-center">
+                                                            <div class="cred-prev-header">
+                                                                  Projects
+                                                             </div>
+                                                       </div>
+                                                       <div class="d-flex align-items-center justify-content-between mb-3">
+                                                            <h5>Academic Projects</h5>
+                                                           
+                                                       </div>
+                                                       <div class="row">
+                                                            <div class="col-md-6 mb-4">
+                                                                 <div class="form-group">
+                                                                      <input type="text" placeholder="Project Name" name="" id="" class="form-control">
+                                                                 </div>
+                                                            </div>
+                                                            <div class="col-md-6 mb-4">
+                                                                 <div class="form-group">
+                                                                      <input type="text" placeholder="Project Duration" name="" id="" class="form-control">
+                                                                 </div>
+                                                            </div>
+                                                            <div class="col-md-6 mb-4">
+                                                                 <div class="form-group">
+                                                                      <textarea name="" id="" cols="30" placeholder="Project Summary" rows="4" class="form-control h-100"></textarea>
+                                                                 </div>
+                                                            </div>
+                                                            <div class="col-md-6 mb-4">
+                                                                 <div class="input-ctn border h-100 p-3">
+                                                                      <div class="proj-file-ctn">
+                                                                           <div class="report-evid">
+                                                                                <div class="d-flex align-items-center justify-content-between">
+                                                                                     <small style="opacity: 0.6"><i>Uploaded</i></small>
+                                                                                     <div id='percent' class="percent">100%</div>
+                                                                                </div>
+                                                                                <div class="progress" id="progress">
+                                                                                     <div class="bar" style="width: 100%!important;" id="bar"></div>
+                                                                                </div>
+                                                                           </div>
+                                                                      </div>
+                                                                      <div class="form-group evid-ctn mt-2">
+                                                                           <label class="proj-label" ><span>Upload files</span> <img src="asset/img/upload-icon.png" width="20px" alt=""> </label>
+                                                                           <input type="file"  name="files" class="form-control default-input off-screen proj-file">
+                                                                      </div>
+                                                                 </div>
+                                                            </div>
+                                                       </div>
+                                                       <div class="d-flex align-items-center justify-content-between mb-3">
+                                                            <h5>Professional Projects</h5>
+                                                            
+                                                       </div>
+                                                       <div class="row">
+                                                            <div class="col-md-6 mb-4">
+                                                                 <div class="form-group">
+                                                                      <input type="text" placeholder="Project Name" name="" id="" class="form-control">
+                                                                 </div>
+                                                            </div>
+                                                            <div class="col-md-6 mb-4">
+                                                                 <div class="form-group">
+                                                                      <input type="text" placeholder="Project Duration" name="" id="" class="form-control">
+                                                                 </div>
+                                                            </div>
+                                                            <div class="col-md-6 mb-4">
+                                                                 <div class="form-group">
+                                                                      <textarea name="" id="" cols="30" placeholder="Project Summary" rows="4" class="form-control h-100"></textarea>
+                                                                 </div>
+                                                            </div>
+                                                            <div class="col-md-6 mb-4">
+                                                                 <div class="input-ctn border h-100 p-3">
+                                                                      <div class="proj-file-ctn">
+                                                                           <div class="report-evid">
+                                                                                <div class="d-flex align-items-center justify-content-between">
+                                                                                     <small style="opacity: 0.6"><i>Uploaded</i></small>
+                                                                                     <div id='percent' class="percent">100%</div>
+                                                                                </div>
+                                                                                <div class="progress" id="progress">
+                                                                                     <div class="bar" style="width: 100%!important;" id="bar"></div>
+                                                                                </div>
+                                                                           </div>
+                                                                      </div>
+                                                                      <div class="form-group evid-ctn mt-2">
+                                                                           <label class="proj-label" ><span>Upload files</span> <img src="asset/img/upload-icon.png" width="20px" alt=""> </label>
+                                                                           <input type="file"  name="files" class="form-control default-input off-screen proj-file">
+                                                                      </div>
+                                                                 </div>
+                                                            </div>
+                                                       </div>
+                                                       <div class="d-flex align-items-center justify-content-between mb-3">
+                                                            <h5>Personal Projects</h5>
+                                                           
+                                                       </div>
+                                                       <div class="row">
+                                                            <div class="col-md-6 mb-4">
+                                                                 <div class="form-group">
+                                                                      <input type="text" placeholder="Project Name" name="" id="" class="form-control">
+                                                                 </div>
+                                                            </div>
+                                                            <div class="col-md-6 mb-4">
+                                                                 <div class="form-group">
+                                                                      <input type="text" placeholder="Project Duration" name="" id="" class="form-control">
+                                                                 </div>
+                                                            </div>
+                                                            <div class="col-md-6 mb-4">
+                                                                 <div class="form-group">
+                                                                      <textarea name="" id="" cols="30" placeholder="Project Summary" rows="4" class="form-control h-100"></textarea>
+                                                                 </div>
+                                                            </div>
+                                                            <div class="col-md-6 mb-4">
+                                                                 <div class="input-ctn border h-100 p-3">
+                                                                      <div class="proj-file-ctn">
+                                                                           <div class="report-evid">
+                                                                                <div class="d-flex align-items-center justify-content-between">
+                                                                                     <small style="opacity: 0.6"><i>Uploaded</i></small>
+                                                                                     <div id='percent' class="percent">100%</div>
+                                                                                </div>
+                                                                                <div class="progress" id="progress">
+                                                                                     <div class="bar" style="width: 100%!important;" id="bar"></div>
+                                                                                </div>
+                                                                           </div>
+                                                                      </div>
+                                                                      <div class="form-group evid-ctn mt-2">
+                                                                           <label class="proj-label" ><span>Upload files</span> <img src="asset/img/upload-icon.png" width="20px" alt=""> </label>
+                                                                           <input type="file"  name="files" class="form-control default-input off-screen proj-file">
+                                                                      </div>
+                                                                 </div>
+                                                            </div>
+                                                       </div>
+
+                                                       <div class="d-flex justify-content-center">
+                                                            <div class="cred-prev-header">
+                                                                  Video Pitch
+                                                             </div>
+                                                       </div>
+                                                       <div class="prevido mb-4">
+                                                            <div class="d-flex align-items-center justify-content-start gap-3">
+                                                                 <img src="asset/img/video-play-icon.png" width="30px" alt="icon">
+                                                                 <span>Uploaded File</span>
+                                                            </div>
+                                                            <div id="remove-prevido">
+                                                                 <img src="asset/img/times-close-circle.png" alt="icon">
+                                                            </div>
+                                                       </div>
+                                                  </div>
+                                             </div>
+                                        </form>
+                                   </div>
+                              </div>
+                              <div class="d-flex align-items-center justify-content-center gap-5 mt-5">
+                                <button type="button" class="cred-btn" id="prev-cred-btn"><i class="fa fa-arrow-left"></i></button>
+                                <button type="button" class="cred-btn" id="next-cred-btn"><i class="fa fa-arrow-right"></i></button>
+                                <button type="button"
+                                    class="new-discussion-btn d-none" 
+                                    id="generate-link-btn" 
+                                    >Generate Link</button>
+                                <button class="d-none" id="show-link-btn" data-bs-toggle="modal" data-bs-target="#linkModal" type="hidden"></button>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--********************** Search Modal *****************************-->
+    <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+     <div class="modal-dialog modal-dialog-scrollable modal-md">
+          <div class="modal-content">
+               <div class="modal-header">
+                              <button type="button" class="btn-close" data-bs-dismiss="modal"
+                    aria-label="Close"><i class="fa fa-times"></i></button>
+                    <div class="form-group">
+                         <input type="text" name="keyword" value="Programming" id="keyword" class="form-control">
+                    </div>
+               </div>
+
+               <div class="modal-body rounded">
+                    <div class="result-ctn">
+                         <h2 class="heading">Search result</h2>
+
+                         <div class="results">
+                         <div class="result">
+                              <h3 class="title">Organization of programming</h3>
+                              <p class="short-desc">
+                                   Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur, fugiat provident temporibus quas molestias similique?...
+                              </p>
+                         </div>
+                         <div class="result">
+                              <h3 class="title">Python programming</h3>
+                              <p class="short-desc">
+                                   Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur, fugiat provident temporibus quas molestias similique?...
+                              </p>
+                         </div>
+                         <div class="result">
+                              <h3 class="title">Web programming</h3>
+                              <p class="short-desc">
+                                   Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur, fugiat provident temporibus quas molestias similique?...
+                              </p>
+                         </div>
+                         <div class="result">
+                              <h3 class="title">Computer programming</h3>
+                              <p class="short-desc">
+                                   Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur, fugiat provident temporibus quas molestias similique?...
+                              </p>
+                         </div>
+                         </div>
+                    </div>
+               </div>
+          </div>
+     </div>
+    </div>
+
+    <div class="modal fade" id="linkModal" tabindex="-1" aria-labelledby="linkModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-md modal-dialog-centered">
+               <div class="modal-content">
+                    <div class="modal-body rounded overflow-hidden">
+                         <h5>Share</h5>
+                         <div class="sharer-ctn">
+                              <div class="sharer  whatsapp">
+                                   <div class="img">
+                                        <img src="asset/img/whatsapp-icon.png" alt="icon">
+                                   </div>
+                                   <span>Whatsapp</span>
+                              </div>
+                              <div class="sharer facebook">
+                                   <div class="img">
+                                        <img src="asset/img/facebook-icon-alt.png" alt="icon">
+                                   </div>
+                                   <span>Facebook</span>
+                              </div>
+                              <div class="sharer email">
+                                   <div class="img">
+                                        <img src="asset/img/email-icon.png" alt="icon">
+                                   </div>
+                                   <span>Email</span>
+                              </div>
+                         </div>
+                         <div class="share-link-ctn">
+                              <div class="custom-tooltip">
+                                   Copied!
+                              </div>
+                              <input type="text" id="sharelink" value="https://credshow.projkonnect.com/johndoe343">
+                              <button class="copy-btn" id="btnCopy">Copy</button>
+                         </div>
+                    </div>
+               </div>
+          </div>
+    </div>
+
+
+
+    <!-- JS FILES -->
+    <script src="vendor/jquery/jQuery3.6.1.min.js"></script>
+    <script src="vendor/popper/popper.js"></script>
+    <script src="vendor/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="vendor/fontawesome/all.min.js"></script>
+    <script src="vendor/jquery-validate/jquery.validate.js"></script>
+    <script src="vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="vendor/moment/moment.min.js"></script>
+    <script src="vendor/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- <script src="asset/js/dashboard.js"></script> -->
+    <script src="asset/js/plugins_init.js"></script>
+    <script src="asset/js/main.js"></script>
+    <script src="asset/js/credshow.js"></script>
+    <script>
+     $(document).ready(function(){
+          $("#btnCopy").on('click', function() {
+               var _this = $(this);
+               var input = $(this).siblings('input');
+               input.select();
+               document.execCommand("copy");
+               
+               $(this).siblings('.custom-tooltip').animate({right: '0'});
+
+               setTimeout(() => {
+                    _this.siblings('.custom-tooltip').animate({right: '-200px'});
+               }, 3000);
+          });
+
+     })
+    </script>
+</body>
+</html>

@@ -119,8 +119,8 @@
                     <div class="container-fluid px-4">
                         <div class="main-header">
                             <div class="d-flex align-items-start gap-3">
-                                <div class="menu d-lg-none">
-                                   <i class="fa fa-ellipsis-v"></i>
+                                <div class="menu harmburger-menu d-lg-none">
+                                  <div class="menu"></div>
                                 </div>
                                 <h1 class="heading">Courses</h1>
                             </div>
@@ -190,27 +190,35 @@
                                     <ul class="profile-dropdown-items profile-items d-none">
                                         <li class="dropdown-item">
                                             <a href="profile.html">
-                                            <img src="asset/img/user-icon-dark.png" class="img-fluid" alt="">Profile</a>
+                                            <img src="asset/img/user-icon-dark.png" class="img-fluid" alt="icon">Profile</a>
+                                        </li>
+                                        <li class="dropdown-item">
+                                            <a href="cart.html">
+                                            <img src="asset/img/shopping-cart.png" class="img-fluid" alt="icon">Cart <span class="cart-count">2</span></a>
+                                        </li>
+                                        <li class="dropdown-item">
+                                            <a href="referrals.html">
+                                            <img src="asset/img/referral-icon.png" class="img-fluid" alt="icon">Refer a Friend</a>
                                         </li>
                                         <li class="dropdown-item">
                                             <a href="projkonnect-ai.html">
-                                            <img src="asset/img/projkonnectai_icon.png" class="img-fluid" alt="">Projkonnect AI</a>
+                                            <img src="asset/img/projkonnectai_icon.png" class="img-fluid" alt="icon">Projkonnect AI</a>
                                         </li>
                                         <li class="dropdown-item">
                                             <a href="settings.html">
-                                            <img src="asset/img/setting-icon-dark.png" class="img-fluid" alt="">Settings</a>
+                                            <img src="asset/img/setting-icon-dark.png" class="img-fluid" alt="icon">Settings</a>
                                         </li>
                                         <li class="dropdown-item">
                                             <a href="certificates.html">
-                                            <img src="asset/img/certificate_icon.png" class="img-fluid" alt="">Certificates</a>
+                                            <img src="asset/img/certificate_icon.png" class="img-fluid" alt="icon">Certificates</a>
                                         </li>
                                         <li class="dropdown-item">
                                             <a href="help-center.html">
-                                            <img src="asset/img/message-question-icon.png" class="img-fluid" alt="">Help center</a>
+                                            <img src="asset/img/message-question-icon.png" class="img-fluid" alt="icon">Help center</a>
                                         </li>
                                         <li class="dropdown-item">
                                             <a href="../login.html">
-                                            <img src="asset/img/login-icon.png" class="img-fluid" alt="">Logout</a></li>
+                                            <img src="asset/img/login-icon.png" class="img-fluid" alt="icon">Logout</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -265,7 +273,8 @@
                                             </div>
                                             <div class="col-sm-6 col-xl-4">
                                                 <div class="card px-3 py-2 br-10 mt-3">
-                                                    <div class="d-flex align-items-center justify-content-start gap-3">
+                                                    <div class="d-flex align-items-center justify-content-start gap-3 cursor-p" data-bs-toggle="modal"
+                                                    data-bs-target="#resourceModal">
                                                         <div class="gray-img">
                                                             <img src="asset/img/note-2.png" />
                                                         </div>
@@ -535,6 +544,28 @@
         </div>
     </div>
     </div>
+
+    <!-- ********************* Resource Modal ********************** -->
+    <div class="modal fade" id="resourceModal" tabindex="-1" aria-labelledby="resourceModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-md modal-dialog-centered">
+             <div class="modal-content">
+                  <div class="modal-body rounded">
+                        <div class="text-center mt-3 mb-2">
+                            <span>Resource link 1</span>
+                        </div>
+                        <a href="https://www.projkonnect.com/rsd/ous/my-course-resoue/2oi4ee5e">
+                            https://www.projkonnect.com/rsd/ous/my-course-resoue/2oi4ee5e
+                        </a>
+                        <div class="text-center mt-3 mb-2">
+                            <span>Resource link 2</span>
+                        </div>
+                        <a href="https://www.projkonnect.com/rsd/ous/my-course-resoue/2oi4ee5e">
+                            https://www.projkonnect.com/rsd/ous/my-course-resoue/2oi4ee5e
+                        </a>
+                  </div>
+             </div>
+        </div>
+  </div>
 
 
 

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student - ProjKonnect AI</title>
+    <title>Student - CredShow</title>
 
     <!--asset-->
     <link rel="shortcut icon" type="text/css" href="asset/img/favicon.ico">
@@ -21,12 +21,14 @@
 
     <!-- Bootstrap daterangepicker -->
     <link rel="stylesheet" href="vendor/bootstrap-daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+    <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
 
     <!--Custom CSS-->
-    <link rel="stylesheet" href="asset/css/style.css">
-    <link rel="stylesheet" href="asset/css/responsive.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.0.0/dist/chart.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+    <link rel="stylesheet" href="asset/css/style.css">
+    <link rel="stylesheet" href="asset/css/responsive.css">
 
 </head>
 
@@ -44,7 +46,7 @@
                     <div class="sidebar-content">
                         <ul class="sidebar-nav-links">
                             <li class="adm-sidebar-link-item">
-                                <a href="index.html" class="sidebar-link active">
+                                <a href="index.html" class="sidebar-link">
                                     <img src="asset/img/dashboard-img.png" alt="">
                                     Dashboard
                                 </a>
@@ -68,7 +70,7 @@
                                 </a>
                             </li>
                             <li class="adm-sidebar-link-item">
-                                <a href="credshow.html" class="sidebar-link">
+                                <a href="credshow.html" class="sidebar-link active">
                                     <img src="asset/img/credshow_icon.png" alt="">
                                     CredShow
                                 </a>
@@ -103,7 +105,6 @@
                                     Schedules
                                 </a>
                             </li>
-
                         </ul>
                         <div class="sidebar-footer">
                             <a href="profile.html" class="sidebar-link mb-5">
@@ -120,7 +121,7 @@
                                 <div class="menu harmburger-menu d-lg-none">
                                    <div class="menu"></div>
                                 </div>
-                                <h1 class="heading">ProjKonnect AI</h1>
+                                <h1 class="heading">CredShow</h1>
                             </div>
                             <div class="d-flex align-items-center justify-content-between">
                                 <button class="btn btn-nav-search" data-bs-toggle="modal"
@@ -222,105 +223,35 @@
                             </div>
                         </div>
                         <div class="main-content">
-                          <div class="ai-ctn">
-                              <div class="ai-sidebar">
-                                   <div class="card ai-card">
-                                        <div class="ai-sidebar-close">
-                                             <i class="fa fa-times"></i>
+                              <div class="row">
+                                   <div class="col-12">
+                                        <div class="header-lg-ctn mb-5">
+                                            <h2>Add Resume</h2>
                                         </div>
-                                        <div class="ai-card-header">
-                                             <button class="ai-btn new-chat-btn"><img src="asset/img/plus_icon.png" alt=""> New Chat</button>
-                                             <h6 class="mt-4">Recent chats</h6>  
-                                        </div>
-                                        <ul class="ai-chats">
-                                             <li class="ai-chat active">Degree vs certificate</li>
-                                             <li class="ai-chat">Generate a database for a</li>
-                                             <li class="ai-chat">Write an esssay on this topic</li>
-                                             <li class="ai-chat">Explain Pythagoras theorem</li>
-                                             <li class="ai-chat">Explain Pythagoras theorem</li>
-                                             <li class="ai-chat">Explain Pythagoras theorem</li>
-                                             <li class="ai-chat">Degree vs certificate</li>
-                                             <li class="ai-chat">Generate a database for a</li>
-                                             <li class="ai-chat">Write an esssay on this topic</li>
-                                             <li class="ai-chat">Explain Pythagoras theorem</li>
-                                             <li class="ai-chat">Explain Pythagoras theorem</li>
-                                             <li class="ai-chat">Explain Pythagoras theorem</li>
-                                        </ul>
-                                   </div>
-                              </div>
-                              <div class="ai-main">
-                                   <div class="card ai-card">
-                                        <div class="header-bar">
-                                             <div class="menu" id="header-menu-icon"></div>                                                
-                                             <button class="new-chat-btn"><img src="asset/img/plus_icon.png" alt=""></button>
-                                        </div>
-                                        <div class="ai-main-main">
-                                             <div class="ai-chat-content d-none">
-                                                  <div class="ai-chat-ctn">
-                                                       <div class="img">
-                                                            <img src="asset/img/user-picture.png" alt="">
-                                                       </div>
-                                                       <div class="chat-content">
-                                                            <p class="mb-0">
-                                                                 What are the steps of generating credshow link?
-                                                            </p>
-                                                       </div>
-                                                  </div>
-                                                  <div class="ai-chat-ctn">
-                                                       <div class="img">
-                                                            <img src="asset/img/ai-logo-colored.png" alt="">
-                                                       </div>
-                                                       <div class="chat-content">
-                                                            <p class="mb-0">
-                                                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim sit et accusamus, dicta odit vero deleniti velit pariatur consequatur tempore architecto dolore ipsa blanditiis deserunt libero numquam delectus nam magnam cum fugit. Voluptatum animi nisi iste quod vel consequuntur dolores autem quibusdam voluptatem praesentium similique, ad provident quasi! Explicabo, culpa.
-                                                            </p>
-                                                       </div>
-                                                  </div>
-                                                  <div class="ai-chat-ctn">
-                                                       <div class="img">
-                                                            <img src="asset/img/user-picture.png" alt="">
-                                                       </div>
-                                                       <div class="chat-content">
-                                                            <p class="mb-0">
-                                                                 What are the steps of generating credshow link?
-                                                            </p>
-                                                       </div>
-                                                  </div>
-                                                  <div class="ai-chat-ctn">
-                                                       <div class="img">
-                                                            <img src="asset/img/ai-logo-colored.png" alt="">
-                                                       </div>
-                                                       <div class="chat-content">
-                                                            <p class="mb-0">
-                                                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim sit et accusamus, dicta odit vero deleniti velit pariatur consequatur tempore architecto dolore ipsa blanditiis deserunt libero numquam delectus nam magnam cum fugit. Voluptatum animi nisi iste quod vel consequuntur dolores autem quibusdam voluptatem praesentium similique, ad provident quasi! Explicabo, culpa.
-                                                            </p>
-                                                       </div>
-                                                  </div>
-                                             </div>
-                                             <div class="ai-card-footer">
-                                              <div class="suggest">
-                                                   <div class="sg-card">
-                                                        <small>How to generate a CredShow shareable link for public view</small>
-                                                        <button>Ask AI</button>
-                                                   </div>
-                                                   <div class="sg-card">
-                                                        <small>How to generate a CredShow shareable link for public view</small>
-                                                        <button>Ask AI</button>
-                                                   </div>
-                                              </div>
-                                              <div class="form">
-                                                   <form class="ai-form" action="#">
-                                                        <div class="group-input">
-                                                             <input type="text" name="query" placeholder="Write your query here...">
-                                                             <button class="group-input-btn">Ask AI</button>
-                                                        </div>
-                                                   </form>
-                                              </div>
-                                             </div>
+                                        
+                                        <div class="row mt-5">
+                                                <div class="col-md-3 col-lg-4"></div>
+                                                <div class="col-md-6 col-lg-4">
+                                                    <div class="header-md-ctn">
+                                                        <img src="asset/img/edit-pen.png" alt=""> Manually Input
+                                                    </div>
+                    
+                                                    <div class="hr-line-ctn">
+                                                            <h5 class="word">OR</h5>
+                                                            <div class="hr-line"></div>
+                                                    </div>
+                    
+                                                    <div class="header-md-ctn">
+                                                            <img src="asset/img/upload-icon.png" alt=""> Upload CV
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 col-lg-4"></div>
                                         </div>
                                    </div>
                               </div>
-                          </div>
+                              <div class="text-center mt-5">
+                                <button class="cred-btn" data-url="create-credshow.html"><i class="fa fa-arrow-right"></i></button>
+                              </div>
                         </div>
                     </div>
                 </div>
@@ -328,13 +259,7 @@
         </div>
     </div>
 
-
-
-
-
-
-
-
+    <!--********************** Search Modal *****************************-->
     <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable modal-md">
@@ -381,9 +306,7 @@
             </div>
         </div>
     </div>
-</div>
-
-
+    </div>
 
 
     <!-- JS FILES -->
@@ -399,6 +322,18 @@
     <!-- <script src="asset/js/dashboard.js"></script> -->
     <script src="asset/js/plugins_init.js"></script>
     <script src="asset/js/main.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.header-md-ctn').on('click', function(){
+                $('.header-md-ctn').removeClass('active');
+                $(this).addClass('active');
+            })
+
+            $('.cred-btn').on('click', function(){
+                location.href = $(this).data('url');
+            })
+        })
+    </script>
 </body>
 
 </html>
