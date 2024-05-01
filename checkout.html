@@ -67,25 +67,56 @@
                                     LiveLearn Sessions
                                 </a>
                             </li>
-                            <li class="adm-sidebar-link-item">
+                            <li class="adm-sidebar-link-item d-none d-lg-block">
                                 <a href="credshow.html" class="sidebar-link">
                                     <img src="asset/img/credshow_icon.png" alt="">
                                     CredShow
                                 </a>
                             </li>
-                            <li class="adm-sidebar-link-item">
+                            <li class="adm-sidebar-link-item d-none d-lg-block">
                                 <a href="project-pitch.html" class="sidebar-link">
                                     <img src="asset/img/project_pitch_icon.png" alt="">
                                     Project Pitch
                                 </a>
                             </li>
-                            <li class="adm-sidebar-link-item">
+                            <li class="adm-sidebar-link-item d-none d-lg-block">
                                 <a href="internship.html" class="sidebar-link">
                                     <img src="asset/img/internship_icon.png" alt="">
                                     Internships
                                 </a>
                             </li>
-                            <li class="adm-sidebar-link-item">
+                            <li class="d-lg-none">
+                                <div class="sidebar-link-dropdown closed">
+                                    <h6>Jobs</h6><span class="fa fa-chevron-down"></span>
+                                </div>
+                                <ul class="sidebar-dropdown-items">
+                                    <li class="adm-sidebar-link-item">
+                                        <a href="job.html" class="sidebar-link">
+                                            <img src="asset/img/briefcase.png" alt="">
+                                            Jobs
+                                        </a>
+                                    </li>
+                                    <li class="adm-sidebar-link-item">
+                                        <a href="internship.html" class="sidebar-link">
+                                            <img src="asset/img/internship_icon.png" alt="">
+                                            Internships
+                                        </a>
+                                    </li>
+                                    <li class="adm-sidebar-link-item">
+                                        <a href="credshow.html" class="sidebar-link">
+                                            <img src="asset/img/credshow_icon.png" alt="">
+                                            CredShow
+                                        </a>
+                                    </li>
+                                    <li class="adm-sidebar-link-item">
+                                        <a href="project-pitch.html" class="sidebar-link">
+                                            <img src="asset/img/project_pitch_icon.png" alt="">
+                                            Project Pitch
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="adm-sidebar-link-item d-none d-lg-block">
                                 <a href="job.html" class="sidebar-link">
                                     <img src="asset/img/briefcase.png" alt="">
                                     Jobs
@@ -203,7 +234,7 @@
                                             <img src="asset/img/projkonnectai_icon.png" class="img-fluid" alt="icon">Projkonnect AI</a>
                                         </li>
                                         <li class="dropdown-item">
-                                            <a href="settings.html">
+                                            <a href="profile.html">
                                             <img src="asset/img/setting-icon-dark.png" class="img-fluid" alt="icon">Settings</a>
                                         </li>
                                         <li class="dropdown-item">
@@ -381,7 +412,24 @@
             </div>
         </div>
     </div>
-</div>
+    </div>
+
+    <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body rounded">
+                    <div class="d-flex align-items-center justify-content-center mb-2 mt-3">
+                        <img src="asset/img/success-star-checked.png" width="50px" alt="icon">
+                    </div>
+                    <h3 class="text-center mb-2">Success!</h3>
+                    <div class="text-center mb-2">
+                        You have successfully registered for a LiveLearn Session.
+                    </div>
+                        <button type="button" id="goto-livepage" class="new-discussion-btn w-100 mb-2">Go Back</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 
@@ -413,6 +461,12 @@
                   $(this).prop('disabled', true).text('Please wait...');
                   var _this = $(this);
 
+                  if ($(this).hasClass('livesession-reg-btn'))
+                  {
+                        _this.prop('disabled', false).text('Pay $139.86');
+                        return true;
+                  }
+
 
                   setTimeout(() => {
                       Swal.fire({
@@ -430,6 +484,23 @@
                       _this.prop('disabled', false).text('Pay $139.86');
                   }, 2000);
               })
+
+              function containsQueryString(queryString) {
+                return window.location.href.includes(queryString);
+                }
+
+                var queryString = "ref=reg-livesession";
+
+                var containsRef = containsQueryString(queryString);
+                if(containsRef){
+                    $('.pay-btn').addClass('livesession-reg-btn');
+                    $('.pay-btn').attr('data-bs-toggle', 'modal').attr('data-bs-target', '#successModal');
+                }
+
+
+                $('#goto-livepage').on('click', function(){
+                    location.href = 'livelearn.html';
+                })
           })
     </script>
 </body>

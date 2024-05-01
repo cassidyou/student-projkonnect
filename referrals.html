@@ -69,25 +69,56 @@
                                     LiveLearn Sessions
                                 </a>
                             </li>
-                            <li class="adm-sidebar-link-item">
+                            <li class="adm-sidebar-link-item d-none d-lg-block">
                                 <a href="credshow.html" class="sidebar-link">
                                     <img src="asset/img/credshow_icon.png" alt="">
                                     CredShow
                                 </a>
                             </li>
-                            <li class="adm-sidebar-link-item">
-                                <a href="project-pitch.html" class="sidebar-link active">
+                            <li class="adm-sidebar-link-item d-none d-lg-block">
+                                <a href="project-pitch.html" class="sidebar-link">
                                     <img src="asset/img/project_pitch_icon.png" alt="">
                                     Project Pitch
                                 </a>
                             </li>
-                            <li class="adm-sidebar-link-item">
+                            <li class="adm-sidebar-link-item d-none d-lg-block">
                                 <a href="internship.html" class="sidebar-link">
                                     <img src="asset/img/internship_icon.png" alt="">
                                     Internships
                                 </a>
                             </li>
-                            <li class="adm-sidebar-link-item">
+                            <li class="d-lg-none">
+                                <div class="sidebar-link-dropdown closed">
+                                    <h6>Jobs</h6><span class="fa fa-chevron-down"></span>
+                                </div>
+                                <ul class="sidebar-dropdown-items">
+                                    <li class="adm-sidebar-link-item">
+                                        <a href="job.html" class="sidebar-link">
+                                            <img src="asset/img/briefcase.png" alt="">
+                                            Jobs
+                                        </a>
+                                    </li>
+                                    <li class="adm-sidebar-link-item">
+                                        <a href="internship.html" class="sidebar-link">
+                                            <img src="asset/img/internship_icon.png" alt="">
+                                            Internships
+                                        </a>
+                                    </li>
+                                    <li class="adm-sidebar-link-item">
+                                        <a href="credshow.html" class="sidebar-link">
+                                            <img src="asset/img/credshow_icon.png" alt="">
+                                            CredShow
+                                        </a>
+                                    </li>
+                                    <li class="adm-sidebar-link-item">
+                                        <a href="project-pitch.html" class="sidebar-link">
+                                            <img src="asset/img/project_pitch_icon.png" alt="">
+                                            Project Pitch
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="adm-sidebar-link-item d-none d-lg-block">
                                 <a href="job.html" class="sidebar-link">
                                     <img src="asset/img/briefcase.png" alt="">
                                     Jobs
@@ -205,7 +236,7 @@
                                             <img src="asset/img/projkonnectai_icon.png" class="img-fluid" alt="icon">Projkonnect AI</a>
                                         </li>
                                         <li class="dropdown-item">
-                                            <a href="settings.html">
+                                            <a href="profile.html">
                                             <img src="asset/img/setting-icon-dark.png" class="img-fluid" alt="icon">Settings</a>
                                         </li>
                                         <li class="dropdown-item">
@@ -227,12 +258,15 @@
                               <div class="row">
                                 <h4>Referral Code</h4>
                                    <div class="col-12 mb-5 mt-3">
-                                        <div class="referral-code">
-                                            <span> PROJ-234509376</span>
-                                            <img src="asset/img/copy-icon.png" alt="">
+                                        <div class="referral-code-ctn">
+                                            <div class="custom-tooltip">
+                                                Copied!
+                                           </div>
+                                            <span class="p-2">https://projkonnect.com/ref/proj345wxAjp</span>
+                                            <img src="asset/img/copy-icon.png" id="copy-ref-code" class="cursor-p" alt="icon">
                                         </div>
                                    </div>
-                                    <div class="col-md-6">
+                                    <div class="col-md-10">
                                         <div class="table-responsive">
                                              <table class="table" id="livelearn-table">
                                                   <thead>
@@ -552,6 +586,29 @@
     <!-- <script src="asset/js/dashboard.js"></script> -->
     <script src="asset/js/plugins_init.js"></script>
     <script src="asset/js/main.js"></script>
+    <script>
+        $(document).ready(function(){
+             $("#copy-ref-code").on('click', function() {
+                var _this = $(this);
+                var textToCopy = $(this).siblings('span').text();
+                var tempInput = $("<input>");
+                $("body").append(tempInput);
+                tempInput.attr('value', textToCopy).select();
+                document.execCommand("copy");
+                tempInput.remove();
+
+                $(this).siblings('span').css({backgroundColor: 'skyblue'})
+                  
+                  $(this).siblings('.custom-tooltip').fadeIn();
+   
+                  setTimeout(() => {
+                       _this.siblings('.custom-tooltip').fadeOut();
+                       _this.siblings('span').css({backgroundColor: 'transparent'});
+                  }, 2000);
+             });
+            
+        })
+       </script>
 </body>
 
 </html>
