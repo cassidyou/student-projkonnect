@@ -19,7 +19,7 @@
          var monthNames = ["January", "February", "March", "April", "May", "June",
            "July", "August", "September", "October", "November", "December"];
  
-         var dayNames = ["M", "T", "W", "T", "F", "S", "S"];
+           var dayNames = [ "S", "M", "T", "W", "T", "F", "S"];
  
          var $calendar = $(this);
  
