@@ -2375,6 +2375,7 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-default-outline:fo
     width: 250px;
     height: 250px;
     overflow: hidden;
+    border-radius: 50%;
 }
 
 .profile-ctn .img img{
