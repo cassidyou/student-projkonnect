@@ -58,38 +58,14 @@
                                 </a>
                             </li>
                             <li class="adm-sidebar-link-item">
-                                <a href="message.html" class="sidebar-link active">
-                                    <img src="asset/img/konnect-icon.png" alt="">
-                                    Messages
-                                </a>
-                            </li>
-                            <li class="adm-sidebar-link-item">
                                 <a href="livelearn.html" class="sidebar-link">
                                     <img src="asset/img/video_icon.png" alt="">
                                     LiveLearn Sessions
                                 </a>
                             </li>
-                            <li class="adm-sidebar-link-item d-none d-lg-block">
-                                <a href="credshow.html" class="sidebar-link">
-                                    <img src="asset/img/credshow_icon.png" alt="">
-                                    CredShow
-                                </a>
-                            </li>
-                            <li class="adm-sidebar-link-item d-none d-lg-block">
-                                <a href="project-pitch.html" class="sidebar-link">
-                                    <img src="asset/img/project_pitch_icon.png" alt="">
-                                    Project Pitch
-                                </a>
-                            </li>
-                            <li class="adm-sidebar-link-item d-none d-lg-block">
-                                <a href="internship.html" class="sidebar-link">
-                                    <img src="asset/img/internship_icon.png" alt="">
-                                    Internships
-                                </a>
-                            </li>
-                            <li class="d-lg-none">
+                            <li>
                                 <div class="sidebar-link-dropdown closed">
-                                    <h6>Jobs</h6><span class="fa fa-chevron-down"></span>
+                                    <h6>Career Hub</h6><span class="fa fa-chevron-down"></span>
                                 </div>
                                 <ul class="sidebar-dropdown-items">
                                     <li class="adm-sidebar-link-item">
@@ -118,17 +94,24 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li class="adm-sidebar-link-item d-none d-lg-block">
-                                <a href="job.html" class="sidebar-link">
-                                    <img src="asset/img/briefcase.png" alt="">
-                                    Jobs
-                                </a>
-                            </li>
-                            <li class="adm-sidebar-link-item">
-                                <a href="forum.html" class="sidebar-link">
-                                    <img src="asset/img/forum_icon.png" alt="">
-                                    Forum
-                                </a>
+                            <li>
+                                <div class="sidebar-link-dropdown closed">
+                                    <h6>Community Connect</h6><span class="fa fa-chevron-down"></span>
+                                </div>
+                                <ul class="sidebar-dropdown-items">
+                                    <li class="adm-sidebar-link-item">
+                                        <a href="message.html" class="sidebar-link active">
+                                            <img src="asset/img/konnect-icon.png" alt="">
+                                            Messages
+                                        </a>
+                                    </li>
+                                    <li class="adm-sidebar-link-item">
+                                        <a href="forum.html" class="sidebar-link">
+                                            <img src="asset/img/forum_icon.png" alt="">
+                                            Forum
+                                        </a>
+                                    </li>
+                                </ul>
                             </li>
                             <li class="adm-sidebar-link-item">
                                 <a href="schedule.html" class="sidebar-link">
@@ -260,11 +243,18 @@
                         </div>
                         <div class="main-content">
                          <div class="message-container">
-                              <div class="message-sidebar">
+                              <div class="message-sidebar overflow-hidden">
                                    <div class="message-sidebar-header">
                                         <div class="top">
                                              <h5>Messages</h5>
-                                             <img src="asset/img/sort.png" alt="icon">
+                                             <img src="asset/img/sort-icon.png" alt="">
+                                             <div class="cursor-p position-relative d-none">
+                                                  <span id="msg-menu"> <i class="fa fa-ellipsis-v"></i></span>
+                                                 
+                                                  <div class="new-group-ctn">
+                                                       <button id="open-ng-ctn">Create group</button>
+                                                  </div>
+                                             </div>
                                         </div>
                                         <div class="input-group">
                                              <img src="asset/img/message-search-icon.png" alt="icon">
@@ -601,6 +591,24 @@
     <!-- <script src="asset/js/dashboard.js"></script> -->
     <script src="asset/js/plugins_init.js"></script>
     <script src="asset/js/main.js"></script>
+    <script>
+     $(document).ready(function(){
+          $('#msg-menu').on('click', function(){
+               if($(this).siblings('.new-group-ctn').hasClass('opened')){
+                    $(this).siblings('.new-group-ctn').animate({right: '-200px'});
+                    $(this).siblings('.new-group-ctn').removeClass('opened');
+               }else{
+                    $(this).siblings('.new-group-ctn').animate({right: '0px'});
+                    $(this).siblings('.new-group-ctn').addClass('opened');
+               }
+          });
+
+
+          $('#open-ng-ctn').on('click', function(){
+
+          })
+     });
+    </script>
 </body>
 
 </html>

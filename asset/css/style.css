@@ -841,7 +841,8 @@ p{
     color: rgb(0, 160, 223);
 }
 
-.pch-btn{
+.pch-btn,
+.pch-btn-outline{
     display: inline-block;
     padding: 8px 15px;
     font-size: 16px;
@@ -851,6 +852,12 @@ p{
     font-weight: 500;
     border-radius: 4px;
     text-align: center;
+}
+
+.pch-btn-outline{
+    color: black;
+    background-color: white!important;
+    border: 1px solid var(--primary-color)!important;
 }
 
 .dlt-card-body .cont-ctn{
@@ -2520,12 +2527,20 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-default-outline:fo
 /* Forum page */
 .new-discussion-btn,
 .btn-danger, 
-.btn-success{
+.btn-success,
+.new-disccusion-btn-outline{
     border: none;
     border-radius: 7px;
-    padding: 10px 15px;
+    padding: 10px 20px;
+    text-align: center;
     color: var(--white-color);
     
+}
+
+.new-disccusion-btn-outline{
+    background-color: white;
+    border: 1px solid #007CFE;
+    color: var(--black-color);
 }
 
 .new-discussion-btn{
@@ -3701,11 +3716,41 @@ ol{
     display: none;
   }
 
+  .border-radius-15{
+    border-radius: 15px!important;
+  }
+
+  .border-radius-10{
+    border-radius: 10px!important;
+  }
 
 
 
+.custom-bg-gray{
+    background-color: #e5e5e5!important;
+    border-color: #e5e5e5!important;
+}
 
+.new-group-ctn{
+    position: absolute;
+    top: 25px;
+    right: -200px;
+    z-index: 10;
+    min-width: 120px;
+    padding: 15px;
+    transition: all 0.5s ease;
+    background-color: #ccc;
+}
 
+#open-ng-ctn{
+    border: 0;
+    border: none;
+    font-size: 14px;
+    background-color: transparent;
+}
 
+[data-bs-toggle="modal"]{
+    cursor: pointer;
+}
   
   

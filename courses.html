@@ -58,38 +58,14 @@
                                 </a>
                             </li>
                             <li class="adm-sidebar-link-item">
-                                <a href="message.html" class="sidebar-link">
-                                    <img src="asset/img/konnect-icon.png" alt="">
-                                    Messages
-                                </a>
-                            </li>
-                            <li class="adm-sidebar-link-item">
                                 <a href="livelearn.html" class="sidebar-link">
                                     <img src="asset/img/video_icon.png" alt="">
                                     LiveLearn Sessions
                                 </a>
                             </li>
-                            <li class="adm-sidebar-link-item d-none d-lg-block">
-                                <a href="credshow.html" class="sidebar-link">
-                                    <img src="asset/img/credshow_icon.png" alt="">
-                                    CredShow
-                                </a>
-                            </li>
-                            <li class="adm-sidebar-link-item d-none d-lg-block">
-                                <a href="project-pitch.html" class="sidebar-link">
-                                    <img src="asset/img/project_pitch_icon.png" alt="">
-                                    Project Pitch
-                                </a>
-                            </li>
-                            <li class="adm-sidebar-link-item d-none d-lg-block">
-                                <a href="internship.html" class="sidebar-link">
-                                    <img src="asset/img/internship_icon.png" alt="">
-                                    Internships
-                                </a>
-                            </li>
-                            <li class="d-lg-none">
+                            <li>
                                 <div class="sidebar-link-dropdown closed">
-                                    <h6>Jobs</h6><span class="fa fa-chevron-down"></span>
+                                    <h6>Career Hub</h6><span class="fa fa-chevron-down"></span>
                                 </div>
                                 <ul class="sidebar-dropdown-items">
                                     <li class="adm-sidebar-link-item">
@@ -118,17 +94,24 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li class="adm-sidebar-link-item d-none d-lg-block">
-                                <a href="job.html" class="sidebar-link">
-                                    <img src="asset/img/briefcase.png" alt="">
-                                    Jobs
-                                </a>
-                            </li>
-                            <li class="adm-sidebar-link-item">
-                                <a href="forum.html" class="sidebar-link">
-                                    <img src="asset/img/forum_icon.png" alt="">
-                                    Forum
-                                </a>
+                            <li>
+                                <div class="sidebar-link-dropdown closed">
+                                    <h6>Community Connect</h6><span class="fa fa-chevron-down"></span>
+                                </div>
+                                <ul class="sidebar-dropdown-items">
+                                    <li class="adm-sidebar-link-item">
+                                        <a href="message.html" class="sidebar-link">
+                                            <img src="asset/img/konnect-icon.png" alt="">
+                                            Messages
+                                        </a>
+                                    </li>
+                                    <li class="adm-sidebar-link-item">
+                                        <a href="forum.html" class="sidebar-link">
+                                            <img src="asset/img/forum_icon.png" alt="">
+                                            Forum
+                                        </a>
+                                    </li>
+                                </ul>
                             </li>
                             <li class="adm-sidebar-link-item">
                                 <a href="schedule.html" class="sidebar-link">
@@ -433,9 +416,8 @@
 
                               <div class="col-md-4">
                                 <div class="course-card overall-p mt-5">
-                                    <h2 class="course-title text-center">Overall Progress</h2>
-                                    <!-- <canvas id="progressChart" width="200" height="200"></canvas> -->
-                                    <div style="height: 200px;" id="donutexample"></div>
+                                    <h2 class="course-title text-center mb-5">Overall Progress</h2>
+                                    <canvas id="courseProgressChart" width="200" height="200"></canvas>
                                     <ul class="mt-5">
                                         <li>
                                             <h2 class="course-title">Courses Completed</h2>
@@ -549,11 +531,72 @@
     <script src="vendor/swiper/swiper-bundle.min.js"></script>
     <script src="vendor/moment/moment.min.js"></script>
     <script src="vendor/bootstrap-daterangepicker/daterangepicker.js"></script>
-    <!-- <script src="asset/js/dashboard.js"></script> -->
+    <script src="asset/js/dashboard.js"></script>
     <script src="vendor/raphael/raphael.min.js"></script>
     <script src="vendor/morris.js/morris.min.js"></script>
     <script src="asset/js/chart.morris.js"></script>
     <script src="asset/js/plugins_init.js"></script>
     <script src="asset/js/main.js"></script>
+    <script>
+            $(document).ready(function(){
+                Chart.register(ChartDataLabels);
+                // Course Progress Chart 
+                var data =  [70, 30];
+                var label = ['Completed', 'uncompleted'];
+                pieChart(data, label, 'courseProgressChart')
+                
+            
+                function pieChart(data, label, idName) {
+                    idName.height = 'auto';
+
+                    new Chart(idName, {
+                        type: 'pie',
+                        data: {
+                                defaultFontFamily: 'Poppins',
+                                labels: label,
+                                datasets: [
+                                    {
+                                        data: data,
+                                        borderColor: '#D80450',
+                                        backgroundColor:  [
+                                            '#007CFE', // Green
+                                            'transparent', // Orange
+                                            '#f97066', // Red
+                                        ],
+                                        borderColor: 'white',
+                                        borderWidth: 0,
+                                        tension: 0.5,
+                                        fill: false,
+                                    }
+                                ],
+                        },
+                        options: {
+                                plugins: {
+                                    datalabels: {
+                                        display: true,
+                                        color: 'white', 
+                                        formatter: function(value, context) {
+                                            return value + '%';
+                                        }
+                                    },
+                                    legend: {
+                                        display: false,
+                                        position: 'bottom'
+                                    },
+                                    tooltip: {
+                                        callbacks: {
+                                            label: function(context) {
+                                                var label = context.label || '';
+                                                var value = context.formattedValue || '';
+                                                return label + ': ' + value + '%';
+                                            }
+                                        }
+                                    }
+                                }
+                        }
+                    });
+                }
+            });
+    </script>
 </body>
 </html>

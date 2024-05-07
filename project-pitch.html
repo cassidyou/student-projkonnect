@@ -58,38 +58,14 @@
                                 </a>
                             </li>
                             <li class="adm-sidebar-link-item">
-                                <a href="message.html" class="sidebar-link">
-                                    <img src="asset/img/konnect-icon.png" alt="">
-                                    Messages
-                                </a>
-                            </li>
-                            <li class="adm-sidebar-link-item">
                                 <a href="livelearn.html" class="sidebar-link">
                                     <img src="asset/img/video_icon.png" alt="">
                                     LiveLearn Sessions
                                 </a>
                             </li>
-                            <li class="adm-sidebar-link-item d-none d-lg-block">
-                                <a href="credshow.html" class="sidebar-link">
-                                    <img src="asset/img/credshow_icon.png" alt="">
-                                    CredShow
-                                </a>
-                            </li>
-                            <li class="adm-sidebar-link-item d-none d-lg-block">
-                                <a href="project-pitch.html" class="sidebar-link active">
-                                    <img src="asset/img/project_pitch_icon.png" alt="">
-                                    Project Pitch
-                                </a>
-                            </li>
-                            <li class="adm-sidebar-link-item d-none d-lg-block">
-                                <a href="internship.html" class="sidebar-link">
-                                    <img src="asset/img/internship_icon.png" alt="">
-                                    Internships
-                                </a>
-                            </li>
-                            <li class="d-lg-none">
+                            <li>
                                 <div class="sidebar-link-dropdown closed">
-                                    <h6>Jobs</h6><span class="fa fa-chevron-down"></span>
+                                    <h6>Career Hub</h6><span class="fa fa-chevron-down"></span>
                                 </div>
                                 <ul class="sidebar-dropdown-items">
                                     <li class="adm-sidebar-link-item">
@@ -118,17 +94,24 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li class="adm-sidebar-link-item d-none d-lg-block">
-                                <a href="job.html" class="sidebar-link">
-                                    <img src="asset/img/briefcase.png" alt="">
-                                    Jobs
-                                </a>
-                            </li>
-                            <li class="adm-sidebar-link-item">
-                                <a href="forum.html" class="sidebar-link">
-                                    <img src="asset/img/forum_icon.png" alt="">
-                                    Forum
-                                </a>
+                            <li>
+                                <div class="sidebar-link-dropdown closed">
+                                    <h6>Community Connect</h6><span class="fa fa-chevron-down"></span>
+                                </div>
+                                <ul class="sidebar-dropdown-items">
+                                    <li class="adm-sidebar-link-item">
+                                        <a href="message.html" class="sidebar-link">
+                                            <img src="asset/img/konnect-icon.png" alt="">
+                                            Messages
+                                        </a>
+                                    </li>
+                                    <li class="adm-sidebar-link-item">
+                                        <a href="forum.html" class="sidebar-link">
+                                            <img src="asset/img/forum_icon.png" alt="">
+                                            Forum
+                                        </a>
+                                    </li>
+                                </ul>
                             </li>
                             <li class="adm-sidebar-link-item">
                                 <a href="schedule.html" class="sidebar-link">
@@ -317,7 +300,8 @@
                                                        <td>
                                                            <span class="live-badge success">Published</span>
                                                        </td>
-                                                       <td><span><i class="fa fa-ellipsis-h"></i></span></td>
+                                                       <td data-bs-toggle="modal"
+                                                       data-bs-target="#editModal"><span><i class="fa fa-ellipsis-h"></i></span></td>
                                                    </tr>
                                                   <tr>
                                                        <td>
@@ -344,7 +328,8 @@
                                                        <td>
                                                            <span class="live-badge success">Published</span>
                                                        </td>
-                                                       <td><span><i class="fa fa-ellipsis-h"></i></span></td>
+                                                       <td data-bs-toggle="modal"
+                                                       data-bs-target="#editModal"><span><i class="fa fa-ellipsis-h"></i></span></td>
                                                    </tr>
                                                   <tr>
                                                        <td>
@@ -371,7 +356,8 @@
                                                        <td>
                                                            <span class="live-badge success">Published</span>
                                                        </td>
-                                                       <td><span><i class="fa fa-ellipsis-h"></i></span></td>
+                                                       <td data-bs-toggle="modal"
+                                                       data-bs-target="#editModal"><span><i class="fa fa-ellipsis-h"></i></span></td>
                                                    </tr>
                                                   <tr>
                                                        <td>
@@ -398,7 +384,8 @@
                                                        <td>
                                                            <span class="live-badge secondary">Pending</span>
                                                        </td>
-                                                       <td><span><i class="fa fa-ellipsis-h"></i></span></td>
+                                                       <td data-bs-toggle="modal"
+                                                       data-bs-target="#editModal"><span><i class="fa fa-ellipsis-h"></i></span></td>
                                                    </tr>
                                                
                                                
@@ -422,8 +409,6 @@
                                                  </tbody>
                                              </table>
                                         </div>
-                                      
-
                                    </div>
                               </div>
                         </div>
@@ -480,6 +465,20 @@
             </div>
         </div>
     </div>
+    </div>
+
+    <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm modal-dialog-centered">
+             <div class="modal-content">
+                  <div class="modal-body rounded">
+                    <div class="d-flex align-items-center justify-content-center mb-3 mt-3">
+                        <img src="asset/img/edit-pen.png" width="30px" alt="icon">
+                    </div>
+                        <a href="create-project-pitch.html"  class="new-discussion-btn d-block">Edit</a>
+                        <!-- <a href="project-pitch-details.html"  class="new-discussion-btn d-block">View</a> -->
+                  </div>
+             </div>
+        </div>
     </div>
 
 

@@ -4,7 +4,7 @@ $(document).ready(function(){
      var yearlyLabel = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
 
-     barChart(yearlyData, yearlyLabel, 'userChart', 'User');
+     // barChart(yearlyData, yearlyLabel, 'userChart', 'User');
 
      
      function barChart(data, label, idName, labelName) {
@@ -63,11 +63,15 @@ $(document).ready(function(){
           });
      }
 
-     var data =  [58, 28, 20];
-     var label = ['Completed', 'Pending', 'Refunded'];
-
+     // // Task Progress Chart 
+     // var data =  [75, 25];
+     // var label = ['Done', 'Pending'];
+     // pieChart(data, label, 'progressChart')
      
-     pieChart(data, label, 'transactionsChart')
+     // // Course Progress Chart 
+     // var data =  [70, 30];
+     // var label = ['Completed', 'uncompleted'];
+     // pieChart(data, label, 'courseProgressChart')
      
    
      function pieChart(data, label, idName) {
@@ -83,12 +87,12 @@ $(document).ready(function(){
                               data: data,
                               borderColor: '#D80450',
                               backgroundColor:  [
-                                   '#12b76a', // Green
-                                   '#f79009', // Orange
+                                   '#007CFE', // Green
+                                   'transparent', // Orange
                                    '#f97066', // Red
                                ],
                                borderColor: 'white',
-                               borderWidth: 2,
+                               borderWidth: 0,
                               tension: 0.5,
                               fill: false,
                          }
@@ -104,7 +108,7 @@ $(document).ready(function(){
                               }
                           },
                          legend: {
-                              display: true,
+                              display: false,
                               position: 'bottom'
                          },
                          tooltip: {

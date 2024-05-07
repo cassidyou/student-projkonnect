@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student - MindBridge AI</title>
+    <title>Student - LiveLearn Checkout</title>
 
     <!--asset-->
     <link rel="shortcut icon" type="text/css" href="asset/img/favicon.png">
@@ -21,12 +21,14 @@
 
     <!-- Bootstrap daterangepicker -->
     <link rel="stylesheet" href="vendor/bootstrap-daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+    <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
 
     <!--Custom CSS-->
-    <link rel="stylesheet" href="asset/css/style.css">
-    <link rel="stylesheet" href="asset/css/responsive.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.0.0/dist/chart.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+    <link rel="stylesheet" href="asset/css/style.css">
+    <link rel="stylesheet" href="asset/css/responsive.css">
 
 </head>
 
@@ -56,7 +58,7 @@
                                 </a>
                             </li>
                             <li class="adm-sidebar-link-item">
-                                <a href="livelearn.html" class="sidebar-link">
+                                <a href="livelearn.html" class="sidebar-link active">
                                     <img src="asset/img/video_icon.png" alt="">
                                     LiveLearn Sessions
                                 </a>
@@ -134,7 +136,7 @@
                                 <div class="menu harmburger-menu d-lg-none">
                                    <div class="menu"></div>
                                 </div>
-                                <h1 class="heading">MindBridge AI</h1>
+                                <h1 class="heading">LiveLearn Sessions</h1>
                             </div>
                             <div class="d-flex align-items-center justify-content-between">
                                 <button class="btn btn-nav-search" data-bs-toggle="modal"
@@ -240,105 +242,110 @@
                             </div>
                         </div>
                         <div class="main-content">
-                          <div class="ai-ctn">
-                              <div class="ai-sidebar">
-                                   <div class="card ai-card">
-                                        <div class="ai-sidebar-close">
-                                             <i class="fa fa-times"></i>
-                                        </div>
-                                        <div class="ai-card-header">
-                                             <button class="ai-btn new-chat-btn"><img src="asset/img/plus_icon.png" alt=""> New Chat</button>
-                                             <h6 class="mt-4">Recent chats</h6>  
-                                        </div>
-                                        <ul class="ai-chats">
-                                             <li class="ai-chat active">Degree vs certificate</li>
-                                             <li class="ai-chat">Generate a database for a</li>
-                                             <li class="ai-chat">Write an esssay on this topic</li>
-                                             <li class="ai-chat">Explain Pythagoras theorem</li>
-                                             <li class="ai-chat">Explain Pythagoras theorem</li>
-                                             <li class="ai-chat">Explain Pythagoras theorem</li>
-                                             <li class="ai-chat">Degree vs certificate</li>
-                                             <li class="ai-chat">Generate a database for a</li>
-                                             <li class="ai-chat">Write an esssay on this topic</li>
-                                             <li class="ai-chat">Explain Pythagoras theorem</li>
-                                             <li class="ai-chat">Explain Pythagoras theorem</li>
-                                             <li class="ai-chat">Explain Pythagoras theorem</li>
-                                        </ul>
-                                   </div>
-                              </div>
-                              <div class="ai-main">
-                                   <div class="card ai-card">
-                                        <div class="header-bar">
-                                             <div class="menu" id="header-menu-icon"></div>                                                
-                                             <button class="new-chat-btn"><img src="asset/img/plus_icon.png" alt=""></button>
-                                        </div>
-                                        <div class="ai-main-main">
-                                             <div class="ai-chat-content d-none">
-                                                  <div class="ai-chat-ctn">
-                                                       <div class="img">
-                                                            <img src="asset/img/user-picture.png" alt="">
-                                                       </div>
-                                                       <div class="chat-content">
-                                                            <p class="mb-0">
-                                                                 What are the steps of generating credshow link?
-                                                            </p>
-                                                       </div>
+                              <div class="row">
+                                   <div class="col-md-7 col-lg-8 mb-4">
+                                        <form>
+                                            <div class="form-group mb-4">
+                                                <h6>Title</h6>
+                                                <input type="text" value="Human Computer Interface" id="" class="form-control custom-bg-gray">
+                                            </div>
+                                            <div class="form-group mb-4">
+                                                <h6>Description</h6>
+                                                <textarea name="" id="" rows="4" class="form-control custom-bg-gray">eiof  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur, quos. Eos ab aliquam laborum ut eius accusantium consequatur reprehenderit eligendi.
+                                                </textarea>
+                                            </div>
+                                        </form>
+                                        <p class="mb-2">Use available points to get a discount</p>
+                                        <div class="row">
+                                             <div class="col-sm-6 col-md-5 col-lg-5">
+                                                  <div class="input-group point-input-group mb-1">
+                                                       <input type="text" class="form-control" value="160">
+                                                       <button class="btn sub-btn" type="button" id="button-addon"><i class="fa fa-arrow-right"></i></button>
                                                   </div>
-                                                  <div class="ai-chat-ctn">
-                                                       <div class="img">
-                                                            <img src="asset/img/ai-logo-colored.png" alt="">
-                                                       </div>
-                                                       <div class="chat-content">
-                                                            <p class="mb-0">
-                                                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim sit et accusamus, dicta odit vero deleniti velit pariatur consequatur tempore architecto dolore ipsa blanditiis deserunt libero numquam delectus nam magnam cum fugit. Voluptatum animi nisi iste quod vel consequuntur dolores autem quibusdam voluptatem praesentium similique, ad provident quasi! Explicabo, culpa.
-                                                            </p>
-                                                       </div>
-                                                  </div>
-                                                  <div class="ai-chat-ctn">
-                                                       <div class="img">
-                                                            <img src="asset/img/user-picture.png" alt="">
-                                                       </div>
-                                                       <div class="chat-content">
-                                                            <p class="mb-0">
-                                                                 What are the steps of generating credshow link?
-                                                            </p>
-                                                       </div>
-                                                  </div>
-                                                  <div class="ai-chat-ctn">
-                                                       <div class="img">
-                                                            <img src="asset/img/ai-logo-colored.png" alt="">
-                                                       </div>
-                                                       <div class="chat-content">
-                                                            <p class="mb-0">
-                                                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim sit et accusamus, dicta odit vero deleniti velit pariatur consequatur tempore architecto dolore ipsa blanditiis deserunt libero numquam delectus nam magnam cum fugit. Voluptatum animi nisi iste quod vel consequuntur dolores autem quibusdam voluptatem praesentium similique, ad provident quasi! Explicabo, culpa.
-                                                            </p>
-                                                       </div>
+                                                  <p>Available Points &nbsp; &nbsp; <span class="primary-color"><b>200</b></span></p>
+                                             </div>
+                                        </div>
+                                        <hr>
+                                        <div class="row card-payment">
+                                             <div class="col-sm-12 mt-4">
+                                                  <div class="form-group">
+                                                       <label for="">Name on Card</label>
+                                                       <input type="text" name="" placeholder="John Doe" class="form-control">
                                                   </div>
                                              </div>
-                                             <div class="ai-card-footer">
-                                              <div class="suggest">
-                                                   <div class="sg-card">
-                                                        <small>How to generate a CredShow shareable link for public view</small>
-                                                        <button>Ask AI</button>
-                                                   </div>
-                                                   <div class="sg-card">
-                                                        <small>How to generate a CredShow shareable link for public view</small>
-                                                        <button>Ask AI</button>
-                                                   </div>
-                                              </div>
-                                              <div class="form">
-                                                   <form class="ai-form" action="#">
-                                                        <div class="group-input">
-                                                             <input type="text" name="query" placeholder="Write your query here...">
-                                                             <button class="group-input-btn">Ask AI</button>
-                                                        </div>
-                                                   </form>
-                                              </div>
+                                             <div class="col-sm-6 mt-4">
+                                                  <div class="form-group">
+                                                       <label for="">Card Number</label>
+                                                       <input type="text" name="" placeholder="251-475-5425-85-632" class="form-control">
+                                                  </div>
+                                             </div>
+                                             <div class="col-sm-4 col-7 mt-4">
+                                                  <div class="form-group">
+                                                       <label for="">Expiration Date</label>
+                                                       <input type="text" name="" placeholder="05/01" class="form-control">
+                                                  </div>
+                                             </div>
+                                             <div class="col-sm-2 col-5 mt-4">
+                                                  <div class="form-group">
+                                                       <label for="">CVV</label>
+                                                       <input type="text" name="" placeholder="238" class="form-control">
+                                                  </div>
+                                             </div>
+                                             <div class="col-sm-12 mt-4">
+                                                  <div class="form-group">
+                                                       <label for="">Currency</label>
+                                                       <select name="" id="" class="form-control">
+                                                            <option value="">Select</option>
+                                                            <option value="naira">Naira</option>
+                                                            <option value="dollar" selected>Dollar</option>
+                                                       </select>
+                                                  </div>
+                                             </div>
+                                             <div class="col-sm-6 col-lg-5 mt-5">
+                                                  <button href="javascript:;" class="pch-btn pay-btn w-100" data-bs-toggle="modal" data-bs-target="#successModal">Pay $139.86</button>
                                              </div>
                                         </div>
                                    </div>
+                                   <div class="col-md-5 col-lg-4">
+                                        <div class="ckt-card">
+                                            <h3 class="g-sm-heading mb-4">Billing Summary</h3>
+                                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                                <p class="mb-0">
+                                                    Price
+                                                </p>
+                                                <p class="mb-0">
+                                                    $159.89
+                                                </p>
+                                            </div>
+                                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                                <p class="mb-0">
+                                                    Discount
+                                                </p>
+                                                <p class="mb-0">
+                                                    $20.00
+                                                </p>
+                                            </div>
+                                            <div class="bb-dotted"></div>
+                                            <div class="d-flex align-items-center justify-content-between my-3">
+                                                <p class="mb-0">
+                                                    Amount to be paid
+                                                </p>
+                                                <p class="mb-0">
+                                                    $139.89
+                                                </p>
+                                            </div>
+                                            <h3 class="g-sm-heading mt-5 mb-4">Select a Payment Method</h3>
+                                            <div class="d-flex align-items-center justify-content-between flex-wrap gap-3">
+                                                <button class="btn pmt-btn active">Debit Card</button>
+                                                <button class="btn pmt-btn">Credit Card</button>
+                                                <button class="btn pmt-btn">Net Banking</button>
+                                            </div>
+                                            <div class="text-center mt-4">
+                                                <img src="asset/img/lock-icon.png" alt=""> <span>Secure Checkout</span>
+                                            </div>
+                                        </div>
+                                   </div>
                               </div>
-                          </div>
                         </div>
                     </div>
                 </div>
@@ -346,13 +353,7 @@
         </div>
     </div>
 
-
-
-
-
-
-
-
+    <!--********************** Search Modal *****************************-->
     <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable modal-md">
@@ -399,9 +400,25 @@
             </div>
         </div>
     </div>
-</div>
+    </div>
 
-
+    <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body rounded">
+                    <div class="d-flex align-items-center justify-content-center mb-2 mt-3">
+                        <img src="asset/img/success-star-checked.png" width="50px" alt="icon">
+                    </div>
+                    <h3 class="text-center mb-2">Success!</h3>
+                    <div class="text-center mb-2">
+                        You have successfully registered for a LiveLearn Session.
+                    </div>
+                        <a href="livelearn.html" class="new-discussion-btn d-block mb-2">Go Back</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
 
 
     <!-- JS FILES -->
@@ -417,6 +434,14 @@
     <!-- <script src="asset/js/dashboard.js"></script> -->
     <script src="asset/js/plugins_init.js"></script>
     <script src="asset/js/main.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.pmt-btn').on('click', function () {
+                  $('.pmt-btn').removeClass('active');
+                  $(this).addClass('active');
+              })
+        })
+    </script>
 </body>
 
 </html>
