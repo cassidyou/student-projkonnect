@@ -203,6 +203,10 @@
                                     </div>
                                     <ul class="profile-dropdown-items profile-items d-none">
                                         <li class="dropdown-item">
+                                            <a href="https://cassidyou.github.io/projkonnect" target="_blank">
+                                            <img src="asset/img/globe-icon.svg" class="img-fluid" alt="icon">Homepage </a>
+                                        </li>
+                                        <li class="dropdown-item">
                                             <a href="profile.html">
                                             <img src="asset/img/user-icon-dark.png" class="img-fluid" alt="icon">Profile</a>
                                         </li>
@@ -211,24 +215,20 @@
                                             <img src="asset/img/shopping-cart.png" class="img-fluid" alt="icon">Cart <span class="cart-count">2</span></a>
                                         </li>
                                         <li class="dropdown-item">
-                                            <a href="https://cassidyou.github.io/projkonnect" target="_blank">
-                                            <img src="asset/img/globe-icon.svg" class="img-fluid" alt="icon">Homepage </a>
-                                        </li>
-                                        <li class="dropdown-item">
                                             <a href="javascript:;">
                                             <img src="asset/img/points-icon.png" class="img-fluid" alt="icon">Points <span class="cart-count primary-color">200</span></a>
                                         </li>
                                         <li class="dropdown-item">
-                                            <a href="referrals.html">
-                                            <img src="asset/img/referral-icon.png" class="img-fluid" alt="icon">Refer a Friend</a>
+                                            <a href="certificates.html">
+                                            <img src="asset/img/certificate_icon.png" class="img-fluid" alt="icon">Certificates</a>
                                         </li>
                                         <li class="dropdown-item">
                                             <a href="projkonnect-ai.html">
                                             <img src="asset/img/projkonnectai_icon.png" class="img-fluid" alt="icon">MindBridge AI</a>
                                         </li>
                                         <li class="dropdown-item">
-                                            <a href="certificates.html">
-                                            <img src="asset/img/certificate_icon.png" class="img-fluid" alt="icon">Certificates</a>
+                                            <a href="referrals.html">
+                                            <img src="asset/img/referral-icon.png" class="img-fluid" alt="icon">Refer a Friend</a>
                                         </li>
                                         <li class="dropdown-item">
                                             <a href="help-center.html">
@@ -506,62 +506,62 @@
 
 
          Chart.register(ChartDataLabels);
-                     // Task Progress Chart 
-                    var data =  [75, 25];
-                    var label = ['Done', 'Pending'];
-                    pieChart(data, label, 'progressChart');
+            // Task Progress Chart 
+        var data =  [75, 25];
+        var label = ['Done', 'Pending'];
+        pieChart(data, label, 'progressChart');
                 
             
-                function pieChart(data, label, idName) {
-                    idName.height = 'auto';
+        function pieChart(data, label, idName) {
+            idName.height = 'auto';
 
-                    new Chart(idName, {
-                        type: 'pie',
-                        data: {
-                                defaultFontFamily: 'Poppins',
-                                labels: label,
-                                datasets: [
-                                    {
-                                        data: data,
-                                        borderColor: '#D80450',
-                                        backgroundColor:  [
-                                            '#007CFE', // Green
-                                            'transparent', // Orange
-                                            '#f97066', // Red
-                                        ],
-                                        borderColor: 'white',
-                                        borderWidth: 0,
-                                        tension: 0.5,
-                                        fill: false,
-                                    }
+            new Chart(idName, {
+                type: 'pie',
+                data: {
+                        defaultFontFamily: 'Poppins',
+                        labels: label,
+                        datasets: [
+                            {
+                                data: data,
+                                borderColor: '#D80450',
+                                backgroundColor:  [
+                                    '#007CFE', // Green
+                                    'transparent', // Orange
+                                    '#f97066', // Red
                                 ],
-                        },
-                        options: {
-                                plugins: {
-                                    datalabels: {
-                                        display: true,
-                                        color: 'white', 
-                                        formatter: function(value, context) {
-                                            return value + '%';
-                                        }
-                                    },
-                                    legend: {
-                                        display: false,
-                                        position: 'bottom'
-                                    },
-                                    tooltip: {
-                                        callbacks: {
-                                            label: function(context) {
-                                                var label = context.label || '';
-                                                var value = context.formattedValue || '';
-                                                return label + ': ' + value + '%';
-                                            }
-                                        }
+                                borderColor: 'white',
+                                borderWidth: 0,
+                                tension: 0.5,
+                                fill: false,
+                            }
+                        ],
+                },
+                options: {
+                        plugins: {
+                            datalabels: {
+                                display: true,
+                                color: 'white', 
+                                formatter: function(value, context) {
+                                    return value + '%';
+                                }
+                            },
+                            legend: {
+                                display: false,
+                                position: 'bottom'
+                            },
+                            tooltip: {
+                                callbacks: {
+                                    label: function(context) {
+                                        var label = context.label || '';
+                                        var value = context.formattedValue || '';
+                                        return label + ': ' + value + '%';
                                     }
                                 }
+                            }
                         }
-                    });
                 }
+            });
+        }
 
      })
  </script>
