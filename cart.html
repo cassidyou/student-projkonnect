@@ -268,7 +268,7 @@
                                                               </div>
                                                          </div>
                                                     </div>
-                                                    <button class="pch-btn w-100 my-3">$123.98</button>
+                                                    <button class="pch-btn w-100 my-3">$ <span class="course-price">123.98</span></button>
                                                     <button class="pch-btn-outline w-100 remove-item-btn">Remove</button>
                                                 </div>
                                             </div>
@@ -296,7 +296,7 @@
                                                               </div>
                                                          </div>
                                                     </div>
-                                                    <button class="pch-btn w-100 my-3">$123.98</button>
+                                                    <button class="pch-btn w-100 my-3">$ <span class="course-price">123.98</span></button>
                                                     <button class="pch-btn-outline w-100 remove-item-btn">Remove</button>
                                                 </div>
                                             </div>
@@ -311,7 +311,7 @@
                                                   Price
                                              </p>
                                              <p class="mb-0">
-                                                  $159.89
+                                                $<span id="payable-price">0</span>
                                              </p>
                                         </div>
                                         <div class="bb-dotted"></div>
@@ -320,7 +320,7 @@
                                                   Amount to be paid
                                              </p>
                                              <p class="mb-0">
-                                                  $139.89
+                                                  $<span id="payable-amount">0</span>
                                              </p>
                                         </div>
                                         <div class="mt-5">
@@ -421,9 +421,38 @@
     <script src="asset/js/main.js"></script>
     <script>
         $(document).ready(function(){
+            
+            calSum();
+           
+            
             $('.remove-item-btn').on('click', function(){
                 $(this).parents('.cart-item').remove();
+                calSum();
             })
+
+
+            function calSum()
+            {
+                var total = 0;
+            
+                $('.course-price').each(function() {
+                    // Get the text content of the element
+                    var priceText = $(this).text();
+                    
+                    // Remove any non-numeric characters (e.g., currency symbols, commas)
+                    var priceNumber = parseFloat(priceText.replace(/[^0-9.]/g, ''));
+                    
+                    // Add the price to the total
+                    total += priceNumber;
+                });
+                
+                var payablePrice = $('#payable-price');
+                var payableAmount = $('#payable-amount');
+                payableAmount.text(total);
+                payablePrice.text(total);
+            }
+
+            
         })
     </script>
 </body>

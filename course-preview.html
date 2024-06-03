@@ -545,7 +545,12 @@
                             <option value="">Other reasons</option>
                         </select>
                     </div>
-                    <div class="form-group mt-4 evid-ctn">
+                    <div class="form-group mt-4">
+                        <label for="">Enter report</label>
+                        <textarea rows="3" name="" id="" class="form-control"></textarea>
+                    </div>
+                    <label class="mt-4" for="">Evidence (Optional)</label>
+                    <div class="form-group evid-ctn">
                         <label for="fileInput"> <img src="asset/img/upload-icon.png" alt=""> <span>Upload Evidence</span></label>
                         <input type="file" id="fileInput" name="files[]" class="form-control default-input d-none">
                     </div>
@@ -651,6 +656,7 @@
                             $(`#evidences #report-evid-${evid_num} #small-${evid_num}`).text(`Evidence ${evid_num}`).css({
                             opacity: '1'
                         });
+                        $(`#evidences #progress-${evid_num} #bar-${evid_num}`).css('background', 'green');
                         }, 1000);
                     }
                 }

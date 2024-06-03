@@ -156,7 +156,8 @@ $(document).ready(function(){
           
                if(newWidth == 100){
                     setTimeout(() => {
-                         _this.parent('.evid-ctn').siblings('.proj-file-ctn').find(`small`).text(``);
+                         _this.parent('.evid-ctn').siblings('.proj-file-ctn').find(`small`).text(`Uploaded`);
+                         _this.parent('.evid-ctn').siblings('.proj-file-ctn').find(`.bar`).css('background', 'green');
                     }, 1000);
                }
           }

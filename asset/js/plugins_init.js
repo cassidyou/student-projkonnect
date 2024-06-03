@@ -159,10 +159,24 @@ $(document).ready(function () {
   });
   // dataTable4
   var table = $('#dataTable4').DataTable({
-    searching: false,
+    searching: true,
     paging: true,
-    select: false,
+    select: false
+  });
+  
+  var table = $('#livelearn-table').DataTable({
+    searching: true,
+    paging: true,
+    select: true,
+    paging: true,
+    info: true,
     lengthChange: false,
+    language: {
+      paginate: {
+        next: '<i class="fa fa-angle-double-right" aria-hidden="true"></i>',
+        previous: '<i class="fa fa-angle-double-left" aria-hidden="true"></i>'
+      }
+    }
 
   });
 

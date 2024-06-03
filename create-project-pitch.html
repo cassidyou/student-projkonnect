@@ -461,15 +461,15 @@
 
 
           let html = `
-          <div class="report-evid">
-               <div class="d-flex align-items-center justify-content-between">
-                    <small style="opacity: 0.6"><i>Uploading...</i></small>
-                    <div id='percent' class="percent">20%</div>
-               </div>
-               <div class="progress" id="progress">
-                    <div class="bar" id="bar"></div>
-               </div>
-          </div>
+            <div class="report-evid">
+                <div class="d-flex align-items-center justify-content-between">
+                        <small style="opacity: 0.6"><i>Uploading...</i></small>
+                        <div id='percent' class="percent">20%</div>
+                </div>
+                <div class="progress" id="progress">
+                        <div class="bar" id="bar"></div>
+                </div>
+            </div>
           `;
 
           $('#pocFile').on('change', () => {
@@ -494,7 +494,8 @@
                
                     if(newWidth == 100){
                          setTimeout(() => {
-                              $(`#pocFile-ctn .report-evid small`).text(``);
+                              $(`#pocFile-ctn .report-evid small`).text(`Uploaded`);
+                              $(`#pocFile-ctn #progress #bar`).css('background', 'green');
                          }, 1000);
                     }
                }
@@ -534,7 +535,8 @@
                     
                          if(newWidth == 100){
                               setTimeout(() => {
-                                   $(this).parent('.evid-ctn').find(`small`).text(``);
+                                   _this.parent('.evid-ctn').find(`small`).text(`Uploaded`);
+                                   _this.parent('.evid-ctn').find(`.bar`).css('background', 'green');
                               }, 1000);
                          }
                }

@@ -18,6 +18,7 @@
 
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="vendor/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="vendor/toastr/css/toastr.min.css">
 
     <!-- Bootstrap daterangepicker -->
     <link rel="stylesheet" href="vendor/bootstrap-daterangepicker/daterangepicker.css">
@@ -480,7 +481,7 @@
                                              <div class="dlt-card-body">
                                                   <h3 class="price mb-3">$198.89</h3>
                                                   <h4 class="g-sm-heading my-4">Organization of Programming Languages</h4>
-                                                  <a href="javascript:;" class="new-discussion-btn text-center d-block mb-4">Add to cart</a>
+                                                  <a href="javascript:;" class="new-discussion-btn text-center d-block mb-4" id="add-to-cart">Add to cart</a>
                                                   <a href="checkout.html" class="pch-btn d-block mb-4">Purchase Now</a>
                                                   <h3 class="g-sm-heading mb-3">This course contains:</h3>
                                                   <div class="cont-ctn">
@@ -590,6 +591,7 @@
     <script src="vendor/jquery-validate/jquery.validate.js"></script>
     <script src="vendor/swiper/swiper-bundle.min.js"></script>
     <script src="vendor/moment/moment.min.js"></script>
+    <script src="vendor/toastr/js/toastr.min.js"></script>
     <script src="vendor/bootstrap-daterangepicker/daterangepicker.js"></script>
     <!-- <script src="asset/js/dashboard.js"></script> -->
     <script src="asset/js/plugins_init.js"></script>
@@ -598,6 +600,18 @@
         const player = new Plyr('#player', {
             controls: ['play-large'],
             debug: false
+        });
+    </script>
+    <script>
+        $(document).ready(function(){
+            $('#add-to-cart').on('click', function(){
+                var _this = $(this);
+                $(this).html(`<i class="fa fa-spin fa-spinner"></i>`);
+                setTimeout(() => {
+                    toastr.success("Added to cart!");
+                    _this.text(`Add to cart`);
+                }, 1000);
+            });
         });
     </script>
 </body>

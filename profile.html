@@ -354,6 +354,16 @@
                                                                    </div>
                                                                </div>
                                                            </div>
+                                                           <div class="form-group mb-3">
+                                                            <h6>Interests</h6>
+                                                            <div class="tag-container">
+                                                                <div class="tags">
+                                                                    <div class="tag">Computer skills &nbsp; <span class="delete-tag cursor-p"><i class="fa fa-times-circle"></i></span></div>
+                                                                    <div class="tag">Communication &nbsp; <span class="delete-tag cursor-p"><i class="fa fa-times-circle"></i></span></div>
+                                                                </div>
+                                                                <input type="text" class="input-tag" placeholder="Enter skills">
+                                                            </div>
+                                                        </div>
                                                        </div>
                                                        <div class="text-end mt-3">
                                                            <button class="submit-btn">Update Profile</button>
@@ -451,6 +461,31 @@
          })
      })
  </script>
+ <script>
+    $(document).ready(function(){
+
+        $('.input-tag').on('keypress', function(event) {
+            var _this = $(this);
+
+            if (event.which === 13 || event.which === 44 || _this.val().indexOf(',') !== -1) { 
+                event.preventDefault();
+                var inputValue = $(this).val().trim();
+                 inputValue = inputValue.replace(/,/g, '');
+                if (inputValue !== '') {
+                    var html = `
+                        <div class="tag">${inputValue} &nbsp; <span class="delete-tag cursor-p"><i class="fa fa-times-circle"></i></span></div>
+                    `;
+                    _this.siblings('.tags').append(html);
+                }
+                _this.val('');
+            }
+        });
+
+        $('body').on('click', '.delete-tag', function(){
+            $(this).parent('.tag').remove();
+        })
+    })
+</script>
 </body>
 
 </html>

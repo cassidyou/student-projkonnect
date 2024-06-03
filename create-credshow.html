@@ -392,22 +392,34 @@
                                                       <h5>Honors and Awards <i class="op-6">(scholarships, dean's list, honor societies)</i></h5>
                                                       <div class="row">
                                                        <div class="col-md-4 mb-4">
-                                                            <div class="d-flex align-items-center justify-content-between honor-ctn">
-                                                                 <span>Scholarships</span>
-                                                                 <img src="asset/img/pdf_icon.png" width="30px" alt="icon">
+                                                            <div class="d-flex align-items-center justify-content-between honor-ctn mb-2" style="padding: 10px!important;padding-left: 0!important;padding-right: 10px!important;">
+                                                                 <input type="text" placeholder="Title" id="" class="form-control" style="border-color: transparent;">
+                                                                 <div class="form-group evid-ctn mt-2" style="border-color: transparent!important;">
+                                                                      <label for="pocFile1" style="border-color: transparent!important;"><img src="asset/img/upload-icon.png" width="20px" alt=""> </label>
+                                                                      <input type="file" id="pocFile1" name="files[]" class="form-control default-input d-none" multiple>
+                                                                 </div>
                                                             </div>
+                                                            <div id="pocFile-ctn1"></div>
                                                        </div>
                                                        <div class="col-md-4 mb-4">
-                                                            <div class="d-flex align-items-center justify-content-between honor-ctn">
-                                                                 <span>Scholarships</span>
-                                                                 <img src="asset/img/pdf_icon.png" width="30px" alt="icon">
+                                                            <div class="d-flex align-items-center justify-content-between honor-ctn mb-2" style="padding: 10px!important;padding-left: 0!important;padding-right: 10px!important;">
+                                                                 <input type="text" placeholder="Title" id="" class="form-control" style="border-color: transparent;">
+                                                                 <div class="form-group evid-ctn mt-2" style="border-color: transparent!important;">
+                                                                      <label for="pocFile2" style="border-color: transparent!important;"><img src="asset/img/upload-icon.png" width="20px" alt=""> </label>
+                                                                      <input type="file" id="pocFile2" name="files[]" class="form-control default-input d-none" multiple>
+                                                                 </div>
                                                             </div>
+                                                            <div id="pocFile-ctn2"></div>
                                                        </div>
                                                        <div class="col-md-4 mb-4">
-                                                            <div class="d-flex align-items-center justify-content-between honor-ctn">
-                                                                 <span>Title</span>
-                                                                 <img src="asset/img/upload-icon.png" width="25px" alt="icon">
+                                                            <div class="d-flex align-items-center justify-content-between honor-ctn mb-2" style="padding: 10px!important;padding-left: 0!important;padding-right: 10px!important;">
+                                                                 <input type="text" placeholder="Title" id="" class="form-control" style="border-color: transparent;">
+                                                                 <div class="form-group evid-ctn mt-2" style="border-color: transparent!important;">
+                                                                      <label for="pocFile3" style="border-color: transparent!important;"><img src="asset/img/upload-icon.png" width="20px" alt=""> </label>
+                                                                      <input type="file" id="pocFile3" name="files[]" class="form-control default-input d-none" multiple>
+                                                                 </div>
                                                             </div>
+                                                            <div id="pocFile-ctn3"></div>
                                                        </div>
                                                       </div>
                                                       <h5>Activities</h5>
@@ -932,8 +944,8 @@
                                                        </div>
                                                        <div class="col-md-4 mb-4">
                                                             <div class="d-flex align-items-center justify-content-between honor-ctn">
-                                                                 <span>Title</span>
-                                                                 <img src="asset/img/upload-icon.png" width="25px" alt="icon">
+                                                                 <span>Awards</span>
+                                                                 <img src="asset/img/pdf_icon.png" width="30px" alt="icon">
                                                             </div>
                                                        </div>
                                                       </div>
@@ -1393,6 +1405,63 @@
                     _this.siblings('.custom-tooltip').animate({right: '-200px'});
                }, 3000);
           });
+
+          let html = `
+            <div class="report-evid">
+                <div class="d-flex align-items-center justify-content-between">
+                        <small style="opacity: 0.6"><i>Uploading...</i></small>
+                        <div id='percent' class="percent">20%</div>
+                </div>
+                <div class="progress" id="progress">
+                        <div class="bar" id="bar"></div>
+                </div>
+            </div>
+          `;
+
+
+          $('#pocFile1').on('change', () => {
+               progressUploader('1');
+          });
+          $('#pocFile2').on('change', () => {
+               progressUploader('2');
+          });
+          $('#pocFile3').on('change', () => {
+               progressUploader('3');
+          });
+
+
+          function progressUploader(id)
+          {
+               $(`#pocFile-ctn${id}`).html(html);
+
+               var initialWidth = 0;
+               var targetWidth = parseInt($(`#pocFile-ctn${id}`).find('.report-evid:first-child').find('.progress').innerWidth());
+
+               function increaseProgress() {
+
+               var newWidth = (initialWidth / targetWidth) * 100;
+               $(`#pocFile-ctn${id} #progress #bar`).css('width', newWidth + '%');
+               initialWidth += 1;
+
+               $(`#pocFile-ctn${id} .report-evid #percent`).text(parseInt(newWidth) + '%');
+
+               if (initialWidth <= targetWidth) {
+                    // Repeat the process after a short delay
+                    setTimeout(increaseProgress, 10);
+               }
+
+                    if(newWidth == 100){
+                         setTimeout(() => {
+                              $(`#pocFile-ctn${id} .report-evid small`).text(`Uploaded`);
+                              $(`#pocFile-ctn${id} #progress #bar`).css('background', 'green');
+                         }, 1000);
+                    }
+               }
+                    
+               increaseProgress();
+               
+          }
+          
 
      })
     </script>

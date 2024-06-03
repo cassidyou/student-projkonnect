@@ -2216,7 +2216,15 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-default-outline:fo
     border-radius: 5px;
     max-width: 60%;
     position: relative;
+    
+}
+
+.message-main-body .sent-ctn .sent{
     background-color: var(--white-color);
+}
+
+.message-main-body .received-ctn .received{
+    background-color: var(--primary-color);
 }
 
 .message-main-body .sent-ctn .sent::after{
@@ -2245,7 +2253,11 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-default-outline:fo
       height: 0;
       border-bottom: 50px solid transparent; 
       border-left: 20px solid transparent;
-      border-top: 20px solid var(--white-color);
+      border-top: 20px solid var(--primary-color);
+}
+
+.message-main-body .received-ctn .received > * {
+    color: var(--white-color);
 }
 
 
@@ -2327,6 +2339,17 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-default-outline:fo
 }
 
 
+#sendChatBtn{
+    position: absolute;
+    right: 0;
+    height: 100%;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 20px;
+    border-color: transparent;
+}
 
 
 
@@ -3753,5 +3776,135 @@ ol{
 [data-bs-toggle="modal"]{
     cursor: pointer;
 }
+
+tr.th_tpc th:first-child {
+    border-top-left-radius: 10px;
+}
+
+tr.th_tpc th:last-child {
+    border-top-right-radius: 10px;
+}
+
+table.dataTable thead .sorting_asc, table.dataTable thead .sorting, table.dataTable thead .sorting_desc {
+    background-color: #f3f1f1d3;
+    border-color: #ccc;
+}
+
+table.dataTable tbody tr, table.dataTable tbody td {
+    padding-top: 10px!important;
+    padding-bottom: 10px!important;
+    border-color: rgba(0,0,0,0.05);
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.previous.disabled, 
+.dataTables_wrapper .dataTables_paginate .paginate_button.next.disabled {
+    background: var(--primary-color-20)!important;
+    color: var(--white-color)!important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.previous {
+    margin-right: 10px;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.next,
+.dataTables_wrapper .dataTables_paginate .paginate_button.previous {
+    background: var(--primary-color)!important;
+    border: 0!important;
+    color: var(--white-color)!important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current,
+.dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+    border: none!important;
+    color: var(--white-color)!important;
+    font-weight: bold!important;
+    background: var(--primary-color-50)!important;
+}
   
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    background-color: transparent;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    background: var(--primary-color-20)!important;
+    border-color: var(--primary-color-20);
+    color: var(--black-color)!important;
+}
+
+.dataTables_filter{
+    margin-bottom: 30px;
+}
+
+.dataTables_filter input[type='search'],
+.dataTables_filter input[type='search'] {
+    height: 30px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 7px;
+    outline: none!important;
+}
+
+table.dataTable.no-footer {
+    border-bottom: 1px solid transparent;
+}
+
+.dataTables_info,
+.dataTables_paginate{
+    margin-top: 20px!important;
+}
+
+.tag-container {
+    width: 100%;
+    padding: 15px;
+    display: inline-block;
+    border: 1px solid #e5e5e5;
+    background: #e5e5e5;
+}
+
+.tag-container .tag {
+    padding: 5px 8px;
+    border-radius: 5px;
+    background-color: var(--white-color);
+    display: inline-block;
+    font-size: 14px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+.tag-container .input-tag, .tag-container .input-tag:focus {
+    border: none;
+    margin-left: 10px;
+    font-size: 14px;
+    min-width: 200px;
+    background-color: transparent;
+}
+
+.tag-container .tags {
+    display: inline;
+}
+
+.custom-input-group{
+    position: relative;
+    border-radius: 7px;
+    border: 1px solid #ccc;
+}
+
+.custom-input-group .custom-input{
+    border-color: transparent!important;
+    padding-right: 40px!important;
+}
+
+.custom-input-group button{
+    position: absolute;
+    top: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    right: 0;
+    padding-right: 10px;
+    background: transparent;
+    border-color: transparent;
+}
   

@@ -294,6 +294,14 @@
                                                             </h2>
                                                             <div id="collapse1" class="accordion-collapse collapse show" aria-labelledby="heading1" data-bs-parent="#accordion-forum">
                                                                  <div class="accordion-body">
+                                                                    <form class="comment-form mb-4">
+                                                                        <div class="form-group">
+                                                                            <div class="custom-input-group">
+                                                                                <input type="text" name="comment" class="form-control custom-input comment" placeholder="Enter your comment">
+                                                                                <button class="sendCommentBtn"><i class="fa fa-paper-plane"></i></button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </form>
                                                                       <div class="m-b0 accordion-content">
                                                                         <h5>Comments</h5>
                                                                         <div class="d-flex align-items-start justify-content-start gap-3 mt-4">
@@ -344,6 +352,14 @@
                                                             </h2>
                                                             <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="heading2" data-bs-parent="#accordion-forum">
                                                                  <div class="accordion-body">
+                                                                    <form class="comment-form mb-4">
+                                                                        <div class="form-group">
+                                                                            <div class="custom-input-group">
+                                                                                <input type="text" name="comment" class="form-control custom-input comment" placeholder="Enter your comment">
+                                                                                <button class="sendCommentBtn"><i class="fa fa-paper-plane"></i></button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </form>
                                                                       <div class="m-b0 accordion-content">
                                                                         <h5>Comments</h5>
                                                                         <div class="d-flex align-items-start justify-content-start gap-3 mt-4">
@@ -394,6 +410,14 @@
                                                             </h2>
                                                             <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="heading3" data-bs-parent="#accordion-forum">
                                                                  <div class="accordion-body">
+                                                                    <form class="comment-form mb-4">
+                                                                        <div class="form-group">
+                                                                            <div class="custom-input-group">
+                                                                                <input type="text" name="comment" class="form-control custom-input comment" placeholder="Enter your comment">
+                                                                                <button class="sendCommentBtn"><i class="fa fa-paper-plane"></i></button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </form>
                                                                       <div class="m-b0 accordion-content">
                                                                         <h5>Comments</h5>
                                                                         <div class="d-flex align-items-start justify-content-start gap-3 mt-4">
@@ -568,7 +592,7 @@
                       <div class="text-center mb-2">
                         New discussion created.
                       </div>
-                        <button type="button" class="new-discussion-btn w-100 mb-2">Go Home</button>
+                        <button type="button" data-bs-dismiss="modal" class="new-discussion-btn w-100 mb-2">Go Home</button>
                   </div>
              </div>
         </div>
@@ -642,11 +666,39 @@
                  if(newWidth == 100){
                          setTimeout(() => {
                              _this.parent('.evid-ctn').children('.proj-file-ctn').find(`small`).text(`Attached`);
+                             _this.parent('.evid-ctn').children('.proj-file-ctn').find(`.bar`).css('background', 'green');
                          }, 1000);
                  }
              }
                  
              increaseProgress();
+         });
+
+         $('.comment-form').on('submit', function(e){
+            e.preventDefault();
+
+            var commentCtn = $(this).find('.comment');
+            var comment = commentCtn.val();
+            
+            var parentCtn = $(this).parents('.accordion-body');
+
+            var html = `
+                <div class="d-flex align-items-start justify-content-start gap-3 mt-4">
+                    <div class="img">
+                        <img src="asset/img/user-picture.png" alt="User Image">
+                    </div>
+                    <div class="forum-user">
+                        <h6>John Doe</h6>
+                        ${comment}
+                    </div>
+                </div>
+            `;
+            if(!comment.trim() == ''){
+                parentCtn.find('.accordion-content').append(html);
+                commentCtn.val('');
+            }
+
+
          });
      })
     </script>
