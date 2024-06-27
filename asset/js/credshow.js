@@ -190,16 +190,19 @@ $(document).ready(function(){
                <div class="row">
                     <div class="col-md-6 mb-4">
                          <div class="form-group">
+                              <label for="">Project Name</label>
                               <input type="text" placeholder="Project Name" name="" id="" class="form-control">
                          </div>
                     </div>
                     <div class="col-md-6 mb-4">
                          <div class="form-group">
+                              <label for="">Project Duration</label>
                               <input type="text" placeholder="Project Duration" name="" id="" class="form-control">
                          </div>
                     </div>
                     <div class="col-md-6 mb-4">
                          <div class="form-group">
+                              <label for="">Project Summary</label>
                               <textarea name="" id="" cols="30" placeholder="Project Summary" rows="4" class="form-control h-100"></textarea>
                          </div>
                     </div>
