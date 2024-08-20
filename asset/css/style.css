@@ -2010,6 +2010,141 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-default-outline:fo
     position: relative;
 }
 
+.message-sidebar-body.add-group,
+.message-sidebar-body.create-group{
+    position: absolute;
+    right: -300px;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 233;
+    background: var(--white-color);
+    padding-top: 10px;
+    transition: all .5s ease-in-out;
+}
+
+.search-users{
+    width: 100%;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border-bottom: 3px solid var(--primary-color)!important;
+}
+
+#selected-users .user{
+    display: inline-flex;
+    align-items: center;
+    justify-content: start;
+    gap: 10px;
+    background: var(--primary-color);
+    border-radius: 5px;
+    padding: 4px 7px;
+    margin-bottom: 5px;
+}
+
+#selected-users .user .img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    overflow: hidden;
+
+}
+
+#selected-users .user span{
+    color: var(--white-color);
+    font-size: 14px;
+
+}
+
+#selected-users .user .img img{
+height: 100%;
+width: auto;
+
+}
+.btn-controller{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+}
+.btn-controller button{
+    min-width: 45%;
+    padding: 4px 0;
+    font-size: 14px;
+    border-radius: 7px;
+}
+
+.btn-controller #next,
+.btn-controller #create{
+    background: var(--primary-color);
+    color: var(--white-color);
+    border: none;
+}
+
+.btn-controller #cancel,
+.btn-controller #cancel-create{
+    border: 1px solid #ccc;
+    background: var(--white-color);
+}
+
+.message-sidebar-body.add-group .contact .custom-check{
+    height: 20px;
+    width: 20px;
+    border-radius: 5px;
+    background: #ccc;
+}
+
+.message-sidebar-body.add-group .contact .custom-check.selected{
+    height: 20px;
+    width: 20px;
+    border-radius: 5px;
+    background: var(--primary-color);
+}
+
+.message-sidebar-body.create-group{
+    z-index: 300!important;
+    background: white;
+}
+
+.message-sidebar-body.create-group .group-logo{
+   position: relative;
+   border-radius: 50px;
+   border: 1px solid #ccc;
+   overflow: hidden; 
+   height: 45px;
+   width: 45px;
+   min-width: 45px;
+}
+.message-sidebar-body.create-group .group-logo img{
+    width: auto;
+    height: 100%;
+}
+
+.message-sidebar-body.create-group .group-logo .img-put{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.message-sidebar-body.create-group .logo-label-text{
+    font-size: 13px;
+}
+.message-sidebar-body.create-group input.group-name{
+    width: 100%;
+    border: 1px solid #ccc;
+    border-bottom-width: 2px;
+    padding: 5px 7px;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.message-sidebar-body.add-group,
+.message-sidebar-body.create-group{
+    right: -500px;
+}
+
+
+
 .message-sidebar-header{
     position: absolute;
     top: 0;
@@ -2098,6 +2233,36 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-default-outline:fo
 .message-main{
     width: 100%;
     position: relative;
+    overflow-x: hidden;
+}
+
+.message-main-header .options{
+    padding: 20px;
+    border-radius: 7px;
+    background: var(--white-color);
+    width: 200px;
+    position: absolute;
+    top: 70px;
+    right: -300px;
+    transition: all .5s ease-in-out;
+}
+
+.message-main-header .options button{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 10px;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #DB1B24;
+    color: var(--white-color);
+}
+
+.message-main-header .options button:first-child{
+    background: var(--white-color);
+    color: var(--black-color);
 }
 
 
@@ -2754,6 +2919,125 @@ textarea:focus{
 
 
 /* CredShow Page */
+
+.add-resu-ctn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background: var(--white-color);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+
+}
+
+.add-resu-ctn a{
+    border: inherit;
+    border-radius: inherit;
+    padding: 5px 8px;
+}
+
+.resumes-ctn{
+    position: relative;
+    width: 100%;
+    border-radius: 5px;
+    background: black;
+    overflow: hidden;
+}
+
+.add-resu-ctn,
+.resumes-ctn{
+    height: 200px;
+}
+
+@media (max-width: 1024px){
+    .add-resu-ctn,
+    .resumes-ctn{
+        height: 170px;
+    }
+}
+
+@media (max-width: 991px){
+    .add-resu-ctn,
+    .resumes-ctn{
+        height: 190px;
+    }
+}
+
+.resumes-ctn span{
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    color: var(--white-color);
+
+}
+
+.resumes-ctn img{
+    width: 100%;
+}
+
+.resumes-ctn .toggler{
+    color: var(--white-color);
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    width: 20px;
+    text-align: center;
+}
+
+
+
+.resumes-ctn .options{
+    background: var(--white-color);
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100px;
+    position: absolute;
+    left: 0px;
+    top: 0;
+    transition: all .5s ease-in-out;
+}
+
+.resumes-ctn .options.close{
+    left: -120px;
+}
+
+.resumes-ctn .options button{
+    width: 100%;
+    border: 1px solid #ccc;
+    background: var(--white-color);
+    border-radius: 5px;
+    padding: 3px;
+}
+
+.resumes-ctn .options button.delete{
+    background: #DB1B24;
+    color: var(--white-color);
+    border-color: #DB1B24;
+}
+
+.resumes-ctn .options button.delete a,
+.resumes-ctn .options button.edit a{
+    color: var(--white-color);
+}
+
+.resumes-ctn .options button.edit{
+   background: var(--primary-color);
+}
+
+
+
+
+
+.resumes-ctn .options button a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 14px;
+}
 
 .header-md-ctn {
     font-size: 18px;

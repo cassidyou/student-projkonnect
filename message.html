@@ -244,16 +244,13 @@
                         <div class="main-content">
                          <div class="message-container">
                               <div class="message-sidebar overflow-hidden">
+                                   
                                    <div class="message-sidebar-header">
                                         <div class="top">
                                              <h5>Messages</h5>
-                                             <img src="asset/img/sort-icon.png" alt="">
-                                             <div class="cursor-p position-relative d-none">
-                                                  <span id="msg-menu"> <i class="fa fa-ellipsis-v"></i></span>
-                                                 
-                                                  <div class="new-group-ctn">
-                                                       <button id="open-ng-ctn">Create group</button>
-                                                  </div>
+                                             <div class="d-flex align-items-center justify-content-end gap-2">
+                                                  <img src="asset/img/add-square.png" alt="icon" class="cursor-p" id="open-add-group">
+                                                  <img src="asset/img/sort-icon.png" alt="icon" class="cursor-p">
                                              </div>
                                         </div>
                                         <div class="input-group">
@@ -261,7 +258,8 @@
                                              <input type="text" name="keyword" placeholder="Search">
                                        </div>
                                    </div>
-                                   <div class="message-sidebar-body">
+                                   
+                                   <div class="message-sidebar-body message-chat">
                                         <div class="contact active">
                                              <div class="d-flex align-items-center justify-content-start gap-2">
                                                   <div class="img">
@@ -344,6 +342,104 @@
                                              <span class="unseen-count d-none">4</span>
                                         </div>
                                    </div>
+
+                                   <!-- Add new group -->
+                                   <div class="message-sidebar-body add-group">
+                                        <div class="d-flex align-items-center justify-content-start gap-3">
+                                             <span class="close-add-group cursor-p" id="close-add-group">
+                                                  <i class="fa fa-arrow-left"></i>
+                                             </span>
+                                             <h5>New Group</h5>
+                                        </div>
+                                        <input type="text" name="" id="" class="search-users my-3" placeholder="search" >
+                                        <div id="selected-users" class=" border border-radius-10 p-2">
+                                             <div class="user" id="1">
+                                                  <div class="img">
+                                                       <img src="asset/img/user-picture.png" alt="">
+                                                  </div>
+                                                  <span>Jane Doe</span>
+                                             </div>
+                                        </div>
+                                        <div class="btn-controller mt-3">
+                                             <button id="next">Next</button>
+                                             <button id="cancel">Cancel</button>
+                                        </div>
+                                        <h6 class="mt-3">All Chats</h6>
+                                        <div class="contact" data-id="1" id="1">
+                                             <div class="d-flex align-items-center justify-content-start gap-2">
+                                                  <div class="img">
+                                                       <img src="asset/img/user-picture.png" alt="">
+                                                  </div>
+                                                  <h6>John Doe</h6>
+                                             </div>
+                                             <span class="custom-check selected"></span>
+                                        </div>
+                                        <div class="contact" data-id="2" id="2">
+                                             <div class="d-flex align-items-center justify-content-start gap-2">
+                                                  <div class="img">
+                                                       <img src="asset/img/user-picture.png" alt="">
+                                                  </div>
+                                                  <h6>William Smith</h6>
+                                             </div>
+                                             <span class="custom-check"></span>
+                                        </div>
+                                        <div class="contact" data-id="3" id="3">
+                                             <div class="d-flex align-items-center justify-content-start gap-2">
+                                                  <div class="img">
+                                                       <img src="asset/img/user-picture.png" alt="">
+                                                  </div>
+                                                  <h6>Oluchi Cassidy</h6>
+                                             </div>
+                                             <span class="custom-check"></span>
+                                        </div>
+                                        <div class="contact" data-id="4" id="4">
+                                             <div class="d-flex align-items-center justify-content-start gap-2">
+                                                  <div class="img">
+                                                       <img src="asset/img/user-picture.png" alt="">
+                                                  </div>
+                                                  <h6>Michael Bush</h6>
+                                             </div>
+                                             <span class="custom-check"></span>
+                                        </div>
+                                   </div>
+                                   <!-- Create Group -->
+                                   <div class="message-sidebar-body create-group" id="create-group-ctn">
+                                        <div class="d-flex align-items-center justify-content-start gap-3">
+                                             <span class="close-create-group cursor-p" id="close-create-group">
+                                                  <i class="fa fa-arrow-left"></i>
+                                             </span>
+                                             <h5>New Group</h5>
+                                        </div>
+                                        <div id="selected-users" class=" border border-radius-10 p-2">
+                                             <div class="user" data-id="1" id="1">
+                                                  <div class="img">
+                                                       <img src="asset/img/user-picture.png" alt="">
+                                                  </div>
+                                                  <span>Jane Doe</span>
+                                             </div>
+                                        </div>
+                                        <div class="d-flex align-items-center justify-content-start gap-2 mt-4">
+                                             <div class="group-logo">
+                                                  <span id="logo-preview">
+
+                                                  </span>
+                                                  <div class="img-put">
+                                                      <input type="file" class="d-none" name="group-logo" id="group-logo">
+                                                      <label class="file-label cursor-p" for="group-logo"><img src="asset/img/camera_icon.png" alt=""></label>
+                                                  </div>
+                                              </div>
+                                              <span class="logo-label-text">Add group logo (optional)</span>
+                                        </div>
+                                       <div class="mt-5">
+                                        <label>Provide a group name</label>
+                                        <input type="text" class="group-name" name="group-name" placeholder="Group name">
+                                       </div>
+
+                                       <div class="btn-controller mt-5">
+                                             <button id="create">Create</button>
+                                             <button id="cancel-create">Cancel</button>
+                                        </div>
+                                  </div>
                               </div>
                               <div class="message-main">
                                    <div class="message-main-header">
@@ -356,7 +452,7 @@
                                         </div>
                                         <div class="d-flex align-items-center justify-content-end gap-3">
                                              <img src="asset/img/message-search-icon.png" id="drop-message-search-ctn" data-icon="icon" alt="icon">
-                                             <img src="asset/img/ellipsis-v-icon.png" height="20px" data-icon="icon" alt="icon">
+                                             <img src="asset/img/ellipsis-v-icon.png" height="20px" data-icon="icon" alt="icon" id="toggle-options">
                                         </div>
                                         <div class="message-search-ctn">
                                              <div class="search-word-ctn" id="message-word-search" style="display: none;">
@@ -368,6 +464,11 @@
                                                        <small id="search-count"></small>
                                                   </div>
                                              </div>
+                                        </div>
+                                        <div class="options close">
+                                             <button><img src="asset/img/logout_icon.png" alt=""> Exit group</button>
+                                             <button class="my-3"><img src="asset/img/trash_icon.svg" alt=""> Delete group</button>
+                                             <button><img src="asset/img/trash_icon.svg" alt=""> Delete chat</button>
                                         </div>
                                    </div>
                                    <div class="message-main-body">
@@ -594,6 +695,21 @@
     <script src="asset/js/plugins_init.js"></script>
     <script src="asset/js/main.js"></script>
     <script>
+     document.addEventListener('DOMContentLoaded', function(){
+         document.getElementById('group-logo').addEventListener('change', function(){
+             var input = this;
+             if (input.files && input.files[0]){
+                 var reader = new FileReader();
+                 reader.onload = function(e) {
+                     document.getElementById('logo-preview').innerHTML = '<img src="' + e.target.result + '" />';
+                 }
+
+                 reader.readAsDataURL(input.files[0]);
+             }
+         })
+     })
+ </script>
+    <script>
      $(document).ready(function(){
           $('#msg-menu').on('click', function(){
                if($(this).siblings('.new-group-ctn').hasClass('opened')){
@@ -609,6 +725,29 @@
           $('#open-ng-ctn').on('click', function(){
 
           });
+
+
+          $("#toggle-options").on("click", function(e){
+               e.stopPropagation();
+               let options = $(".message-main-header").find(".options");
+               if(options.hasClass("close")){
+                    options.animate({right: "0px"});
+                    options.removeClass("close");
+                    options.addClass('open');
+               }else{
+                   options.animate({right: "-300px"})
+                   options.addClass("close"); 
+                   options.removeClass("open")
+               }
+               
+          })
+
+          $("body").on("click", function(){
+               let options = $(".message-main-header").find(".options");
+               if(options.hasClass('open')){
+                    $(".message-main-header").find(".options").animate({right: "-300px"}).addClass("close"); 
+               }
+          })
 
 
           $('#chat-form').on('submit', function(e){
@@ -636,6 +775,69 @@
                     container.scrollTop(container.prop("scrollHeight"));
               }
           })
+
+
+
+          $("#open-add-group").on('click', function(){
+               $('.message-sidebar-body.add-group').animate({right: '0px'})
+          })
+
+          $("#close-add-group").on('click', function(){
+               $('.message-sidebar-body.add-group').animate({right: '-300px'})
+          })
+
+          $(".message-sidebar-body.add-group .btn-controller #next").on('click', function(){
+              $(".message-sidebar-body.create-group").animate({right: "0px"})
+          })
+
+          $("#close-create-group").on('click', function(){
+               $('.message-sidebar-body.create-group').animate({right: '-300px'})
+          })
+
+
+
+
+          $(".message-sidebar-body.add-group .contact").on("click", function(){
+               let userId = parseInt($(this).attr('id'));
+               let userName = $(this).find("h6").text();
+               let photo = $(this).find("img").attr("src");
+               let html = `
+                   <div class="user" data-id="${userId}" id="${userId}">
+                         <div class="img">
+                              <img src="${photo}" alt="">
+                         </div>
+                         <span>${userName}</span>
+                    </div>  
+               `;
+               let identical = $(`.message-sidebar-body.add-group #selected-users .user#${userId}`).attr('id');
+
+                    console.log(identical)     
+
+               if(identical == undefined){
+                    $('.message-sidebar-body.add-group #selected-users').append(html);
+                    $(".message-sidebar-body.create-group #selected-users").append(html)
+                    $(this).find('.custom-check').addClass('selected')
+               }else{
+                    $(`.message-sidebar-body.add-group #selected-users .user#${identical}`).remove();
+                    $(`.message-sidebar-body.create-group #selected-users`).find(`.user#${identical}`).remove();
+                    $(this).find('.custom-check').removeClass('selected');
+               }
+          })
+
+          $(".message-sidebar-body.add-group button#cancel").on("click", function(){
+               cancelFunc('.message-sidebar-body.add-group', '.message-sidebar-body.create-group')
+          })
+          $(".message-sidebar-body.create-group button#cancel-create").on("click", function(){
+               cancelFunc('.message-sidebar-body.add-group', '.message-sidebar-body.create-group')
+          })
+
+          function cancelFunc(a, b){
+               $(a).find("#selected-users").empty();
+               $(b).find("#selected-users").empty();
+               $(a).animate({right: "-300px"});
+               $(b).animate({right: "-300px"})
+               $(".custom-check.selected").removeClass("selected")
+          }
      });
     </script>
 </body>

@@ -71,7 +71,7 @@ $(document).ready(function() {
       //MESSAGE PAGE
       var screenSize = window.screen.width;
 
-      $('.message-sidebar').find('.contact').on('click', function(){
+      $('.message-sidebar.message-chat').find('.contact').on('click', function(){
             $(this).siblings('.contact').removeClass('active');
             $(this).addClass('active');
             setTimeout(() => {
@@ -79,7 +79,7 @@ $(document).ready(function() {
             }, 2000);
 
             if(screenSize <= 576){
-                $('.message-sidebar').animate({left: '-400px'});
+                $('.message-sidebar.message-chat').animate({left: '-400px'});
             }
        
     })

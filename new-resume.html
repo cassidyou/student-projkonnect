@@ -243,56 +243,36 @@
                         </div>
                         <div class="main-content">
                               <div class="row">
-                                   <div class="wp_xoy col-md-4 col-lg-3 col-sm-6 mb-3">
-                                    <div class="add-resu-ctn">
-                                        <a href="new-resume.html">
-                                            <img src="asset/img/plus-dark-icon.png" alt="">
-                                            <span>New Resume</span>
-                                        </a>
-                                    </div>
+                                   <div class="col-12">
+                                        <div class="header-lg-ctn mb-5">
+                                            <h2>Add Resume</h2>
+                                        </div>
+                                        
+                                        <div class="row mt-5">
+                                                <div class="col-md-3 col-lg-4"></div>
+                                                <div class="col-md-6 col-lg-4">
+                                                    <div class="header-md-ctn">
+                                                        <img src="asset/img/edit-pen.png" alt=""> Manually Input
+                                                    </div>
+                    
+                                                    <div class="hr-line-ctn">
+                                                            <h5 class="word">OR</h5>
+                                                            <div class="hr-line"></div>
+                                                    </div>
+                    
+                                                    <div class="header-md-ctn evid-ctn">
+
+                                                            <div class="proj-file-ctn mb-2"></div>
+                                                            <label class="proj-label" > <img src="asset/img/upload-icon.png" alt="icon"> <span>Upload CV</span></label>
+                                                            <input type="file"  name="files" class="form-control default-input off-screen proj-file">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 col-lg-4"></div>
+                                        </div>
                                    </div>
-                                   <div class="wp_xoy col-md-4 col-lg-3 col-sm-6 mb-3">
-                                    <div class="resumes-ctn">
-                                        <div class="options close">
-                                            <button><a href="create-credshow.html"> <i class="fa fa-edit"></i> Edit</a></button>
-                                            <button class="my-2 edit"><a href="credshow-link.html"> <i class="fa fa-eye"></i> View</a></button>
-                                            <button class="delete"><a href="javascript:;"> <i class="fa fa-trash"></i> Delete</a></button>
-                                        </div>
-                                        <div class="toggler">
-                                            <i class="fa fa-ellipsis-v"></i>
-                                        </div>
-                                        <img src="asset/img/abstract-dotted-grid.png" alt="">
-                                        <span>Resume 1</span>
-                                    </div>
-                                   </div>
-                                   <div class="wp_xoy col-md-4 col-lg-3 col-sm-6 mb-3">
-                                    <div class="resumes-ctn">
-                                        <div class="options close">
-                                            <button><a href="create-credshow.html"> <i class="fa fa-edit"></i> Edit</a></button>
-                                            <button class="my-2 edit"><a href="credshow-link.html"> <i class="fa fa-eye"></i> View</a></button>
-                                            <button class="delete"><a href="javascript:;"> <i class="fa fa-trash"></i> Delete</a></button>
-                                        </div>
-                                        <div class="toggler">
-                                            <i class="fa fa-ellipsis-v"></i>
-                                        </div>
-                                        <img src="asset/img/abstract-dotted-grid.png" alt="">
-                                        <span>Resume 2</span>
-                                    </div>
-                                   </div>
-                                   <div class="wp_xoy col-md-4 col-lg-3 col-sm-6 mb-3">
-                                    <div class="resumes-ctn">
-                                        <div class="options close">
-                                            <button><a href="create-credshow.html"> <i class="fa fa-edit"></i> Edit</a></button>
-                                            <button class="my-2 edit"><a href="credshow-link.html"> <i class="fa fa-eye"></i> View</a></button>
-                                            <button class="delete"><a href="javascript:;"> <i class="fa fa-trash"></i> Delete</a></button>
-                                        </div>
-                                        <div class="toggler">
-                                            <i class="fa fa-ellipsis-v"></i>
-                                        </div>
-                                        <img src="asset/img/abstract-dotted-grid.png" alt="">
-                                        <span>Resume 3</span>
-                                    </div>
-                                   </div>
+                              </div>
+                              <div class="text-center mt-5">
+                                <button class="cred-btn" data-url="create-credshow.html"><i class="fa fa-arrow-right"></i></button>
                               </div>
                         </div>
                     </div>
@@ -301,7 +281,54 @@
         </div>
     </div>
 
+    <!--********************** Search Modal *****************************-->
+    <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                aria-label="Close"><i class="fa fa-times"></i></button>
+                <div class="form-group">
+                    <input type="text" name="keyword" value="Programming" id="keyword" class="form-control">
+                </div>
+            </div>
 
+            <div class="modal-body rounded">
+                <div class="result-ctn">
+                    <h2 class="heading">Search result</h2>
+
+                    <div class="results">
+                        <div class="result">
+                            <h3 class="title">Organization of programming</h3>
+                            <p class="short-desc">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur, fugiat provident temporibus quas molestias similique?...
+                            </p>
+                        </div>
+                        <div class="result">
+                            <h3 class="title">Python programming</h3>
+                            <p class="short-desc">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur, fugiat provident temporibus quas molestias similique?...
+                            </p>
+                        </div>
+                        <div class="result">
+                            <h3 class="title">Web programming</h3>
+                            <p class="short-desc">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur, fugiat provident temporibus quas molestias similique?...
+                            </p>
+                        </div>
+                        <div class="result">
+                            <h3 class="title">Computer programming</h3>
+                            <p class="short-desc">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur, fugiat provident temporibus quas molestias similique?...
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
 
 
     <!-- JS FILES -->
@@ -319,20 +346,6 @@
     <script src="asset/js/main.js"></script>
     <script>
         $(document).ready(function(){
-
-            $(".toggler").on('click', function(e){
-                e.stopPropagation();
-                let options = $(this).siblings('.options');
-                let other_options = options.parents('.wp_xoy').siblings(".wp_xoy").find(".options");
-                other_options.addClass("close");
-                options.toggleClass("close")
-            });
-
-            $("body").on("click", function(){
-                $(".options").addClass("close")
-            })
-
-
             $('.header-md-ctn').on('click', function(){
                 $('.header-md-ctn').removeClass('active');
                 $(this).addClass('active');
