@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student - Layout</title>
+
+    <!--asset-->
+    <link rel="shortcut icon" type="text/css" href="asset/img/favicon.png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="vendor/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="https://preview.colorlib.com/theme/bootstrap/css-table-19/css/style.css">
+
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="vendor/fontawesome/all.min.css">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="vendor/swiper/swiper-bundle.min.css">
+
+    <!-- Bootstrap daterangepicker -->
+    <link rel="stylesheet" href="vendor/bootstrap-daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+    <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
+
+    <!--Custom CSS-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.0.0/dist/chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+    <link rel="stylesheet" href="asset/css/style.css">
+    <link rel="stylesheet" href="asset/css/responsive.css">
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+          background-color: #f5f5f5;
+          padding: 20px;
+        }
+        
+        .acrmap-form {
+          max-width: 800px;
+          margin: 0 auto;
+          background-color: white;
+          padding: 30px;
+          border-radius: 8px;
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .acrmap-steps-container {
+          position: relative;
+          overflow: hidden;
+          /* min-height: 400px; */
+        }
+        
+        .acrmap-step {
+          position: absolute;
+          width: 100%;
+          transition: transform 0.5s linear, opacity 0.5s linear;
+          opacity: 0;
+          transform: translateX(100%);
+        }
+        
+        .acrmap-step.active {
+          opacity: 1;
+          transform: translateX(0);
+          position: relative;
+        }
+        
+        .acrmap-step.prev {
+          transform: translateX(-100%);
+        }
+        
+        .acrmap-title {
+          font-size: 24px;
+          margin-bottom: 15px;
+          color: #333;
+        }
+        
+        .acrmap-step-title {
+          display: block;
+          font-size: 16px;
+          color: #666;
+          margin-bottom: 20px;
+        }
+        
+        select, input {
+          padding: 12px;
+          border: 1px solid #ddd;
+          border-radius: 4px;
+          font-size: 16px;
+          margin-top: 8px;
+        }
+        
+        select {
+          appearance: none;
+          background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23131313%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+          background-repeat: no-repeat;
+          background-position: right 12px top 50%;
+          background-size: 12px auto;
+          padding-right: 30px;
+        }
+        
+        .error {
+          color: #e74c3c;
+        }
+        
+        .field-error {
+          border-color: #e74c3c !important;
+        }
+        
+        .error-message {
+          color: #e74c3c;
+          font-size: 14px;
+          margin-top: 5px;
+          display: none;
+        }
+        
+        .acrmap-form-navigation button {
+          padding: 12px 24px;
+          border: none;
+          border-radius: 4px;
+          font-size: 16px;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          transition: all 0.3s ease;
+        }
+        
+        #acrmap-prev-btn {
+          background-color: #f8f9fa;
+          color: #333;
+        }
+        
+        #acrmap-next-btn {
+          background-color: #4CAF50;
+          color: white;
+        }
+        
+        #acrmap-prev-btn:hover {
+          background-color: #e9ecef;
+        }
+        
+        #acrmap-next-btn:hover {
+          background-color: #45a049;
+        }
+        
+        #acrmap-prev-btn img, #acrmap-next-btn img {
+          width: 20px;
+          height: 20px;
+          margin: 0 5px;
+        }
+        
+        .acrmap-specializations {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+          gap: 10px;
+          margin-top: 10px;
+        }
+        
+        .acrmap-specializations label {
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+        }
+        
+        /* Custom checkbox styling */
+        .custom-checkbox {
+          appearance: none;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          width: 20px;
+          height: 20px;
+          border: 2px solid #888;
+          border-radius: 50%;
+          outline: none;
+          cursor: pointer;
+          position: relative;
+          background-color: white;
+          margin-right: 10px;
+        }
+        
+        .custom-checkbox:checked::after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background-color: #4CAF50;
+        }
+        
+        /* Spinner */
+        .acrmap-spinner {
+          width: 50px;
+          height: 50px;
+          border: 5px solid rgba(0, 0, 0, 0.1);
+          border-radius: 50%;
+          border-top-color: #4CAF50;
+          animation: spin 1s linear infinite;
+          margin: 20px auto;
+        }
+        
+        @keyframes spin {
+          0% {
+            transform: rotate(0deg);
+          }
+          100% {
+            transform: rotate(360deg);
+          }
+        }
+        
+        /* Progress bar */
+        .acrmap-progress-container {
+          width: 100%;
+          background-color: #e0e0e0;
+          border-radius: 8px;
+          overflow: hidden;
+          margin: 20px 0;
+        }
+        
+        .acrmap-progress-bar {
+          height: 24px;
+          width: 0%;
+          background-color: #4CAF50;
+          text-align: center;
+          line-height: 24px;
+          color: white;
+          font-size: 14px;
+          transition: width 3s linear;
+        }
+        
+        .acrmap-generation {
+          text-align: center;
+        }
+        
+        .shake {
+          animation: shake 0.5s linear;
+        }
+        
+        @keyframes shake {
+          0%, 100% {transform: translateX(0);}
+          10%, 30%, 50%, 70%, 90% {transform: translateX(-5px);}
+          20%, 40%, 60%, 80% {transform: translateX(5px);}
+        }
+      </style>
+</head>
+
+<body>
+    <div class="page-wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-2 sidebar">
+                    <div class="sidebar-header">
+                        <div class="sidebar-close d-lg-none"></div>
+                        <div class="logo">
+                            <img src="asset/img/logo-light.png" class="img-fluid mb-2 sidebar-logo" alt="">
+                        </div>
+                    </div>
+                    <div class="sidebar-content">
+                        <ul class="sidebar-nav-links">
+                            <li class="adm-sidebar-link-item">
+                                <a href="index.html" class="sidebar-link">
+                                    <img src="asset/img/dashboard-img.png" alt="">
+                                    Dashboard
+                                </a>
+                            </li>
+                            <li class="adm-sidebar-link-item">
+                                <a href="courses.html" class="sidebar-link">
+                                    <img src="asset/img/book_icon.png" alt="">
+                                    Courses
+                                </a>
+                            </li>
+                            <li class="adm-sidebar-link-item">
+                                <a href="livelearn.html" class="sidebar-link">
+                                    <img src="asset/img/video_icon.png" alt="">
+                                    LiveLearn Sessions
+                                </a>
+                            </li>
+                            <li>
+                                <div class="sidebar-link-dropdown closed">
+                                    <h6>Career Hub</h6><span class="fa fa-chevron-down"></span>
+                                </div>
+                                <ul class="sidebar-dropdown-items">
+                                    <li class="adm-sidebar-link-item">
+                                        <a href="job.html" class="sidebar-link">
+                                            <img src="asset/img/briefcase.png" alt="">
+                                            Jobs
+                                        </a>
+                                    </li>
+                                    <li class="adm-sidebar-link-item">
+                                        <a href="internship.html" class="sidebar-link">
+                                            <img src="asset/img/internship_icon.png" alt="">
+                                            Internships
+                                        </a>
+                                    </li>
+                                    <li class="adm-sidebar-link-item">
+                                        <a href="credshow.html" class="sidebar-link">
+                                            <img src="asset/img/credshow_icon.png" alt="">
+                                            CredShow
+                                        </a>
+                                    </li>
+                                    <li class="adm-sidebar-link-item">
+                                        <a href="project-pitch.html" class="sidebar-link">
+                                            <img src="asset/img/project_pitch_icon.png" alt="">
+                                            Project Pitch
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <div class="sidebar-link-dropdown closed">
+                                    <h6>Community Connect</h6><span class="fa fa-chevron-down"></span>
+                                </div>
+                                <ul class="sidebar-dropdown-items">
+                                    <li class="adm-sidebar-link-item">
+                                        <a href="message.html" class="sidebar-link">
+                                            <img src="asset/img/konnect-icon.png" alt="">
+                                            Messages
+                                        </a>
+                                    </li>
+                                    <li class="adm-sidebar-link-item">
+                                        <a href="forum.html" class="sidebar-link">
+                                            <img src="asset/img/forum_icon.png" alt="">
+                                            Forum
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="adm-sidebar-link-item">
+                                <a href="schedule.html" class="sidebar-link">
+                                    <img src="asset/img/schedule_icon.png" alt="">
+                                    Schedules
+                                </a>
+                            </li>
+
+                        </ul>
+                        <div class="sidebar-footer">
+                            <a href="profile.html" class="sidebar-link mb-5">
+                                <img src="asset/img/setting-icon-light.png" alt="">
+                                My Account
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-10 main">
+                    <div class="container-fluid px-4">
+                        <div class="main-header">
+                            <div class="d-flex align-items-start gap-3">
+                                <div class="menu harmburger-menu d-lg-none">
+                                    <div class="menu"></div>
+                                 </div>
+                                <h1 class="heading">Courses</h1>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between">
+                                <button class="btn btn-nav-search" data-bs-toggle="modal"
+                                data-bs-target="#searchModal">
+                                    <img src="asset/img/search-icon.png" alt="">
+                                </button>
+    
+                                <div class="profile-dropdown notify-dropdown">
+                                    <div class="drop-now">
+                                        <img src="asset/img/notification-icon.png" alt="">
+                                    </div>
+                                    <div class="profile-dropdown-items notify-dropdown-items d-none">
+                                        <div class="d-flex align-items-center justify-content-between mb-4">
+                                            <h4 class="heading">Notifications</h4>
+                                            <span>  <i class="fa fa-check-double"></i> Mark all as read</span>
+                                        </div>
+                                        <div class="notify-dropdown-item">
+                                            <div class="notice-ctn">
+                                                <div class="img">
+                                                    <img src="asset/img/user-picture.png" alt="">
+                                                </div>
+                                                <div class="notice">
+                                                    <p>
+                                                        <b>John Does</b> added a new course, check this out!
+                                                    </p>
+                                                    <small class="time">23 mins ago</small>
+                                                </div>
+                                                <div class="resta"></div>
+                                            </div>
+                                            <div class="notice-ctn">
+                                                <div class="img">
+                                                    <img src="asset/img/user-picture.png" alt="">
+                                                </div>
+                                                <div class="notice">
+                                                    <p>
+                                                        <b>John Does</b> added a new course, check this out!
+                                                    </p>
+                                                    <small class="time">23 mins ago</small>
+                                                </div>
+                                                <!-- <div class="resta"></div> -->
+                                            </div>
+                                            <div class="text-center">
+                                                <a href="notifications.html" class="notify-btn">See all notifications</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="profile-dropdown">
+                                    <div class="drop-now d-flex align-items-center justify-content-between gap-4">
+                                        <div class="d-flex align-items-center align-items-start gap-3">
+                                            <div class="img">
+                                                <img src="asset/img/user-picture.png" class="img-flui" alt="">
+                                            </div>
+                                            <div class="d-flex flex-column">
+                                                <span class="name">John Doe</span>
+                                                <span class="role">Student</span>
+                                            </div>
+                                        </div>
+                                        <div class="directions close">
+                                            <i class="fa fa-chevron-down"></i>
+                                            <i class="fa fa-chevron-up"></i>
+                                        </div>
+                                    </div>
+                                    <ul class="profile-dropdown-items profile-items d-none">
+                                        <li class="dropdown-item">
+                                            <a href="https://cassidyou.github.io/projkonnect" target="_blank">
+                                            <img src="asset/img/globe-icon.svg" class="img-fluid" alt="icon">Homepage </a>
+                                        </li>
+                                        <li class="dropdown-item">
+                                            <a href="profile.html">
+                                            <img src="asset/img/user-icon-dark.png" class="img-fluid" alt="icon">Profile</a>
+                                        </li>
+                                        <li class="dropdown-item">
+                                            <a href="cart.html">
+                                            <img src="asset/img/shopping-cart.png" class="img-fluid" alt="icon">Cart <span class="cart-count">2</span></a>
+                                        </li>
+                                        <li class="dropdown-item">
+                                            <a href="javascript:;">
+                                            <img src="asset/img/points-icon.png" class="img-fluid" alt="icon">Points <span class="cart-count primary-color">200</span></a>
+                                        </li>
+                                        <li class="dropdown-item">
+                                            <a href="certificates.html">
+                                            <img src="asset/img/certificate_icon.png" class="img-fluid" alt="icon">Certificates</a>
+                                        </li>
+                                        <li class="dropdown-item">
+                                            <a href="projkonnect-ai.html">
+                                            <img src="asset/img/projkonnectai_icon.png" class="img-fluid" alt="icon">MindBridge AI</a>
+                                        </li>
+                                        <li class="dropdown-item">
+                                            <a href="referrals.html">
+                                            <img src="asset/img/referral-icon.png" class="img-fluid" alt="icon">Refer a Friend</a>
+                                        </li>
+                                        <li class="dropdown-item">
+                                            <a href="help-center.html">
+                                            <img src="asset/img/message-question-icon.png" class="img-fluid" alt="icon">Help center</a>
+                                        </li>
+                                        <li class="dropdown-item">
+                                            <a href="../login.html">
+                                            <img src="asset/img/login-icon.png" class="img-fluid" alt="icon">Logout</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="main-content">
+                              <div class="row">
+                                <div class="col-12">
+                                    <div class="mb-3">
+                                        <span class="g-sm-heading op-6">Courses <i class="fa fa-chevron-right"></i></span>
+                                        <span class="g-sm-heading op-6">Organization of Programming Languages <i class="fa fa-chevron-right"></i></span>
+                                        <span class="g-sm-heading">Quiz</span>
+                                   </div>
+                                </div>
+                                   <div class="col-12 mb-4">
+                                    <form class="acrmap-form">
+                                        <div class="acrmap-steps-container">
+                                          <div class="acrmap-step faculty active">
+                                            <h1 class="acrmap-title">Create Academic Roadmap</h1>
+                                            <span class="acrmap-step-title">Step 1: Select your faculty to begin creating your personalized academic roadmap.</span>
+                                            <div class="form-control border-0 mb-4 p-0">
+                                              <label for="faculty" class="d-block fw-bold">Faculty <span class="error">*</span></label>
+                                              <select id="faculty" class="d-block w-100 collector">
+                                                <option value="">Select a faculty</option>
+                                                <option value="engineering">Engineering</option>
+                                                <option value="science">Science</option>
+                                                <option value="arts">Arts</option>
+                                              </select>
+                                              <div class="error-message" id="faculty-error">Please select a faculty</div>
+                                            </div>
+                                          </div>
+                                          
+                                          <div class="acrmap-step department">
+                                            <h1 class="acrmap-title">Department Selection</h1>
+                                            <span class="acrmap-step-title">Step 2: Select your department from the faculty you've chosen.</span>
+                                            <div class="form-control border-0 mb-4 p-0">
+                                              <label for="department" class="d-block fw-bold">Department <span class="error">*</span></label>
+                                              <select id="department" class="d-block w-100 collector">
+                                                <option value="">Select a department</option>
+                                                <option value="civil-engineering">Civil Engineering</option>
+                                                <option value="mechanical-engineering">Mechanical Engineering</option>
+                                                <option value="chemical-engineering">Chemical Engineering</option>
+                                              </select>
+                                              <div class="error-message" id="department-error">Please select a department</div>
+                                            </div>
+                                          </div>
+                                          
+                                          <div class="acrmap-step level">
+                                            <h1 class="acrmap-title">Level Selection</h1>
+                                            <span class="acrmap-step-title">Step 3: Select your current and target academic levels.</span>
+                                            <div class="row">
+                                              <div class="col-md-6">
+                                                <div class="form-control border-0 mb-4 p-0">
+                                                  <label for="current-level" class="d-block fw-bold">Current Level <span class="error">*</span></label>
+                                                  <select id="current-level" class="d-block w-100 collector">
+                                                    <option value="">Select level</option>
+                                                    <option value="100">100</option>
+                                                    <option value="200">200</option>
+                                                    <option value="300">300</option>
+                                                    <option value="400">400</option>
+                                                    <option value="500">500</option>
+                                                  </select>
+                                                  <div class="error-message" id="current-level-error">Please select your current level</div>
+                                                </div>
+                                              </div>
+                                              <div class="col-md-6">
+                                                <div class="form-control border-0 mb-4 p-0">
+                                                  <label for="target-level" class="d-block fw-bold">Target Level <span class="error">*</span></label>
+                                                  <select id="target-level" class="d-block w-100 collector">
+                                                    <option value="">Select level</option>
+                                                    <option value="100">100</option>
+                                                    <option value="200">200</option>
+                                                    <option value="300">300</option>
+                                                    <option value="400">400</option>
+                                                    <option value="500">500</option>
+                                                  </select>
+                                                  <div class="error-message" id="target-level-error">Please select your target level</div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          
+                                          <div class="acrmap-step specialization">
+                                            <h1 class="acrmap-title">Specialization Selection</h1>
+                                            <span class="acrmap-step-title">Step 4: Select one or more Specializations for your academic roadmap.</span>
+                                            <div class="form-control border-0 mb-4 p-0">
+                                              <label for="specializations" class="d-block fw-bold">Select specializations <span class="error">*</span></label>
+                                              <div class="acrmap-specializations">
+                                                <label for="software-engineering">
+                                                  <input class="custom-checkbox" checked type="checkbox" id="software-engineering" name="specialization" value="software-engineering"> Software Engineering
+                                                </label>
+                                                <label for="data-analysis">
+                                                  <input class="custom-checkbox" type="checkbox" id="data-analysis" name="specialization" value="data-analysis"> Data Analysis
+                                                </label>
+                                                <label for="web-development">
+                                                  <input class="custom-checkbox" type="checkbox" id="web-development" name="specialization" value="web-development"> Web Development
+                                                </label>
+                                                <label for="cybersecurity">
+                                                  <input class="custom-checkbox" type="checkbox" id="cybersecurity" name="specialization" value="cybersecurity"> Cyber Security
+                                                </label>
+                                              </div>
+                                              <div class="error-message" id="specialization-error">Please select at least one specialization</div>
+                                            </div>
+                                          </div>
+                                          
+                                          <div class="acrmap-step acrmap-generation">
+                                            <div class="acrmap-spinner"></div>
+                                            <h2>Generating your Academic Roadmap...</h2>
+                                            <div class="acrmap-progress-container">
+                                              <div class="acrmap-progress-bar"></div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        
+                                        <div class="acrmap-form-navigation d-flex align-items-center justify-content-between mt-5">
+                                          <button type="button" id="acrmap-prev-btn"><img src="asset/img/prev-arrow-icon.png" alt="arrow-left" /> Back</button>
+                                          <button type="button" id="acrmap-next-btn">Continue <img src="asset/img/next-arrow-icon-black.png" alt="arrow-right" /></button>
+                                        </div>
+                                      </form>
+                                   </div>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm modal-dialog-centered">
+             <div class="modal-content">
+                  <div class="modal-body rounded">
+                    <div class="d-flex align-items-center justify-content-center mb-2 mt-3">
+                        <img src="asset/img/success-star-checked.png" width="50px" alt="icon">
+                    </div>
+                       <h3 class="text-center mb-2">Success!</h3>
+                      <div class="text-center mb-2">
+                        You have successfully registered for a LiveLearn Session.
+                      </div>
+                        <button type="button" class="new-discussion-btn w-100 mb-2">Go Back</button>
+                  </div>
+             </div>
+        </div>
+    </div>
+
+    <!--********************** Search Modal *****************************-->
+    <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                aria-label="Close"><i class="fa fa-times"></i></button>
+                <div class="form-group">
+                    <input type="text" name="keyword" value="Programming" id="keyword" class="form-control">
+                </div>
+            </div>
+
+            <div class="modal-body rounded">
+                <div class="result-ctn">
+                    <h2 class="heading">Search result</h2>
+
+                    <div class="results">
+                        <div class="result">
+                            <h3 class="title">Organization of programming</h3>
+                            <p class="short-desc">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur, fugiat provident temporibus quas molestias similique?...
+                            </p>
+                        </div>
+                        <div class="result">
+                            <h3 class="title">Python programming</h3>
+                            <p class="short-desc">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur, fugiat provident temporibus quas molestias similique?...
+                            </p>
+                        </div>
+                        <div class="result">
+                            <h3 class="title">Web programming</h3>
+                            <p class="short-desc">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur, fugiat provident temporibus quas molestias similique?...
+                            </p>
+                        </div>
+                        <div class="result">
+                            <h3 class="title">Computer programming</h3>
+                            <p class="short-desc">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur, fugiat provident temporibus quas molestias similique?...
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+    <!-- JS FILES -->
+    <script src="vendor/jquery/jQuery3.6.1.min.js"></script>
+    <script src="vendor/popper/popper.js"></script>
+    <script src="vendor/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="vendor/fontawesome/all.min.js"></script>
+    <script src="vendor/jquery-validate/jquery.validate.js"></script>
+    <script src="vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="vendor/moment/moment.min.js"></script>
+    <script src="vendor/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <!-- <script src="asset/js/dashboard.js"></script> -->
+    <script src="asset/js/plugins_init.js"></script>
+    <script src="asset/js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        const steps = $('.acrmap-step');
+        const nextBtn = $('#acrmap-next-btn');
+        const prevBtn = $('#acrmap-prev-btn');
+        const progressBar = $('.acrmap-progress-bar');
+        let currentStep = 0;
+        
+        // Hide back button on first step
+        prevBtn.css('visibility', 'hidden');
+        
+        // Handle next button click
+        nextBtn.click(function() {
+          if (validateStep(currentStep)) {
+            if (currentStep < steps.length - 1) {
+              // Move to next step
+              $(steps[currentStep]).removeClass('active').addClass('prev');
+              currentStep++;
+              $(steps[currentStep]).removeClass('prev').addClass('active');
+              
+              // Update button visibility
+              if (currentStep > 0) {
+                prevBtn.css('visibility', 'visible');
+              }
+              
+              // Handle final step (generation)
+              if (currentStep === steps.length - 1) {
+                nextBtn.css('visibility', 'hidden');
+                // Start progress bar animation
+                setTimeout(() => {
+                  progressBar.css('width', '100%');
+                }, 200);
+              }
+            }
+          }
+        });
+        
+        // Handle back button click
+        prevBtn.click(function() {
+          if (currentStep > 0) {
+            $(steps[currentStep]).removeClass('active');
+            currentStep--;
+            $(steps[currentStep]).removeClass('prev').addClass('active');
+            
+            // Update button visibility
+            if (currentStep === 0) {
+              prevBtn.css('visibility', 'hidden');
+            }
+            
+            nextBtn.css('visibility', 'visible');
+            
+            // Reset any validation errors
+            resetValidation(currentStep);
+          }
+        });
+        
+        // Validation function
+        function validateStep(stepIndex) {
+          resetValidation(stepIndex);
+          let isValid = true;
+          
+          // Step 1: Faculty validation
+          if (stepIndex === 0) {
+            if (!$('#faculty').val()) {
+              showError('faculty');
+              isValid = false;
+            }
+          }
+          
+          // Step 2: Department validation
+          else if (stepIndex === 1) {
+            if (!$('#department').val()) {
+              showError('department');
+              isValid = false;
+            }
+          }
+          
+          // Step 3: Level validation
+          else if (stepIndex === 2) {
+            if (!$('#current-level').val()) {
+              showError('current-level');
+              isValid = false;
+            }
+            
+            if (!$('#target-level').val()) {
+              showError('target-level');
+              isValid = false;
+            }
+          }
+          
+          // Step 4: Specialization validation
+          else if (stepIndex === 3) {
+            if ($('input[name="specialization"]:checked').length === 0) {
+              showError('specialization');
+              isValid = false;
+            }
+          }
+          
+          return isValid;
+        }
+        
+        // Show error for a specific field
+        function showError(fieldId) {
+          const field = $('#' + fieldId);
+          field.addClass('field-error');
+          $('#' + fieldId + '-error').show();
+          
+          // Add shake animation
+          field.addClass('shake');
+          setTimeout(() => {
+            field.removeClass('shake');
+          }, 500);
+        }
+        
+        // Reset validation for a step
+        function resetValidation(stepIndex) {
+          if (stepIndex === 0) {
+            $('#faculty').removeClass('field-error');
+            $('#faculty-error').hide();
+          } else if (stepIndex === 1) {
+            $('#department').removeClass('field-error');
+            $('#department-error').hide();
+          } else if (stepIndex === 2) {
+            $('#current-level, #target-level').removeClass('field-error');
+            $('#current-level-error, #target-level-error').hide();
+          } else if (stepIndex === 3) {
+            $('.custom-checkbox').removeClass('field-error');
+            $('#specialization-error').hide();
+          }
+        }
+        
+        // Clear validation errors when selecting a value
+        $('.collector').change(function() {
+          $(this).removeClass('field-error');
+          $('#' + $(this).attr('id') + '-error').hide();
+        });
+        
+        // Clear validation errors when checking a checkbox
+        $('.custom-checkbox').change(function() {
+          if ($('input[name="specialization"]:checked').length > 0) {
+            $('#specialization-error').hide();
+          }
+        });
+      });
+    </script>
+</body>
+
+</html>

@@ -17,6 +17,9 @@
     --white-color: #ffffff;
     --gray-color: #FCFCFC;
     /* --gray-color: #FAF5F6; */
+    --acmap-primary: #EFF6FF;
+    --acmap-green: #16A34A;
+
     --box-shadow-primary: 0px 1px 2px 0px #1018280F,
                         0px 1px 3px 0px #1018281A;
     --box-shadow: 0 0.5rem 5rem rgba(0, 0, 0, 0.15);
@@ -4191,4 +4194,347 @@ table.dataTable.no-footer {
     background: transparent;
     border-color: transparent;
 }
+
+
+
+
+/**************************** Academic Roadmap ****************************************/
+
+.acrmap-container,
+.smarp-container {
+    max-width: 90%;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.acrmap-form,
+.acrmap-content,
+.smarp-content{
+    padding: 30px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.acrmap-steps-container {
+    position: relative;
+    overflow: hidden;
+}
+
+
+.acrmap-step {
+    position: absolute;
+    width: 100%;
+    transition: transform 0.5s linear, opacity 0.5s linear;
+    opacity: 0;
+    transform: translateX(100%);
+}
+
+.acrmap-step.active {
+    opacity: 1;
+    transform: translateX(0);
+    position: relative;
+}
   
+.acrmap-step.prev {
+    transform: translateX(-100%);
+}
+
+
+
+.acrmap-title{
+    font-size: 24px;
+    text-transform: capitalize;
+}
+
+.acrmap-step-title{
+    font-size: 16px;
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.acrmap-container .error{
+    color: red;
+}
+
+.acrmap-form .field-error {
+    border-color: #e74c3c !important;
+}
+
+.acrmap-form .error-message{
+    color: #e74c3c;
+    font-size: 14px;
+    margin-top: 5px;
+    display: none;
+}
+
+
+.acrmap-form .collector,
+.acrmap-form .collector:active,
+.acrmap-form .collector:focus,
+.acrmap-form .collector:focus-within
+{
+    padding: 10px;
+    border-radius: 5px;
+    outline: none;
+    margin-top: 10px;
+}
+
+
+#acrmap-prev-btn,
+#acrmap-next-btn{
+    border: none;
+    background: none;
+    padding: 10px 20px;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.5s ;
+}
+
+#acrmap-next-btn{
+    background: #D1D5DB;
+}
+
+#acrmap-prev-btn:hover{
+    background: #D1D5DB;
+}
+
+
+.acrmap-help-box{
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    gap: 10px;
+    background: var(--acmap-primary);
+    margin-top: 30px;
+}
+
+.acrmap-help-box strong{
+    font-weight: bold;
+}
+
+
+.acrmap-specializations{
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 60%;
+    display: inline-block;
+    padding: 30px;
+    padding-top: 0;
+    margin-top: 10px;
+}
+
+@media (max-width: 576px) {
+    .acrmap-specializations{
+        width: 100%;
+    }
+}
+
+.acrmap-specializations label{
+    display: block;
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+
+.acrmap-specializations .custom-checkbox {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #6750A4;
+    border-radius: 50%; 
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    background-color: white;
+  }
+  
+  .acrmap-specializations .custom-checkbox:checked::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #6750A4;
+  }
+
+
+  .acrmap-spinner {
+    width: 60px;
+    height: 60px;
+    border: 3px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    border-top-color: var(--black-color);
+    animation: spin 1s linear infinite;
+    margin: 30px auto;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+
+  .acrmap-step.acrmap-generation{
+    text-align: center;
+  }
+
+
+  .acrmap-progress-container {
+    width: 250px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 30px auto;
+  }
+
+  @media (max-width: 425px) {
+    .acrmap-progress-container {
+        width: 200px;
+      }
+      .acrmap-form-navigation{
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      .acrmap-form-navigation button{
+        width: 100%;
+      }
+  }
+  
+  .acrmap-progress-bar {
+    height: 8px;
+    width: 0%; 
+    background-color: var(--black-color);
+    text-align: center;
+    line-height: 24px;
+    color: white;
+    font-size: 14px;
+    border-radius: inherit;
+    transition: width 0.5s linear ease-in-out;
+}
+
+
+.shake {
+    animation: shake 0.5s linear;
+}
+
+@keyframes shake {
+    0%, 100% {transform: translateX(0);}
+    10%, 30%, 50%, 70%, 90% {transform: translateX(-5px);}
+    20%, 40%, 60%, 80% {transform: translateX(5px);}
+}
+
+
+.acrmap-content-header{
+    background: #F9FAFB;
+}
+
+.acrmap-content-header,
+.acrmap-item{
+    padding: 20px;
+    border-radius: inherit;
+
+}
+
+.acrmap-content-header h4
+{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.acrmap-item{
+    margin-top: 30px;
+    background: transparent;
+    border: 1px solid #ccc;
+}
+
+.acrmap-item h4 {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.acrmap-required{
+    background: #FEFCE8;
+    padding: 4px 8px;
+}
+
+
+.acrmap-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 24px;
+    border-radius: 8px;
+    color: white;
+    font-size: 14px;
+    border: none;
+}
+
+
+.acrmap-btn.dark{
+    background: var(--black-color);
+}
+
+.acrmap-btn.green{
+    background: var(--acmap-green);
+}
+
+.acrmap-btn.gray{
+    background: #D1D5DB;
+    color: var(--black-color);
+}
+
+
+
+/***************** SmartPlan ****************************/
+.smarp-title{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+
+.smarp-item{
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    height: 100%;
+}
+
+.smarp-item span{
+    font-size: 14px;
+}
+
+.smarp-progress-container{
+    position: relative;
+    width: 100%;
+    height: 7px;
+    border-radius: 10px;
+    background: #ccc;
+    overflow: hidden;
+    margin-top: 7px;
+    margin-bottom: 15px;
+}
+
+.smarp-progress-bar{
+    position: absolute;
+    left: 0;
+    height: inherit;
+    border-radius: inherit;
+    background: var(--black-color);
+}
