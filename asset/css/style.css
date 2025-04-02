@@ -5074,3 +5074,11 @@ textarea.form-control:focus{
 .res-d-card h6{
     margin-bottom: 5px;
 }
+
+.invi-table tr:last-child td{
+    border-bottom: none;
+}
+
+.invi-table td{
+    vertical-align: middle;
+}

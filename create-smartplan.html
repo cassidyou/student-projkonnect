@@ -259,7 +259,7 @@
                                                     <div class="smarp-item">
                                                         <div class="d-flex align-items-start justify-content-between mb-3">
                                                             <img src="asset/img/briefcase-dark-icon.png" alt="briefcase image" />
-                                                            <input type="checkbox" name="focus-area" value="jobs">
+                                                            <input type="checkbox" name="focus-area" value="jobs" checked>
                                                         </div>
                                                         <h6>Jobs</h6>
                                                         <span>
@@ -293,6 +293,7 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="error-message" id="val-error">Please select at least one focus area before generating your SmartPlan.</div>
                                         <div class="d-flex align-items-center flex-wrap justify-content-center gap-3 mt-4">
                                             <button id="smarpModelBtn" class="acrmap-btn gray" data-bs-toggle="modal" data-bs-target="#smartPlanModal"> Generate SmartPlan</button>
                                         </div>
@@ -451,6 +452,10 @@
                 setTimeout(() => {
                     animateProgressBar(careerProgress, careerLoader, 3000);
                 }, 7000);
+
+                setTimeout(() => {
+                    location.href = 'smartplan.html';
+                }, 8000);
             });
 
 
@@ -472,7 +477,30 @@
 
                 requestAnimationFrame(step);
             }
-          });
+
+            
+            // Function to check if any checkbox is selected
+            function updateButtonState() {
+                // Count the number of checked checkboxes
+                var checkedCount = $("input[name='focus-area']:checked").length;
+                
+                // Enable button if at least one checkbox is checked, otherwise disable it
+                if (checkedCount > 0) {
+                $("#smarpModelBtn").prop("disabled", false).removeClass("disabled");
+                $("#val-error").hide();
+                } else {
+                $("#smarpModelBtn").prop("disabled", true).addClass("disabled");
+                $("#val-error").show();
+                }
+            }
+            
+            // Attach the function to the change event of all checkboxes
+            $("input[name='focus-area']").change(function() {
+                updateButtonState();
+            });
+
+            updateButtonState();
+        });
     </script>
 </body>
 </html>
