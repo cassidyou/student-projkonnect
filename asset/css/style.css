@@ -4867,6 +4867,14 @@ table.dataTable.no-footer {
     font-size: 16px!important;
 }
 
+@media (max-width: 425px) {
+    .smart-d-card .nav-tabs .nav-link{
+        font-size: 14px!important;
+        margin-bottom: 0;
+        margin-right: 0;
+    }
+}
+
 
 .smart-d-card .nav-tabs .nav-link.active{
     font-weight: 600;
