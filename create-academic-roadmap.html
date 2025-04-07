@@ -253,9 +253,23 @@
                                         <div class="acrmap-container">
                                             <form class="acrmap-form">
                                                 <div class="acrmap-steps-container">
-                                                    <div class="acrmap-step institution-type active">
+                                                    <div class="acrmap-step country active">
                                                         <h1 class="acrmap-title">Create Academic Roadmap</h1>
-                                                        <span class="acrmap-step-title">Step 1: Select your Insitution to begin creating your personalized academic roadmap.</span>
+                                                        <span class="acrmap-step-title">Step 1: Select your country to begin creating your personalized academic roadmap.</span>
+                                                        <div class="form-control border-0 mb-4 p-0">
+                                                            <label for="country" class="d-block fw-bold">Country <span class="error">*</span></label>
+                                                            <select id="country" class="d-block w-100 collector">
+                                                                <option value="">Select a country</option>
+                                                                <option value="ng">Nigeria</option>
+                                                                <option value="gh">Ghana</option>
+                                                                <option value="usa">United States of America</option>
+                                                            </select>
+                                                            <div class="error-message" id="country-error">Please select a faculty</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="acrmap-step institution-info">
+                                                        <h1 class="acrmap-title">Create Academic Roadmap</h1>
+                                                        <span class="acrmap-step-title">Step 2: Select your Insitution to begin creating your personalized academic roadmap.</span>
                                                         <div class="form-control border-0 mb-4 p-0">
                                                             <label for="institution-type" class="d-block fw-bold">Institution type <span class="error">*</span></label>
                                                             <select id="institution-type" class="d-block w-100 collector">
@@ -277,10 +291,7 @@
                                                             </select>
                                                             <div class="error-message" id="institution-error">Please select name of institution.</div>
                                                         </div>
-                                                    </div>
-                                                    <div class="acrmap-step faculty">
-                                                        <h1 class="acrmap-title">Create Academic Roadmap</h1>
-                                                        <span class="acrmap-step-title">Step 2: Select your faculty to begin creating your personalized academic roadmap.</span>
+                                                        <span class="acrmap-step-title">Step 3: Select your faculty to begin creating your personalized academic roadmap.</span>
                                                         <div class="form-control border-0 mb-4 p-0">
                                                             <label for="faculty" class="d-block fw-bold">Faculty <span class="error">*</span></label>
                                                             <select id="faculty" class="d-block w-100 collector">
@@ -291,10 +302,7 @@
                                                             </select>
                                                             <div class="error-message" id="faculty-error">Please select a faculty</div>
                                                         </div>
-                                                    </div>
-                                                    <div class="acrmap-step department">
-                                                        <h1 class="acrmap-title">Department Selection</h1>
-                                                        <span class="acrmap-step-title">Step 3: Select your department from the faculty you've chosen.</span>
+                                                        <span class="acrmap-step-title">Step 4: Select your department from the faculty you've chosen.</span>
                                                         <div class="form-control border-0 mb-4 p-0">
                                                             <label for="department" class="d-block fw-bold">Department <span class="error">*</span></label>
                                                             <select id="department" class="d-block w-100 collector">
@@ -305,10 +313,7 @@
                                                             </select>
                                                             <div class="error-message" id="department-error">Please select a department</div>
                                                         </div>
-                                                    </div>
-                                                    <div class="acrmap-step level">
-                                                        <h1 class="acrmap-title">Level Selection</h1>
-                                                        <span class="acrmap-step-title">Step 4: Select your current and target academic levels.</span>
+                                                        <span class="acrmap-step-title">Step 5: Select your current and target academic levels.</span>
                                                         <div class="row">
                                                             <div class="col-md-6">
                                                                 <div class="form-control border-0 mb-4 p-0">
@@ -375,13 +380,13 @@
                                                     <button type="button" id="acrmap-next-btn">Continue <img src="asset/img/next-arrow-icon-black.png" alt="arrow-right" /></button>
                                                 </div>
                                             </form>
-                                    
-                                            <div class="acrmap-help-box">
+                                            
+                                            <div class="acrmap-help-box" id="acrmap-help-container">
                                                 <span><img src="asset/img/note-icon.png" alt="note-image" /></span>
                                                 <div>
-                                                    <strong>Need Help?</strong>
+                                                    <strong class="acrmap-help-title">Need Help?</strong>
                                                     <br>
-                                                    <span id="acrmap-help-text">Your faculty selection will help us create a customized roadmap based on your program requirements. If you're unsure about your faculty, please contact academic services.</span>
+                                                    <span id="acrmap-help-text">Select your country to get a personalized academic Raodmap based on your country.</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -483,6 +488,7 @@
           let currentStep = 0;
           const duration = 5000;
           const helpText = $('#acrmap-help-text');
+          const helpTextContainer = $("#acrmap-help-container");
           
           // Hide back button on first step
           prevBtn.css('visibility', 'hidden');
@@ -566,19 +572,14 @@
 
           //Update help text
           function updateHelpText(stepIndex) {
-            if(stepIndex === 0 || stepIndex === 1){
-                helpText.text("Your faculty selection will help us create a customized roadmap based on your program requirements. If you're unsure about your faculty, please contact academic services.");
-            }
-            else if(stepIndex === 2) {
-                helpText.text("Your department selection will determine the specific courses and requirements for your academic roadmap. If you need to change your faculty selection, use the Back button.");
-            }
-            else if(stepIndex === 3) {
-                helpText.text("Your current and target levels will help us create a personalized academic roadmap. The target level must be equal to or higher than your current level.")
-            }
-            else if (stepIndex === 4) {
+            if( stepIndex === 1){
+                helpTextContainer.addClass("d-none");
+            } else if (stepIndex === 2) {
+                helpTextContainer.removeClass("d-none");
                 helpText.text("Select at least one specialization to generate your personalized academic roadmap. You can choose multiple specializations to create a comprehensive learning path.")
             }
-            else if (stepIndex === 5) {
+            else if (stepIndex === 3) {
+                helpTextContainer.removeClass("d-none");
                 helpText.text("We are analyzing your selections and creating a personalized learning path. This may take a few moments.")
             }
           }
@@ -588,10 +589,16 @@
             resetValidation(stepIndex);
             let isValid = true;
 
-
+            //Step 1: country validation
+            if(stepIndex === 0) {
+                if (!$('#country').val()) {
+                showError('country');
+                isValid = false;
+              }
+            }
             
             // Step 1: Institution validation
-            if (stepIndex === 0) {
+            if (stepIndex === 1) {
               if (!$('#institution-type').val()) {
                 showError('institution-type');
                 isValid = false;
@@ -600,26 +607,14 @@
                 showError('institution');
                 isValid = false;
               }
-            }
-            
-            // Step 2: Faculty validation
-            if (stepIndex === 1) {
               if (!$('#faculty').val()) {
                 showError('faculty');
                 isValid = false;
               }
-            }
-            
-            // Step 3: Department validation
-            else if (stepIndex === 2) {
               if (!$('#department').val()) {
                 showError('department');
                 isValid = false;
               }
-            }
-            
-            // Step 4: Level validation
-            else if (stepIndex === 3) {
               if (!$('#current-level').val()) {
                 showError('current-level');
                 isValid = false;
@@ -629,11 +624,11 @@
                 showError('target-level');
                 isValid = false;
               }
-
             }
             
+            
             // Step 5: Specialization validation
-            else if (stepIndex === 4) {
+            else if (stepIndex === 2) {
               if ($('input[name="specialization"]:checked').length === 0) {
                 showError('specialization');
                 isValid = false;
@@ -659,22 +654,25 @@
           // Reset validation for a step
           function resetValidation(stepIndex) {
             if (stepIndex === 0) {
+                $('#country').removeClass('field-error');
+                $('#country-error').hide();
+            }
+            else if (stepIndex === 1) {
                 $('#institution-type').removeClass('field-error');
                 $('#institution-type-error').hide();
 
                 $('#institution').removeClass('field-error');
                 $('#institution-error').hide();
-            }
-            else if (stepIndex === 1) {
-              $('#faculty').removeClass('field-error');
-              $('#faculty-error').hide();
+
+                $('#faculty').removeClass('field-error');
+                $('#faculty-error').hide();
+
+                $('#department').removeClass('field-error');
+                $('#department-error').hide();
+
+                $('#current-level, #target-level').removeClass('field-error');
+                $('#current-level-error, #target-level-error').hide();             
             } else if (stepIndex === 2) {
-              $('#department').removeClass('field-error');
-              $('#department-error').hide();
-            } else if (stepIndex === 3) {
-              $('#current-level, #target-level').removeClass('field-error');
-              $('#current-level-error, #target-level-error').hide();
-            } else if (stepIndex === 4) {
               $('.custom-checkbox').removeClass('field-error');
               $('#specialization-error').hide();
             }

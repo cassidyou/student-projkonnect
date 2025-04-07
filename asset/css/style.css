@@ -4252,8 +4252,8 @@ table.dataTable.no-footer {
 .acrmap-step-title{
     font-size: 16px;
     display: block;
-    margin-top: 20px;
-    margin-bottom: 30px;
+    margin-top: 40px;
+    margin-bottom: 15px;
 }
 
 .acrmap-container .error{
@@ -4478,6 +4478,20 @@ table.dataTable.no-footer {
     font-weight: 600;
 }
 
+.acrmap-course-description > p{
+    font-weight: 500;
+    font-family: var(--font-family-regular);
+}
+
+.acrmap-course-description > ul{
+    list-style: disc !important;
+    margin-left: 30px!important;
+}
+
+.acrmap-course-description > * {
+    font-size: 15px;
+}
+
 .acrmap-required{
     background: #FEFCE8;
     padding: 4px 8px;
@@ -4509,6 +4523,11 @@ table.dataTable.no-footer {
 .acrmap-btn.gray{
     background: #D1D5DB;
     color: var(--black-color);
+}
+
+.acrmap-btn.green {
+    background: var(--acmap-green);
+    color: var(--white-color);
 }
 
 
@@ -5090,4 +5109,27 @@ textarea.form-control:focus{
 .invi-table td{
     vertical-align: middle;
     white-space: nowrap;
+}
+
+
+.smarp-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 15px;
+}
+
+.smarp-card h6:first-child {
+    margin-bottom: 10px;
+}
+
+.smarp-card > .d-flex {
+    margin-top: 10px;
+}
+
+.smarp-card img{
+    width: 15px;
+}
+
+.smarp-card span {
+    font-size: 15px;
 }
