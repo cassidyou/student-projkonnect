@@ -280,6 +280,17 @@ $(document).ready(function () {
 
 
 
+  /****************** Select2 *************************************/
+  // Basic initialization
+  $('.select2-select-search').select2();
+
+  // Optional: Add a placeholder
+  $('.select2-select-search').select2({
+    placeholder: "Select",
+    allowClear: !true
+  });
+
+  
   /****************** Dropify *************************************/
   if ($('.dropify').length > 0) {
     $('.dropify').dropify({

@@ -13,6 +13,9 @@
     <link rel="stylesheet" href="vendor/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="https://preview.colorlib.com/theme/bootstrap/css-table-19/css/style.css">
 
+     <!-- Select2 CSS -->
+     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
     <!-- Fontawesome CSS -->
     <link rel="stylesheet" href="vendor/fontawesome/all.min.css">
 
@@ -266,17 +269,20 @@
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-sm-12 col-md-4 mt-3">
-                                                        <select name="department" id="">
-                                                            <option value="all-department">All Departments</option>
-                                                            <option value="all">Computer Science</option>
-                                                            <option value="all">Mechanical Engineering</option>
+                                                        <select name="department" id="" class="select2-select-search">
+                                                            <option value="all-department">Country</option>
+                                                            <option value="ng">Nigeria</option>
+                                                            <option value="gh">Ghana</option>
                                                         </select>
                                                     </div>
                                                     <div class="col-sm-12 col-md-4 mt-3">
                                                         <select name="focus-area" id="">
                                                             <option value="all-focus-area">All Focus Areas</option>
+                                                            <option value="career_pathways">Career Pathways </option>
                                                             <option value="jobs">Jobs</option>
                                                             <option value="graduate-school">Graduate School</option>
+                                                            <option value="entrepreneurship">Entrepreneurship</option>
+                                                            
                                                         </select>
                                                     </div>
                                                     <div class="col-sm-12 col-md-4 mt-3">
@@ -444,6 +450,8 @@
     <script src="vendor/moment/moment.min.js"></script>
     <script src="vendor/bootstrap-daterangepicker/daterangepicker.js"></script>
     <!-- <script src="asset/js/dashboard.js"></script> -->
+      <!-- Select2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script src="asset/js/plugins_init.js"></script>
     <script src="asset/js/main.js"></script>
     <script>

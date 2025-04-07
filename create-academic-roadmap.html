@@ -16,6 +16,9 @@
     <!-- Fontawesome CSS -->
     <link rel="stylesheet" href="vendor/fontawesome/all.min.css">
 
+    <!-- Select2 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="vendor/swiper/swiper-bundle.min.css">
 
@@ -281,9 +284,9 @@
                                                             <div class="error-message" id="institution-type-error">Please select institution type.</div>
                                                         </div>
                                                         <div class="form-control border-0 mb-4 p-0">
-                                                            <label for="institution" class="d-block fw-bold">Name of Institution <span class="error">*</span></label>
-                                                            <select id="institution" class="d-block w-100 collector">
-                                                                <option value="">Select </option>
+                                                            <label for="institution" class="d-block fw-bold">Name of Institution</label>
+                                                            <select id="institution" class="d-block w-100 collector select2-select-search">
+                                                                <option value="">Select</option>
                                                                 <option value="funai">Alex-Ekwueme Federal University of Technology</option>
                                                                 <option value="futminna">Federal University of Technology, Minna</option>
                                                                 <option value="futo">Federal University of Technology, Owerri</option>
@@ -294,7 +297,7 @@
                                                         <span class="acrmap-step-title">Step 3: Select your faculty to begin creating your personalized academic roadmap.</span>
                                                         <div class="form-control border-0 mb-4 p-0">
                                                             <label for="faculty" class="d-block fw-bold">Faculty <span class="error">*</span></label>
-                                                            <select id="faculty" class="d-block w-100 collector">
+                                                            <select id="faculty" class="d-block w-100 collector select2-select-search">
                                                                 <option value="">Select a faculty</option>
                                                                 <option value="engineering">Engineering</option>
                                                                 <option value="science">Science</option>
@@ -305,7 +308,7 @@
                                                         <span class="acrmap-step-title">Step 4: Select your department from the faculty you've chosen.</span>
                                                         <div class="form-control border-0 mb-4 p-0">
                                                             <label for="department" class="d-block fw-bold">Department <span class="error">*</span></label>
-                                                            <select id="department" class="d-block w-100 collector">
+                                                            <select id="department" class="d-block w-100 collector select2-select-search">
                                                                 <option value="">Select a department</option>
                                                                 <option value="civil-engineering">Civil Engineering</option>
                                                                 <option value="mechanical-engineering">Mechanical Engineering</option>
@@ -476,6 +479,8 @@
     <script src="vendor/swiper/swiper-bundle.min.js"></script>
     <script src="vendor/moment/moment.min.js"></script>
     <script src="vendor/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <!-- Select2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <!-- <script src="asset/js/dashboard.js"></script> -->
     <script src="asset/js/plugins_init.js"></script>
     <script src="asset/js/main.js"></script>
@@ -601,10 +606,6 @@
             if (stepIndex === 1) {
               if (!$('#institution-type').val()) {
                 showError('institution-type');
-                isValid = false;
-              }
-              if (!$('#institution').val()) {
-                showError('institution');
                 isValid = false;
               }
               if (!$('#faculty').val()) {

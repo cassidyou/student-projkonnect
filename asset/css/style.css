@@ -5133,3 +5133,21 @@ textarea.form-control:focus{
 .smarp-card span {
     font-size: 15px;
 }
+
+
+.select2-container--default .select2-selection--single {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    height: 42px;
+    width: 100%;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    color: #444;
+    line-height: 28px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
