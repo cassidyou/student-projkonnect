@@ -111,6 +111,16 @@
         margin-bottom: 20px;
     }
 
+    .custom-tab.request {
+
+        .nav-link{
+            margin-bottom: 0;
+        }
+        .button-ctn{
+            width: 100%;
+        }
+    }
+
     .tutimg{
         height: 270px;
     }
@@ -123,6 +133,8 @@
         z-index: 50;
         height: 100%;
     }
+
+    
 
 
 }

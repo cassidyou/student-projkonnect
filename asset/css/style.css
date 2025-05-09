@@ -5151,3 +5151,116 @@ textarea.form-control:focus{
     align-items: center;
     width: 100%;
 }
+
+
+.dsh-verify_id{
+    padding: 10px;
+    border-radius: 10px;
+    background: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.dsh-verify_id{
+    h4 {
+        color: var(--white-color);
+        font-size: 14px;
+        padding: 0;
+        margin: 0;
+        margin-left: 20px;
+    }
+
+    a{
+        background: var(--white-color);
+        color: var(--black-color);
+        border-radius: inherit;
+        padding: 7px 30px;
+        font-size: 14px;
+    }
+}
+
+
+.id_verification_container{
+
+    h4, small{
+        display: block;
+        text-align: center;
+    }
+
+    small{
+        margin-bottom: 30px;
+        margin-top: 10px;
+    }
+
+    .dropify-wrapper {
+        background-color: var(--white-color);
+        text-align: center;
+        border: 2px dashed #E5E5E5;
+        border-radius: 10px;
+    }
+
+    .dropify-ctn{
+        padding: 30px;
+        border-radius: 7px;
+        background: var(--white-color);
+    }
+
+    button{
+        border: none;
+        padding: 7px 40px;
+        background-color: var(--primary-color);
+        color: var(--white-color);
+        border-radius: 7px;
+        font-size: 14px;
+    }
+}
+
+
+.smartplan-table{
+ 
+
+    ul{
+        list-style: disc;
+        
+        li{
+            margin-top: 8px;
+            margin-bottom: 8px;
+        }
+    }
+
+    td, th, tr{
+        white-space: nowrap;
+    }
+    td{
+        padding: 20px;
+    }
+
+}
+
+.new-request-btn{
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: var(--white-color);
+    background-color: var(--primary-color);
+}
+
+
+
+.custom-tab.reqeust
+{
+        .nav-link {
+        margin-bottom: 0px;
+    }
+
+
+
+}
+
+
+@media (max-width: 576px)
+{
+    .flexwrapper{
+        flex-wrap: wrap;
+    }
+}
